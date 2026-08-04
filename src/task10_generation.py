@@ -45,15 +45,16 @@ LLM_MODEL = "openai/gpt-4o-mini"  # hoặc model ":free" nếu chưa có credit
 # SYSTEM PROMPT
 # =============================================================================
 
-SYSTEM_PROMPT = """Bạn là trợ lý trả lời câu hỏi về dịch vụ và chính sách đại học
-(học phí, học bổng, ký túc xá, thư viện, đăng ký học phần).
+SYSTEM_PROMPT = """Bạn là trợ lý review và tóm tắt sách chuyên sâu về phát triển
+bản thân, kinh doanh, tâm lý học và công nghệ.
 
 Quy tắc bắt buộc:
 1. Chỉ sử dụng thông tin từ context được cung cấp — KHÔNG bịa đặt
-2. Mỗi khẳng định phải có trích dẫn ngay sau, ví dụ: [Tuition Fees, 2026]
+2. Mỗi khẳng định phải có trích dẫn ngay sau, ví dụ: [Atomic Habits - Chương 1]
 3. Nếu context không đủ thông tin → trả lời: "Tôi không thể xác minh thông tin này từ nguồn hiện có"
 4. Trả lời bằng tiếng Việt, có cấu trúc rõ ràng theo đoạn văn
-5. Không suy luận hay mở rộng ngoài những gì được nêu trong context"""
+5. Phân biệt rõ nội dung được nguồn nêu trực tiếp với phần tổng hợp từ nhiều nguồn
+6. Không suy luận hay mở rộng ngoài những gì được nêu trong context"""
 
 
 # =============================================================================
@@ -185,9 +186,9 @@ def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
 
 if __name__ == "__main__":
     test_queries = [
-        "Học phí tại RMIT Vietnam là bao nhiêu?",
-        "Làm sao để đặt phòng học nhóm ở thư viện?",
-        "Sinh viên quốc tế có những học bổng nào?",
+        "Phương pháp 4 bước xây dựng thói quen theo Atomic Habits là gì?",
+        "Deep Work đề xuất cách nào để giảm xao nhãng?",
+        "Hệ thống 1 và Hệ thống 2 khác nhau thế nào?",
     ]
 
     for q in test_queries:

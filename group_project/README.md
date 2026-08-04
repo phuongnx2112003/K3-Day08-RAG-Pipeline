@@ -1,4 +1,4 @@
-# Bài Tập Nhóm — University Services RAG Chatbot
+# Bài Tập Nhóm — Trợ Lý Review & Tóm Tắt Sách Chuyên Sâu
 
 ## Mục Tiêu
 
@@ -8,7 +8,7 @@ Sau khi hoàn thành bài cá nhân, nhóm ngồi lại để xây dựng **1 tr
 
 ## Yêu cầu 1: Sản phẩm nhóm RAG Chatbot
 
-Xây dựng chatbot trả lời câu hỏi về dịch vụ và chính sách đại học liên quan.
+Xây dựng chatbot tóm tắt tri thức cốt lõi, trích dẫn bài học và phân tích góc nhìn từ các sách về phát triển bản thân, kinh doanh, tâm lý học và công nghệ.
 
 **Yêu cầu:**
 - Giao diện chat (Streamlit / Gradio / Chainlit)
@@ -81,6 +81,9 @@ Role 1: PipelineSupervisor điều phối contract, kiểm tra sẵn sàng và d
 
 Chi tiết kiến trúc, điều kiện bàn giao và kịch bản demo nằm trong
 [`demo_runbook.md`](demo_runbook.md).
+
+Phạm vi đề tài, chuẩn nguồn dữ liệu và metadata nằm trong
+[`topic_scope.md`](topic_scope.md).
 
 ---
 

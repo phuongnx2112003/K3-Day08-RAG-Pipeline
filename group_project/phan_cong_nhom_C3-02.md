@@ -176,12 +176,12 @@ Task 1, Task 2
 ### 4.2 Phùng Hồng Phước - Role 2: Data Engineering & Scraping Dev
 
 #### Công việc chi tiết
-1. **Task 1 - Tải PDF chính sách**
-   - Tìm và tải ít nhất 3 tài liệu chính sách/quy định dạng PDF/DOCX.
+1. **Task 1 - Thu thập tài liệu sách**
+   - Thu thập ít nhất 3 tài liệu tóm tắt/phân tích sách dạng PDF/DOCX hoặc tài liệu do nhóm có quyền sử dụng.
    - Đặt tên file rõ ràng.
    - Lưu vào `data/landing/legal/`.
-2. **Task 2 - Crawl bài viết tin tức**
-   - Crawl ít nhất 5 bài viết hoặc thông báo liên quan đến dịch vụ đại học.
+2. **Task 2 - Crawl bài review/phân tích**
+   - Crawl ít nhất 5 bài review hoặc bài phân tích công khai liên quan đến các đầu sách đã chọn.
    - Lưu metadata: URL gốc, ngày crawl, tiêu đề.
    - Lưu vào `data/landing/news/`.
 3. **Task 3 - Convert Markdown**

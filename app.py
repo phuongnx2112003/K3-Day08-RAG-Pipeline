@@ -1,5 +1,5 @@
 """
-RAG Chatbot — University Services (Starter Template)
+RAG Chatbot — Book Review & Summary Assistant.
 Streamlit app kết nối RAG Retrieval (Task 9) và Generation (Task 10).
 
 Chạy:
@@ -24,8 +24,8 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # =============================================================================
 
 st.set_page_config(
-    page_title="University Services RAG Chatbot",
-    page_icon="🎓",
+    page_title="Book Insights RAG Chatbot",
+    page_icon="📚",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -35,18 +35,18 @@ st.set_page_config(
 # =============================================================================
 
 with st.sidebar:
-    st.title("🎓 University Services RAG")
-    st.caption("Trợ lý hỏi đáp về dịch vụ và chính sách đại học (học phí, học bổng, ký túc xá, thư viện)")
+    st.title("📚 Book Insights RAG")
+    st.caption("Trợ lý review, tóm tắt và phân tích sách về phát triển bản thân, kinh doanh, tâm lý học và công nghệ")
 
     st.divider()
 
     st.subheader("💡 Câu hỏi gợi ý")
     suggestions = [
-        "Học phí tại RMIT Vietnam là bao nhiêu?",
-        "Làm sao để đặt phòng học nhóm ở thư viện?",
-        "Điều kiện xin học bổng Academic Achievement?",
-        "Dịch vụ hỗ trợ chỗ ở cho sinh viên như thế nào?",
-        "Cách đăng ký học phần qua myRMIT?",
+        "Phương pháp 4 bước xây dựng thói quen theo Atomic Habits là gì?",
+        "Deep Work đề xuất cách nào để giảm xao nhãng khi làm việc sâu?",
+        "Hệ thống 1 và Hệ thống 2 trong Thinking, Fast and Slow khác nhau thế nào?",
+        "Bài học quan trọng về ra quyết định từ cuốn sách là gì?",
+        "Hãy so sánh ý chính của Atomic Habits và Deep Work.",
     ]
     for s in suggestions:
         if st.button(s, use_container_width=True, key=f"sug_{s[:20]}"):
@@ -73,8 +73,8 @@ if "pending_query" not in st.session_state:
 # MAIN CHAT AREA
 # =============================================================================
 
-st.title("🎓 University Services RAG Chatbot")
-st.caption("Hệ thống hỏi đáp thông tin dịch vụ đại học (Học phí, Học bổng, Ký túc xá, Thư viện)")
+st.title("📚 Trợ Lý Review & Tóm Tắt Sách")
+st.caption("Hệ thống hỏi đáp và phân tích sách với trích dẫn từ nguồn đã được cung cấp")
 
 # Hiển thị lịch sử chat
 for msg in st.session_state.messages:
@@ -96,7 +96,7 @@ for msg in st.session_state.messages:
 # =============================================================================
 
 # Xử lý khi bấm nút gợi ý hoặc nhập câu hỏi mới
-user_input = st.chat_input("Nhập câu hỏi của bạn về chính sách/dịch vụ đại học...")
+user_input = st.chat_input("Nhập câu hỏi về nội dung, bài học hoặc góc nhìn từ sách...")
 query = user_input or st.session_state.pending_query
 
 if query:
