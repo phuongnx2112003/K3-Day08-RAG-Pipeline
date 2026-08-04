@@ -126,6 +126,10 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
     for doc in documents:
         splits = splitter.split_text(doc["content"])
         for i, chunk_text in enumerate(splits):
+            # Một số tài liệu convert có block chỉ gồm whitespace. Không index
+            # các block này vì cả dense retrieval lẫn BM25 đều không thể dùng.
+            if not chunk_text.strip() or not any(char.isalnum() for char in chunk_text):
+                continue
             chunk_metadata = {**doc["metadata"], "chunk_index": i}
             chunks.append({
                 "content": chunk_text,

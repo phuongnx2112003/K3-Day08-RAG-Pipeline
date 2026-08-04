@@ -167,9 +167,15 @@ def _load_from_task4() -> list[CorpusItem]:
 
 
 def load_shared_corpus() -> list[CorpusItem]:
-    """Nạp corpus theo ưu tiên Chroma → Task 4 → Markdown fallback."""
+    """Nạp chunks xác định từ Task 4, không mở ChromaDB trong lúc truy vấn sparse.
 
-    corpus = _load_from_chroma() or _load_from_task4() or _load_markdown_fallback()
+    BM25/TF-IDF chỉ cần text và metadata. Tạo lại chunks từ Markdown giúp sparse
+    index luôn cùng cấu hình với Task 4, không bị phụ thuộc vào database đang bị
+    lock hoặc artifact Chroma cũ. ``_load_from_chroma`` được giữ lại cho các công
+    cụ migration/inspection, không nằm trên đường chạy mặc định.
+    """
+
+    corpus = _load_from_task4() or _load_markdown_fallback()
     return _validate_corpus(corpus)
 
 

@@ -6,6 +6,12 @@ __pycache__/
 venv/
 *.egg-info/
 
+# Node / React
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
 # Env (keys)
 .env
 
