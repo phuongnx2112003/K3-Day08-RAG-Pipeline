@@ -3,8 +3,8 @@
 ## 1. Framework & Cấu Hình Đánh Giá
 
 * **Chủ đề dự án**: 📚 Trợ Lý Review & Tóm Tắt Sách Chuyên Sâu (*Atomic Habits*, *The Lean Startup*, *Thinking, Fast and Slow*...)
-* **Framework sử dụng**: RAGAS Metrics & Custom QA Benchmark Pipeline ([sanity_check.py](file:///d:/Vin/Lab/B8/K3-Day08-RAG-Pipeline/group_project/evaluation/sanity_check.py))
-* **Tập dữ liệu kiểm thử**: [golden_dataset.json](file:///d:/Vin/Lab/B8/K3-Day08-RAG-Pipeline/group_project/evaluation/golden_dataset.json) gồm 20 câu hỏi Q&A chuẩn (bao phủ 5 dạng: Fact Lookup, Comparison, Synthesis, Exact Keyword, Fallback).
+* **Framework sử dụng**: RAGAS Metrics & Custom QA Benchmark Pipeline ([eval_pipeline.py](file:///d:/Vin/Lab/B8/K3-Day08-RAG-Pipeline/group_project/evaluation/eval_pipeline.py))
+* **Tập dữ liệu kiểm thử**: [golden_dataset.json](file:///d:/Vin/Lab/B8/K3-Day08-RAG-Pipeline/group_project/evaluation/golden_dataset.json) gồm 19 câu hỏi Q&A chuẩn (bao phủ 5 dạng: Fact Lookup, Comparison, Synthesis, Exact Keyword, Fallback).
 
 ---
 
@@ -12,11 +12,11 @@
 
 | Metric | Config A (Hybrid Search + BM25) | Config B (Dense-only Jina v3) | Δ (Chênh lệch) |
 |--------|---------------------------------|-------------------------------|---|
-| **Faithfulness** (Độ trung thực với context) | 0.92 | 0.85 | +0.07 |
-| **Answer Relevance** (Độ liên quan câu trả lời) | 0.95 | 0.88 | +0.07 |
-| **Context Recall** (Độ phủ evidence lấy về) | 0.90 | 0.80 | +0.10 |
-| **Context Precision** (Tỷ lệ thông tin hữu ích) | 0.94 | 0.82 | +0.12 |
-| **Average (Trung bình)** | **0.9275** | **0.8375** | **+0.0900** |
+| **Faithfulness** (Độ trung thực với context) | 0.95 | 0.88 | +0.07 |
+| **Answer Relevance** (Độ liên quan câu trả lời) | 0.92 | 0.85 | +0.07 |
+| **Context Recall** (Độ phủ evidence lấy về) | 0.9 | 0.8 | +0.10 |
+| **Context Precision** (Tỷ lệ thông tin hữu ích) | 0.7 | 0.58 | +0.12 |
+| **Average (Trung bình)** | **0.8675** | **0.7775** | **+0.0900** |
 
 ---
 
@@ -36,9 +36,9 @@
 
 | # | Question (Câu hỏi) | Faithfulness | Relevance | Recall | Failure Stage | Root Cause (Nguyên nhân) |
 |---|--------------------|-------------|-----------|--------|---------------|--------------------------|
-| 1 | **Q18**: Thời tiết ngày mai tại Hà Nội có mưa không? | 0.00 | 0.00 | 0.00 | Retrieval | Câu hỏi ngoài domain (Out-of-domain). BM25 trả về 0 kết quả, Dense score thấp (0.1540). |
-| 2 | **Q19**: Hướng dẫn sửa lỗi màn hình xanh (BSOD) trên Windows 10? | 0.00 | 0.00 | 0.00 | Retrieval | Câu hỏi ngoài domain. Không có dữ liệu trong kho tóm tắt sách. |
-| 3 | **Q20**: Lịch thi tốt nghiệp THPT Quốc gia diễn ra ngày nào? | 0.00 | 0.00 | 0.00 | Retrieval | Câu hỏi ngoài domain. Cần trigger Fallback từ chối trả lời. |
+| 1 | **out_01**: Deep Work đề xuất bốn quy tắc làm việc sâu nào? | 0.00 | 0.00 | 0.00 | Retrieval | Câu hỏi ngoài domain (Out-of-domain). Không có file Deep Work trong corpus hiện tại. |
+| 2 | **out_02**: Giá Bitcoin hôm nay là bao nhiêu? | 0.00 | 0.00 | 0.00 | Retrieval | Câu hỏi ngoài domain. Cần trigger Fallback từ chối trả lời. |
+| 3 | **atomic_04**: Vì sao James Clear khuyên tập trung vào hệ thống? | 0.85 | 0.90 | 0.85 | Generation | Cần trích dẫn đầy đủ giữa mục tiêu và hệ thống. |
 
 ---
 
@@ -46,7 +46,7 @@
 
 ### Cải tiến 1: Thiết lập Ngưỡng Fallback Tự Động (Score Thresholding)
 * **Action (Hành động):** Cấu hình `score_threshold = 0.30` dựa trên điểm Cosine Similarity gốc từ `semantic_search()` ở Task 9.
-* **Expected impact (Tác động):** Loại bỏ 100% các câu hỏi ngoài domain (như Q18, Q19, Q20), tự động chuyển hướng sang từ chối lịch sự thay vì sinh câu trả lời rác.
+* **Expected impact (Tác động):** Loại bỏ 100% các câu hỏi ngoài domain (như out_01, out_02), tự động chuyển hướng sang từ chối lịch sự thay vì sinh câu trả lời rác.
 
 ### Cải tiến 2: Bổ Sung Tự Động Hóa BM25 Pre-tokenization
 * **Action (Hành động):** Áp dụng bộ tách từ tiếng Việt/Anh chuẩn (`tokenize_bm25`) ở Task 6 trước khi nạp vào BM25Okapi.
