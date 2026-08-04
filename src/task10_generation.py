@@ -200,16 +200,7 @@ def generate_with_citation(
     }
 
 
-<<<<<<< HEAD
-    for q in test_queries:
-        print(f"\n{'='*70}")
-        print(f"Q: {q}")
-        print("=" * 70)
-        result = generate_with_citation(q)
-        print(f"\nA: {result['answer']}")
-        print(f"\n[Sources: {len(result['sources'])} chunks | via {result['retrieval_source']}]")
-=======
 if __name__ == "__main__":
     result = generate_with_citation("What are the four laws of behavior change?")
     print(result["answer"])
->>>>>>> 402e1e6ad54f8511a8940733b2e9f70c6b62af7a
+

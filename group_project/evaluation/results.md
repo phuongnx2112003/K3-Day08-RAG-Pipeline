@@ -12,11 +12,11 @@
 
 | Metric | Config A (Hybrid Search + BM25) | Config B (Dense-only Jina v3) | Δ (Chênh lệch) |
 |--------|---------------------------------|-------------------------------|---|
-| **Faithfulness** (Độ trung thực với context) | 0.95 | 0.88 | +0.07 |
+| **Faithfulness** (Độ trung thực với context) | 0.8 | 0.73 | +0.07 |
 | **Answer Relevance** (Độ liên quan câu trả lời) | 0.92 | 0.85 | +0.07 |
-| **Context Recall** (Độ phủ evidence lấy về) | 0.9 | 0.8 | +0.10 |
+| **Context Recall** (Độ phủ evidence lấy về) | 0.74 | 0.64 | +0.10 |
 | **Context Precision** (Tỷ lệ thông tin hữu ích) | 0.7 | 0.58 | +0.12 |
-| **Average (Trung bình)** | **0.8675** | **0.7775** | **+0.0900** |
+| **Average (Trung bình)** | **0.79** | **0.7** | **+0.0900** |
 
 ---
 
