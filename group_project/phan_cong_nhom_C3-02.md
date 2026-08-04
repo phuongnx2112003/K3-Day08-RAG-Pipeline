@@ -49,9 +49,104 @@ Task 1, Task 2
                             -> evaluation / results.md
 ```
 
-## 3. Phân Công Chi Tiết Theo Từng Người
+## 3. Phân Công Theo Checkpoint
 
-### 3.1 Nguyễn Xuân Phượng - Nhóm trưởng, Role 1
+> Quy ước của nhóm: **Task 9** được giao cho Phượng (Role 1) vì đây là bước hợp nhất kiến trúc giữa dense retrieval của Role 3 và sparse/fallback của Role 4. Việc này không thay đổi 6 role đã chốt.
+
+### CP0 - Setup Môi Trường (0:00 - 0:10)
+
+| Thành viên | Nhiệm vụ | Phụ thuộc / Bàn giao |
+|---|---|---|
+| Phượng - Role 1 | Kiểm tra repo chung, tạo quy ước branch, chốt chủ đề dữ liệu, kiểm tra `.env.example` và phân công. | Không phụ thuộc; bàn giao cấu trúc dự án và danh sách nguồn dữ liệu. |
+| Phước - Role 2 | Tạo môi trường ảo, cài dependencies; kiểm tra thư viện crawl và MarkItDown. | Báo lỗi cài đặt cho Phượng trước CP1. |
+| Hải - Role 3 | Kiểm tra `chromadb`, `sentence-transformers` và khả năng tải embedding model. | Sẵn sàng môi trường cho CP2. |
+| Mạnh - Role 4 | Kiểm tra `rank-bm25`, cấu hình `PAGEINDEX_API_KEY` nếu nhóm sử dụng PageIndex. | Báo tình trạng API/fallback cho Phượng. |
+| Dũng - Role 5 | Kiểm tra Streamlit chạy được và xác nhận biến API cho Task 10. | Sẵn sàng khung `app.py` cho CP5. |
+| Minh Đức - Role 6 | Kiểm tra `ragas`, `datasets`; tạo cấu trúc file evaluation. | Sẵn sàng template benchmark cho CP5. |
+
+**Điều kiện qua CP0:** mọi người cài được dependencies cần cho role của mình và thống nhất cách chạy dự án bằng `python3`.
+
+### CP1 - Thu Thập Và Chuẩn Hóa Dữ Liệu (0:10 - 0:35)
+
+| Thành viên | Nhiệm vụ | Phụ thuộc / Bàn giao |
+|---|---|---|
+| Phượng - Role 1 | Duyệt danh sách URL, tránh tài liệu trùng lặp; kiểm tra số lượng và chất lượng đầu ra. | Nhận báo cáo từ Phước. |
+| Phước - Role 2 | Làm Task 1, 2, 3: tải ít nhất 3 PDF/DOCX, crawl ít nhất 5 bài có metadata, convert toàn bộ sang Markdown. | Bàn giao `data/standardized/` cho Hải và Mạnh. |
+| Hải - Role 3 | Xem trước Markdown, phản hồi nếu thiếu `source`, `type` hoặc nội dung quá ngắn gây khó index. | Phụ thuộc Role 2 hoàn thành Markdown. |
+| Mạnh - Role 4 | Kiểm tra corpus có thể tokenize cho BM25; đề xuất chuẩn hóa text nếu cần. | Phụ thuộc Role 2 hoàn thành Markdown. |
+| Dũng - Role 5 | Chuẩn bị câu hỏi gợi ý trong UI dựa trên tài liệu thực tế. | Nhận danh sách chủ đề từ Role 2. |
+| Minh Đức - Role 6 | Soạn nháp 20 câu hỏi golden dataset, mỗi câu phải có evidence dự kiến trong nguồn đã crawl. | Hoàn thiện sau khi Role 2 bàn giao data. |
+
+**Điều kiện qua CP1:** có ít nhất 3 file chính sách, 5 bài tin và Markdown tương ứng trong `data/standardized/`.
+
+### CP2 - Chunking, Indexing Và Search Cơ Bản (0:35 - 1:00)
+
+| Thành viên | Nhiệm vụ | Phụ thuộc / Bàn giao |
+|---|---|---|
+| Phượng - Role 1 | Duyệt contract chunk chung: `content`, `score`, `metadata`; chốt chunk size, overlap và model embedding với Hải. | Phụ thuộc Markdown của CP1. |
+| Phước - Role 2 | Sửa hoặc bổ sung data nếu phát hiện file rỗng, lỗi encode hay metadata thiếu. | Hỗ trợ Hải/Mạnh theo phản hồi. |
+| Hải - Role 3 | Làm Task 4 và 5: chunking, ChromaDB indexing, `semantic_search()` và HyDE nếu triển khai. | Nhận Markdown từ Role 2; bàn giao dense results cho Mạnh/Phượng. |
+| Mạnh - Role 4 | Làm Task 6: xây BM25/TF-IDF từ cùng corpus và trả format chunk thống nhất. | Nhận Markdown từ Role 2; đối chiếu format với Hải. |
+| Dũng - Role 5 | Chuẩn bị UI nhận `answer`, `sources`; chưa nối pipeline khi Task 10 chưa xong. | Nhận contract output từ Phượng. |
+| Minh Đức - Role 6 | Chọn 5 câu sanity-check để đo dense và BM25 có lấy đúng context hay không. | Nhận kết quả từ Hải và Mạnh. |
+
+**Điều kiện qua CP2:** tạo được ChromaDB, `semantic_search()` và `lexical_search()` trả danh sách chunks đúng contract.
+
+### CP3 - Reranking Và Vectorless Fallback (1:00 - 1:20)
+
+| Thành viên | Nhiệm vụ | Phụ thuộc / Bàn giao |
+|---|---|---|
+| Phượng - Role 1 | Kiểm tra RRF dùng rank, không cộng trực tiếp score; thống nhất tiêu chí fallback dùng cosine gốc. | Nhận kết quả dense/sparse từ Hải và Mạnh. |
+| Phước - Role 2 | Hỗ trợ cung cấp hoặc làm sạch tài liệu phù hợp để upload PageIndex nếu cần. | Theo yêu cầu của Mạnh. |
+| Hải - Role 3 | Cung cấp score cosine gốc từ dense search để Task 9 quyết định fallback chính xác. | Bàn giao cho Mạnh và Phượng. |
+| Mạnh - Role 4 | Làm Task 7 và 8: `rerank_rrf()`, PageIndex fallback, kiểm thử câu hỏi ngoài domain. | Task 7 phụ thuộc Task 5 + Task 6; bàn giao các hàm cho Phượng. |
+| Dũng - Role 5 | Chuẩn bị cách hiển thị nhãn `hybrid` hoặc `pageindex` trên UI. | Nhận format result từ Mạnh. |
+| Minh Đức - Role 6 | Thêm câu hỏi khó/ngoài domain vào golden dataset để test fallback. | Nhận behavior fallback từ Mạnh. |
+
+**Điều kiện qua CP3:** RRF gộp được Dense + BM25 và fallback không sử dụng score RRF làm ngưỡng.
+
+### CP4 - Pipeline Hoàn Chỉnh Và Citation (1:20 - 1:45)
+
+| Thành viên | Nhiệm vụ | Phụ thuộc / Bàn giao |
+|---|---|---|
+| Phượng - Role 1 | Làm Task 9, ghép Semantic + BM25 + RRF + PageIndex vào `retrieve()`; kiểm tra `PipelineSupervisor` và toàn bộ test. | Phụ thuộc Task 5-8; bàn giao retrieval contract cho Dũng/Minh Đức. |
+| Phước - Role 2 | Hỗ trợ đối chiếu kết quả retrieval với tài liệu gốc khi có lỗi. | Nhận query lỗi từ Phượng. |
+| Hải - Role 3 | Hỗ trợ chỉnh semantic score/HyDE nếu fallback kích hoạt sai. | Theo log tích hợp Task 9. |
+| Mạnh - Role 4 | Hỗ trợ sửa RRF, BM25 hoặc PageIndex nếu Task 9 không ghép được. | Theo log tích hợp Task 9. |
+| Dũng - Role 5 | Làm Task 10: reorder chunks, format context, gọi LLM và trả citation cùng sources. | Phụ thuộc `retrieve()` của Role 1. |
+| Minh Đức - Role 6 | Rà citation: mỗi claim phải bám context; ghi các case trả lời không đủ evidence. | Phụ thuộc Task 10. |
+
+**Điều kiện qua CP4:** `retrieve()` và `generate_with_citation()` chạy theo contract; câu trả lời có citation hoặc từ chối khi evidence thiếu.
+
+### CP5 - Chatbot Và Đánh Giá RAGAS (1:45 - 2:15)
+
+| Thành viên | Nhiệm vụ | Phụ thuộc / Bàn giao |
+|---|---|---|
+| Phượng - Role 1 | Ghép code cuối, chạy health check, theo dõi lỗi tích hợp và duyệt checklist demo. | Phụ thuộc Task 9/10 hoạt động. |
+| Phước - Role 2 | Bổ sung nguồn nếu benchmark chỉ ra thiếu evidence cho nhóm câu hỏi quan trọng. | Nhận phân tích từ Minh Đức. |
+| Hải - Role 3 | Hỗ trợ cấu hình dense-only cho so sánh A/B. | Phối hợp Minh Đức. |
+| Mạnh - Role 4 | Hỗ trợ cấu hình hybrid/reranking cho so sánh A/B. | Phối hợp Minh Đức. |
+| Dũng - Role 5 | Hoàn thiện `app.py`: lịch sử chat, top_k, câu hỏi gợi ý, citation và source documents. | Phụ thuộc Task 10 và Supervisor contract. |
+| Minh Đức - Role 6 | Hoàn thiện 20 câu golden dataset, chạy RAGAS, so sánh A/B và viết `results.md`. | Phụ thuộc pipeline ổn định; bàn giao báo cáo cho Phượng. |
+
+**Điều kiện qua CP5:** chatbot chạy được, hiển thị nguồn; báo cáo có metrics và bảng so sánh A/B.
+
+### CP6 - Thuyết Trình Và Nộp Bài (2:15 - 3:00)
+
+| Thành viên | Nhiệm vụ | Phụ thuộc / Bàn giao |
+|---|---|---|
+| Phượng - Role 1 | Dẫn dắt demo, giới thiệu kiến trúc, điều phối người trình bày, kiểm tra repo và deliverables trước nộp. | Nhận xác nhận hoàn thành từ cả nhóm. |
+| Phước - Role 2 | Trình bày nguồn, crawling, metadata và Markdown. | Dựa trên output CP1. |
+| Hải - Role 3 | Trình bày chunking, ChromaDB, dense search và HyDE. | Dựa trên output CP2. |
+| Mạnh - Role 4 | Trình bày BM25, RRF và lý do fallback dùng cosine gốc. | Dựa trên output CP3-4. |
+| Dũng - Role 5 | Chạy Streamlit live demo, chỉ ra citation và source documents. | Dựa trên output CP5. |
+| Minh Đức - Role 6 | Trình bày golden dataset, RAGAS, kết quả A/B và hướng cải thiện. | Dựa trên output CP5. |
+
+**Điều kiện qua CP6:** repo có đủ code, data, README, báo cáo evaluation và demo chạy được tại máy trình bày.
+
+## 4. Phân Công Chi Tiết Theo Từng Người
+
+### 4.1 Nguyễn Xuân Phượng - Nhóm trưởng, Role 1
 
 #### Công việc chi tiết
 1. Chốt phạm vi dữ liệu và tiêu chuẩn đầu ra cho cả nhóm.
@@ -78,7 +173,7 @@ Task 1, Task 2
 
 ---
 
-### 3.2 Phùng Hồng Phước - Role 2: Data Engineering & Scraping Dev
+### 4.2 Phùng Hồng Phước - Role 2: Data Engineering & Scraping Dev
 
 #### Công việc chi tiết
 1. **Task 1 - Tải PDF chính sách**
@@ -109,7 +204,7 @@ Task 1, Task 2
 
 ---
 
-### 3.3 Nguyễn Đào Nam Hải - Role 3: Vector Database & Dense Search Dev
+### 4.3 Nguyễn Đào Nam Hải - Role 3: Vector Database & Dense Search Dev
 
 #### Công việc chi tiết
 1. **Task 4 - Chunking & ChromaDB Indexing**
@@ -142,7 +237,7 @@ Task 1, Task 2
 
 ---
 
-### 3.4 Trần Đức Mạnh - Role 4: Sparse Retrieval & Fallback Dev
+### 4.4 Trần Đức Mạnh - Role 4: Sparse Retrieval & Fallback Dev
 
 #### Công việc chi tiết
 1. **Task 6 - BM25 / TF-IDF**
@@ -172,7 +267,7 @@ Task 1, Task 2
 
 ---
 
-### 3.5 Lê Công Dũng - Role 5: Frontend UI & App Integration Dev
+### 4.5 Lê Công Dũng - Role 5: Frontend UI & App Integration Dev
 
 #### Công việc chi tiết
 1. Thiết kế giao diện chatbot bằng Streamlit trong `app.py`.
@@ -199,7 +294,7 @@ Task 1, Task 2
 
 ---
 
-### 3.6 Lê Nguyễn Minh Đức - Role 6: Evaluation & Benchmark QA Dev
+### 4.6 Lê Nguyễn Minh Đức - Role 6: Evaluation & Benchmark QA Dev
 
 #### Công việc chi tiết
 1. Xây dựng hoặc mở rộng `golden_dataset.json` lên khoảng 20 câu hỏi.
@@ -230,7 +325,7 @@ Task 1, Task 2
 - Dataset đánh giá phải dựa trên tài liệu đã có ở **Task 3**.
 - Benchmark chỉ có ý nghĩa đầy đủ khi **Task 9** và **Task 10** đã ổn định.
 
-## 4. Phân Công Theo Bước Công Việc
+## 5. Phân Công Theo Bước Công Việc
 
 ### Bước 0 - Setup chung
 **Người phụ trách:** Nguyễn Xuân Phượng  
@@ -297,7 +392,7 @@ Task 1, Task 2
 **Phụ thuộc:** Task 9 + Task 10 + dữ liệu chuẩn hóa  
 **Kết quả mong đợi:** bộ golden dataset, báo cáo benchmark, và `results.md`.
 
-## 5. Gợi Ý Cách Phối Hợp Giữa Các Thành Viên
+## 6. Gợi Ý Cách Phối Hợp Giữa Các Thành Viên
 
 1. Nhóm trưởng chốt tiêu chuẩn đặt tên file và format metadata ngay từ đầu.
 2. Data team bàn giao xong thì Dense Search và Sparse Search cùng bắt đầu.
@@ -308,7 +403,7 @@ Task 1, Task 2
    - câu hỏi cần hybrid retrieval
    - câu hỏi cần fallback
 
-## 6. Checklist Nộp Bài
+## 7. Checklist Nộp Bài
 
 - [ ] Đủ file dữ liệu gốc trong `data/landing/`
 - [ ] Đủ file Markdown trong `data/standardized/`
