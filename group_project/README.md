@@ -69,9 +69,18 @@ Xem code mẫu (DeepEval/RAGAS/TruLens) chi tiết trong `README.md` gốc mục
 
 ## Kiến Trúc Hệ Thống
 
+```text
+Data collection (Role 2) -> Markdown -> ChromaDB/Dense Search (Role 3)
+                                      -> BM25/RRF/PageIndex (Role 4)
+                                      -> Task 9 retrieval pipeline
+                                      -> Task 10 + Streamlit UI (Role 5)
+                                      -> RAGAS evaluation (Role 6)
+
+Role 1: PipelineSupervisor điều phối contract, kiểm tra sẵn sàng và demo.
 ```
-[Vẽ diagram kiến trúc ở đây]
-```
+
+Chi tiết kiến trúc, điều kiện bàn giao và kịch bản demo nằm trong
+[`demo_runbook.md`](demo_runbook.md).
 
 ---
 
@@ -79,10 +88,12 @@ Xem code mẫu (DeepEval/RAGAS/TruLens) chi tiết trong `README.md` gốc mục
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Nguyễn Xuân Phượng | 2A202601874 | Role 1: Supervisor, kiến trúc và điều phối demo | Đang triển khai |
+| Phùng Hồng Phước | 2A202601215 | Role 2: Task 1-3, data engineering | Chờ bàn giao |
+| Nguyễn Đào Nam Hải | 2A202601037 | Role 3: Task 4-5, vector database và dense search | Chờ bàn giao |
+| Trần Đức Mạnh | 2A202601567 | Role 4: Task 6-8, sparse retrieval và fallback | Chờ bàn giao |
+| Lê Công Dũng | 2A202601649 | Role 5: Streamlit UI và Task 10 | Chờ bàn giao |
+| Lê Nguyễn Minh Đức | 2A202601013 | Role 6: Golden dataset, RAGAS và báo cáo | Chờ bàn giao |
 
 ---
 
