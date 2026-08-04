@@ -1,162 +1,109 @@
-"""
-Task 10 — Generation Có Citation (Hỗ trợ cấu hình Config A & Config B cho A/B Testing).
+"""Task 10 — sinh câu trả lời RAG có citation được kiểm chứng."""
 
-Hướng dẫn:
-    1. Chọn top_k, top_p phù hợp
-    2. Sắp xếp lại chunks sau reranking để tránh "lost in the middle"
-    3. Inject context vào prompt
-    4. Yêu cầu LLM trả lời có citation
-"""
+from __future__ import annotations
 
 import os
 import re
-from pathlib import Path
+from typing import Any
+
 from dotenv import load_dotenv
 
 load_dotenv()
 
 try:
     from .task9_retrieval_pipeline import retrieve
-except ImportError:
+except ImportError:  # pragma: no cover - hỗ trợ chạy trực tiếp module
     retrieve = None
 
-# =============================================================================
-# CONFIGURATION
-# =============================================================================
 
 TOP_K = 5
 TOP_P = 0.9
 TEMPERATURE = 0.3
 LLM_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+REFUSAL_MESSAGE = "Tôi không thể xác minh thông tin này từ nguồn hiện có."
+_CITATION_RE = re.compile(r"\[S(\d+)\]")
 
-# =============================================================================
-# SYSTEM PROMPT (Multi-lingual support: EN & VI)
-# =============================================================================
-
-SYSTEM_PROMPT = """You are an expert AI Book Assistant specializing in personal development, business, psychology, and technology books.
-
-Mandatory Rules:
-1. LANGUAGE MATCHING: Respond in the EXACT SAME LANGUAGE as the user's query. If the query is in Vietnamese, respond in clear Vietnamese. If the query is in English, respond in professional English.
-2. CITATION REQUIREMENT: Support claims with exact source citations immediately following the point, e.g., [Atomic Habits - Chapter 1] or [article_01.md].
-3. FACTUAL BOUNDARY: Rely ONLY on the provided context. Do NOT fabricate facts.
-4. INSUFFICIENT EVIDENCE: If context lacks sufficient evidence, state clearly: "I cannot verify this information from the available sources" (or "Tôi không thể xác minh thông tin này từ nguồn hiện có" if in Vietnamese).
-5. Structure your response clearly with concise bullet points or paragraphs."""
+SYSTEM_PROMPT = """You are an evidence-grounded assistant.
+Answer only from the supplied context. Cite every material claim using the
+provided [S#] identifiers. If evidence is insufficient, use the configured
+Vietnamese refusal message exactly."""
 
 
 def is_vietnamese(text: str) -> bool:
-    """Kiểm tra xem câu hỏi có chứa ký tự tiếng Việt hay không."""
-    vietnamese_chars = r'[àáảãạâầấẩẫậăằắẳẵặèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ]'
-    return bool(re.search(vietnamese_chars, text.lower()))
+    """Return whether input contains Vietnamese-specific characters."""
 
+    return bool(re.search(r"[àáảãạâầấẩẫậăằắẳẵặèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ]", text.lower()))
 
-# =============================================================================
-# DOCUMENT REORDERING (tránh lost in the middle)
-# =============================================================================
 
 def reorder_for_llm(chunks: list[dict]) -> list[dict]:
-    """
-    Sắp xếp chunks để tránh "lost in the middle" effect.
-    """
+    """Place highly-ranked chunks at both the beginning and end of context."""
+
     if len(chunks) <= 2:
-        return chunks
-
-    front = chunks[::2]
-    back = chunks[1::2]
-    return front + back[::-1]
+        return list(chunks)
+    return chunks[::2] + chunks[1::2][::-1]
 
 
-# =============================================================================
-# CONTEXT FORMATTING
-# =============================================================================
+def prepare_citation_sources(chunks: list[dict]) -> list[dict]:
+    """Copy chunks and give each prompt source a stable, one-based citation ID."""
+
+    prepared: list[dict] = []
+    for index, chunk in enumerate(chunks, start=1):
+        item = dict(chunk)
+        metadata = dict(item.get("metadata") or {})
+        metadata["citation_id"] = f"S{index}"
+        item["metadata"] = metadata
+        prepared.append(item)
+    return prepared
+
 
 def format_context(chunks: list[dict]) -> str:
-    """
-    Format chunks thành context string cho prompt.
-    """
-    context_parts = []
-    for i, chunk in enumerate(chunks, 1):
-        metadata = chunk.get("metadata", {})
-        source = metadata.get("source", f"Source {i}")
+    """Render retrieved chunks with the exact citation IDs available to the LLM."""
+
+    parts: list[str] = []
+    for index, chunk in enumerate(chunks, start=1):
+        metadata = chunk.get("metadata") or {}
+        citation_id = metadata.get("citation_id", f"S{index}")
+        source = metadata.get("source", f"Source {index}")
         doc_type = metadata.get("type", "unknown")
-        content = chunk.get("content", "").strip()
-        context_parts.append(
-            f"[Document {i} | Source: {source} | Type: {doc_type}]\n"
-            f"{content}"
-        )
-    return "\n---\n".join(context_parts)
+        content = str(chunk.get("content", "")).strip()
+        parts.append(f"[{citation_id}] Source: {source} | Type: {doc_type}\n{content}")
+    return "\n---\n".join(parts)
 
 
-# =============================================================================
-# LOCAL RETRIEVAL FALLBACK
-# =============================================================================
+def validate_citations(answer: str, source_count: int) -> tuple[bool, list[str]]:
+    """Ensure every [S#] emitted by the model identifies a supplied source."""
 
-STANDARDIZED_DIR = Path(__file__).parent.parent / "data" / "standardized"
-
-
-def retrieve_local(query: str, top_k: int = TOP_K) -> list[dict]:
-    """Fallback retrieval từ các tài liệu markdown sẵn có."""
-    if not query.strip():
-        return []
-
-    query_terms = [term for term in re.findall(r"\w+", query.lower()) if len(term) > 2]
-    if not query_terms:
-        return []
-
-    candidates: list[dict] = []
-    if STANDARDIZED_DIR.exists():
-        for md_file in STANDARDIZED_DIR.rglob("*.md"):
-            if md_file.name.startswith("."):
-                continue
-            text = md_file.read_text(encoding="utf-8")
-            paragraphs = [p.strip() for p in re.split(r"\n{2,}", text) if p.strip()]
-            for idx, paragraph in enumerate(paragraphs):
-                paragraph_lower = paragraph.lower()
-                score = sum(paragraph_lower.count(term) for term in query_terms)
-                if score <= 0:
-                    continue
-                doc_type = "legal" if "legal" in str(md_file.parent).lower() else "news"
-                candidates.append({
-                    "content": paragraph,
-                    "score": float(score),
-                    "metadata": {
-                        "source": md_file.name,
-                        "type": doc_type,
-                        "chunk_index": idx,
-                    },
-                    "source": "local",
-                })
-
-    candidates.sort(key=lambda item: item["score"], reverse=True)
-    return candidates[:top_k]
+    if answer == REFUSAL_MESSAGE:
+        return True, []
+    invalid = [f"S{number}" for number in _CITATION_RE.findall(answer) if not 1 <= int(number) <= source_count]
+    return not invalid, invalid
 
 
-def _render_fallback_answer(chunks: list[dict], query: str) -> str:
-    vi = is_vietnamese(query)
-    if not chunks:
-        return (
-            "Tôi không thể xác minh thông tin này từ nguồn hiện có."
-            if vi else
-            "I cannot verify this information from the available sources."
-        )
+def _openai_answer(query: str, context: str) -> str | None:
+    """Call a configured OpenAI-compatible endpoint, or return ``None`` offline."""
 
-    parts = [
-        "📌 **Tổng hợp tri thức từ tài liệu trích xuất (RAG Pipeline)**:\n" if vi
-        else "📌 **Synthesized knowledge from retrieved chunks (RAG Pipeline)**:\n"
-    ]
+    openai_key = os.getenv("OPENAI_API_KEY", "").strip()
+    openrouter_key = os.getenv("OPENROUTER_API_KEY", "").strip()
+    if not openai_key and not openrouter_key:
+        return None
 
-    for i, c in enumerate(chunks[:3], 1):
-        src = c.get("metadata", {}).get("source", "Sách")
-        text = c.get("content", "").strip().replace("\n", " ")
-        if len(text) > 280:
-            text = text[:280] + "..."
-        parts.append(f"• **Điểm {i}** `[{src}]`: {text}\n")
+    from openai import OpenAI
 
-    if vi:
-        parts.append("\n⚠️ *(Lưu ý: Thêm OPENAI_API_KEY vào .env để kích hoạt AI trả lời mượt mà)*")
+    if openai_key:
+        client = OpenAI(api_key=openai_key)
     else:
-        parts.append("\n⚠️ *(Note: Add OPENAI_API_KEY to .env for full AI generation)*")
-
-    return "\n".join(parts)
+        client = OpenAI(api_key=openrouter_key, base_url="https://openrouter.ai/api/v1")
+    response = client.chat.completions.create(
+        model=LLM_MODEL,
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {query}"},
+        ],
+        temperature=TEMPERATURE,
+        top_p=TOP_P,
+    )
+    content = response.choices[0].message.content
+    return content.strip() if content else None
 
 
 def generate_with_citation(
@@ -164,86 +111,62 @@ def generate_with_citation(
     top_k: int = TOP_K,
     retrieval_mode: str = "hybrid",
     use_reranking: bool = True,
-    use_pageindex_fallback: bool = True
+    use_pageindex_fallback: bool = True,
+    *,
+    conversation: list[dict[str, Any]] | None = None,
+    score_threshold: float | None = None,
 ) -> dict:
+    """Retrieve evidence, generate an answer, and return validated citations.
+
+    ``conversation`` is accepted for UI compatibility; the current prompt remains
+    single-turn to avoid injecting unverified chat history. ``score_threshold`` is
+    forwarded to Task 9 when supplied.
     """
-    End-to-end RAG generation hỗ trợ các cấu hình A/B Retrieval:
-    - Config A: retrieval_mode="hybrid", use_reranking=True, use_pageindex_fallback=True
-    - Config B: retrieval_mode="dense_only", use_reranking=False, use_pageindex_fallback=False
-    """
+
     if not isinstance(query, str) or not query.strip():
         raise ValueError("Query must be a non-empty string")
+
+    retrieval_kwargs: dict[str, Any] = {
+        "top_k": top_k,
+        "retrieval_mode": retrieval_mode,
+        "use_reranking": use_reranking,
+        "use_pageindex_fallback": use_pageindex_fallback,
+    }
+    if score_threshold is not None:
+        retrieval_kwargs["score_threshold"] = score_threshold
 
     chunks: list[dict] = []
     if callable(retrieve):
         try:
-            chunks = retrieve(
-                query,
-                top_k=top_k,
-                retrieval_mode=retrieval_mode,
-                use_reranking=use_reranking,
-                use_pageindex_fallback=use_pageindex_fallback
-            )
+            chunks = retrieve(query, **retrieval_kwargs)
         except Exception:
             chunks = []
 
-    retrieval_source = retrieval_mode
     if not chunks:
-        chunks = retrieve_local(query, top_k=top_k)
-        retrieval_source = "local"
+        return {
+            "answer": REFUSAL_MESSAGE,
+            "sources": [],
+            "retrieval_source": "none",
+            "model": None,
+            "citations_valid": True,
+            "invalid_citations": [],
+        }
 
-    reordered = reorder_for_llm(chunks)
-    context = format_context(reordered)
-
-    answer = None
-    openai_key = os.getenv("OPENAI_API_KEY", "").strip()
-    openrouter_key = os.getenv("OPENROUTER_API_KEY", "").strip()
-
-    if chunks:
-        try:
-            from openai import OpenAI
-
-            client = None
-            model_to_use = LLM_MODEL
-
-            if openai_key and not openai_key.startswith("sk-or-v1"):
-                client = OpenAI(api_key=openai_key)
-            elif openrouter_key and not openrouter_key.startswith("sk-or-v1-..."):
-                client = OpenAI(api_key=openrouter_key, base_url="https://openrouter.ai/api/v1")
-
-            if client is not None:
-                lang_instruction = "Respond in Vietnamese." if is_vietnamese(query) else "Respond in English."
-                user_message = f"Language Requirement: {lang_instruction}\n\nContext:\n{context}\n\n---\n\nQuestion: {query}"
-                response = client.chat.completions.create(
-                    model=model_to_use,
-                    messages=[
-                        {"role": "system", "content": SYSTEM_PROMPT},
-                        {"role": "user", "content": user_message},
-                    ],
-                    temperature=TEMPERATURE,
-                    top_p=TOP_P,
-                )
-                answer = response.choices[0].message.content.strip()
-        except Exception as e:
-            print(f"LLM Call Error: {e}")
-            answer = None
-
+    sources = prepare_citation_sources(reorder_for_llm(chunks))
+    context = format_context(sources)
+    try:
+        answer = _openai_answer(query, context)
+    except Exception:
+        answer = None
     if not answer:
-        answer = _render_fallback_answer(chunks, query)
+        answer = REFUSAL_MESSAGE
 
+    citations_valid, invalid_citations = validate_citations(answer, len(sources))
     return {
         "answer": answer,
-        "sources": chunks,
-        "retrieval_source": retrieval_source,
+        "sources": sources,
+        "retrieval_source": retrieval_mode,
+        "model": LLM_MODEL if answer != REFUSAL_MESSAGE else None,
+        "citations_valid": citations_valid,
+        "invalid_citations": invalid_citations,
     }
-
-
-if __name__ == "__main__":
-    test_queries = [
-        "Phương pháp 4 bước xây dựng thói quen theo Atomic Habits là gì?",
-    ]
-
-    for q in test_queries:
-        print(f"\n{'='*70}\nQ: {q}\n" + "="*70)
-        res_a = generate_with_citation(q)
-        print(f"\nConfig A Answer: {res_a['answer']}")

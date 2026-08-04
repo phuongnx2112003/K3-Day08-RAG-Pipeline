@@ -116,7 +116,9 @@ def retrieve(
         fallback = pageindex_search(query, top_k=top_k)
         if fallback:
             return fallback[:top_k]
-        # Nếu PageIndex chưa có data, sử dụng kết quả dense_results hiện có
+        # Không có evidence từ fallback thì phải từ chối, thay vì đưa context
+        # dense dưới ngưỡng vào generation.
+        return []
 
 
     if retrieval_mode == "dense_only":
