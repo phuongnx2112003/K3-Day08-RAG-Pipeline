@@ -245,5 +245,5 @@ if __name__ == "__main__":
 
     for q in test_queries:
         print(f"\n{'='*70}\nQ: {q}\n" + "="*70)
-        res_a = generate_with_citation(q, config_type="A")
+        res_a = generate_with_citation(q)
         print(f"\nConfig A Answer: {res_a['answer']}")
