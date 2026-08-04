@@ -1,27 +1,26 @@
-"""
-RAG Chatbot — Book Review & Summary Assistant.
-Streamlit app kết nối RAG Retrieval (Task 9) và Generation (Task 10).
+"""Streamlit chatbot cho Book Insights Hybrid RAG.
 
-Chạy:
-    streamlit run app.py
+Chạy trên Windows:
+    .\.venv\Scripts\python.exe -m streamlit run app.py
 """
 
-import os
+from __future__ import annotations
+
 import sys
 from pathlib import Path
 
 import streamlit as st
 from dotenv import load_dotenv
 
+
 load_dotenv()
+PROJECT_ROOT = Path(__file__).resolve().parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-# Thêm project root vào sys.path để import các task từ src/
-PROJECT_ROOT = Path(__file__).parent
-sys.path.insert(0, str(PROJECT_ROOT))
+from src.supervisor import PipelineSupervisor
+from src.task10_generation import LLM_MODEL, generate_with_citation
 
-# =============================================================================
-# PAGE CONFIG
-# =============================================================================
 
 st.set_page_config(
     page_title="Book Insights RAG Chatbot",
@@ -30,122 +29,147 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# =============================================================================
-# SIDEBAR — INFO & SETTINGS
-# =============================================================================
 
-with st.sidebar:
-    st.title("📚 Book Insights RAG")
-    st.caption("Trợ lý review, tóm tắt và phân tích sách về phát triển bản thân, kinh doanh, tâm lý học và công nghệ")
+def render_sources(sources: list[dict]) -> None:
+    if not sources:
+        return
+    with st.expander(f"📚 Nguồn tham khảo ({len(sources)} chunks)"):
+        for index, source in enumerate(sources, start=1):
+            metadata = source.get("metadata") or {}
+            citation_id = metadata.get("citation_id", f"S{index}")
+            title = metadata.get("title") or metadata.get("display_source") or metadata.get("source", "Unknown")
+            author = metadata.get("author", "")
+            source_url = metadata.get("source_url", "")
+            retrieval = source.get("source", metadata.get("retrieval_mode", "hybrid"))
+            score = float(source.get("score", 0.0))
 
-    st.divider()
+            heading = f"**[{citation_id}] {title}**"
+            if source_url:
+                heading = f"**[{citation_id}] [{title}]({source_url})**"
+            st.markdown(heading)
+            details = [f"retrieval: `{retrieval}`", f"score: `{score:.4f}`"]
+            if author:
+                details.insert(0, f"tác giả: `{author}`")
+            st.caption(" · ".join(details))
+            preview = source.get("content", "").strip()
+            st.text(preview[:500] + ("..." if len(preview) > 500 else ""))
+            if index < len(sources):
+                st.divider()
 
-    st.subheader("💡 Câu hỏi gợi ý")
-    suggestions = [
-        "Phương pháp 4 bước xây dựng thói quen theo Atomic Habits là gì?",
-        "Deep Work đề xuất cách nào để giảm xao nhãng khi làm việc sâu?",
-        "Hệ thống 1 và Hệ thống 2 trong Thinking, Fast and Slow khác nhau thế nào?",
-        "Bài học quan trọng về ra quyết định từ cuốn sách là gì?",
-        "Hãy so sánh ý chính của Atomic Habits và Deep Work.",
-    ]
-    for s in suggestions:
-        if st.button(s, use_container_width=True, key=f"sug_{s[:20]}"):
-            st.session_state["pending_query"] = s
-
-    st.divider()
-    st.subheader("⚙️ Thiết lập")
-    top_k = st.slider("Số chunks retrieval (top_k)", 3, 10, 5)
-
-    st.divider()
-    st.caption("**Kiến trúc hệ thống:**")
-    st.caption("Hybrid Retrieval (Semantic + BM25) → RRF Rerank → PageIndex Fallback → LLM Generation có Citation")
-
-# =============================================================================
-# SESSION STATE
-# =============================================================================
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "pending_query" not in st.session_state:
     st.session_state.pending_query = None
 
-# =============================================================================
-# MAIN CHAT AREA
-# =============================================================================
+
+with st.sidebar:
+    st.title("📚 Book Insights RAG")
+    st.caption("Tóm tắt và phân tích sách dựa trên evidence có citation")
+
+    st.subheader("💡 Câu hỏi gợi ý")
+    suggestions = [
+        "Phương pháp 4 bước xây dựng thói quen theo Atomic Habits là gì?",
+        "Hệ thống 1 và Hệ thống 2 khác nhau như thế nào?",
+        "Validated learning trong The Lean Startup là gì?",
+        "Atomic Habits khuyên tập trung vào hệ thống thay vì mục tiêu ra sao?",
+        "Giá Bitcoin hôm nay là bao nhiêu?",
+    ]
+    for suggestion in suggestions:
+        if st.button(suggestion, use_container_width=True, key=f"suggestion-{suggestion}"):
+            st.session_state.pending_query = suggestion
+
+    st.divider()
+    st.subheader("⚙️ Thiết lập")
+    top_k = st.slider("Số chunks", min_value=3, max_value=10, value=5)
+    score_threshold = st.slider(
+        "Ngưỡng fallback cosine",
+        min_value=0.20,
+        max_value=0.60,
+        value=0.40,
+        step=0.05,
+        help="Dùng cosine gốc của dense retrieval; không dùng RRF score.",
+    )
+    if st.button("🗑️ Xóa lịch sử chat", use_container_width=True):
+        st.session_state.messages = []
+        st.session_state.pending_query = None
+        st.rerun()
+
+    st.divider()
+    st.caption(f"Model generation: `{LLM_MODEL}`")
+    st.caption("Dense + BM25 → RRF → PageIndex fallback → OpenAI + citations")
+    health = PipelineSupervisor().health_check()
+    if all(item.ready for item in health):
+        st.success("Task 9/10 READY")
+    else:
+        for item in health:
+            if not item.ready:
+                st.error(f"{item.component}: {item.detail}")
+
 
 st.title("📚 Trợ Lý Review & Tóm Tắt Sách")
-st.caption("Hệ thống hỏi đáp và phân tích sách với trích dẫn từ nguồn đã được cung cấp")
+st.caption("Câu trả lời chỉ dựa trên corpus đã index; thiếu evidence sẽ từ chối xác minh.")
 
-# Hiển thị lịch sử chat
-for msg in st.session_state.messages:
-    with st.chat_message(msg["role"]):
-        st.markdown(msg["content"])
-        if msg["role"] == "assistant" and "sources" in msg and msg["sources"]:
-            with st.expander(f"📚 Nguồn tham khảo ({len(msg['sources'])} chunks)"):
-                for i, src in enumerate(msg["sources"], 1):
-                    meta = src.get("metadata", {})
-                    source_name = meta.get("source", "Unknown")
-                    doc_type = meta.get("type", "unknown")
-                    score = src.get("score", 0)
-                    st.markdown(f"**[{i}] {source_name}** `{doc_type}` | score: `{score:.4f}`")
-                    st.text(src.get("content", "")[:300] + "...")
-                    st.divider()
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+        if message["role"] == "assistant":
+            retrieval_source = message.get("retrieval_source", "none")
+            model = message.get("model")
+            caption = f"retrieval: `{retrieval_source}`"
+            if model:
+                caption += f" · model: `{model}`"
+            st.caption(caption)
+            render_sources(message.get("sources", []))
 
-# =============================================================================
-# QUERY HANDLING
-# =============================================================================
 
-# Xử lý khi bấm nút gợi ý hoặc nhập câu hỏi mới
-user_input = st.chat_input("Nhập câu hỏi về nội dung, bài học hoặc góc nhìn từ sách...")
-query = user_input or st.session_state.pending_query
+typed_query = st.chat_input("Nhập câu hỏi về nội dung hoặc bài học từ sách...")
+query = typed_query or st.session_state.pending_query
 
 if query:
     st.session_state.pending_query = None
-
-    # Hiển thị câu hỏi của user
+    history = list(st.session_state.messages)
     st.session_state.messages.append({"role": "user", "content": query})
     with st.chat_message("user"):
         st.markdown(query)
 
-    # Sinh câu trả lời từ RAG Pipeline
     with st.chat_message("assistant"):
-        with st.spinner("Đang tìm kiếm tài liệu và tổng hợp câu trả lời..."):
+        with st.spinner("Đang tìm evidence và tạo câu trả lời có citation..."):
             try:
-                # TODO (Học viên): Tích hợp hàm sinh câu trả lời từ Task 10
-                # Ví dụ:
-                # from src.task10_generation import generate_with_citation
-                # response = generate_with_citation(query, top_k=top_k)
-                # answer = response["answer"]
-                # sources = response.get("sources", [])
-
-                # Tạm thời mockup để test UI:
-                from src.task10_generation import generate_with_citation
-                response = generate_with_citation(query, top_k=top_k)
-                answer = response.get("answer", "Chưa thể trả lời.")
+                response = generate_with_citation(
+                    query,
+                    top_k=top_k,
+                    conversation=history,
+                    score_threshold=score_threshold,
+                )
+                answer = response["answer"]
                 sources = response.get("sources", [])
-
-            except NotImplementedError:
-                answer = "⚠️ **Task 10 chưa được implement.** Hãy hoàn thành `src/task10_generation.py` để kết nối pipeline vào UI!"
+                retrieval_source = response.get("retrieval_source", "none")
+                model = response.get("model")
+                citations_valid = response.get("citations_valid", True)
+            except Exception as exc:
+                answer = f"❌ Không thể hoàn tất RAG pipeline: `{type(exc).__name__}: {exc}`"
                 sources = []
-            except Exception as e:
-                answer = f"❌ **Lỗi khi chạy RAG Pipeline:** {e}"
-                sources = []
+                retrieval_source = "error"
+                model = None
+                citations_valid = False
 
             st.markdown(answer)
+            st.caption(
+                f"retrieval: `{retrieval_source}`"
+                + (f" · model: `{model}`" if model else "")
+            )
+            if not citations_valid:
+                st.warning("Citation do model trả về chưa vượt qua kiểm tra ID nguồn.")
+            render_sources(sources)
 
-            if sources:
-                with st.expander(f"📚 Nguồn tham khảo ({len(sources)} chunks)"):
-                    for i, src in enumerate(sources, 1):
-                        meta = src.get("metadata", {})
-                        source_name = meta.get("source", "Unknown")
-                        doc_type = meta.get("type", "unknown")
-                        score = src.get("score", 0)
-                        st.markdown(f"**[{i}] {source_name}** `{doc_type}` | score: `{score:.4f}`")
-                        st.text(src.get("content", "")[:300] + "...")
-                        st.divider()
-
-    st.session_state.messages.append({
-        "role": "assistant",
-        "content": answer,
-        "sources": sources,
-    })
+    st.session_state.messages.append(
+        {
+            "role": "assistant",
+            "content": answer,
+            "sources": sources,
+            "retrieval_source": retrieval_source,
+            "model": model,
+            "citations_valid": citations_valid,
+        }
+    )
