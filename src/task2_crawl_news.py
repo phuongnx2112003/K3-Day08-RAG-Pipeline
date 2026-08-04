@@ -1,19 +1,5 @@
 """
-Task 2 — Crawl bài viết/thông báo về Sach.
-
-Hướng dẫn:
-    1. Crawl tối thiểu 5 bài viết từ trang công khai của một trường đại học.
-    2. Sử dụng Crawl4AI hoặc thư viện crawling tương tự.
-    3. Lưu output vào data/landing/news/
-    4. Mỗi bài lưu 1 file JSON với metadata (url, title, date_crawled, content).
-
-Cài đặt:
-    pip install crawl4ai
-    playwright install chromium   # bắt buộc — pip install crawl4ai KHÔNG tự tải browser binary,
-                                   # thiếu bước này sẽ báo lỗi
-                                   # "BrowserType.launch: Executable doesn't exist"
-
-Gợi ý chủ đề: thông báo tuyển sinh, sự kiện, dịch vụ thư viện, hỗ trợ sinh viên, học bổng.
+Task 2 — Crawl bài viết/thông báo.
 """
 
 import asyncio
@@ -29,45 +15,40 @@ def setup_directory():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
-# TODO: Điền danh sách URL bài viết cần crawl
 ARTICLE_URLS = [
-    # Ví dụ (trang công khai RMIT Vietnam):
-    # "https://www.rmit.edu.vn/libraryvn/...",
-    # "https://www.rmit.edu.vn/students/...",   
-    "https://vi.wikipedia.org/wiki/Th%C3%B3i_quen_nguy%C3%AAn_t%E1%BB%AD", # Atomic Habits
-    "https://vi.wikipedia.org/wiki/T%C6%B0_duy_nhanh_v%C3%A0_ch%E1%BA%ADm", # Thinking, Fast and Slow
-    "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%AFc_nh%C3%A2n_t%C3%A2m",     # How to Win Friends & Influence People
-    "https://vi.wikipedia.org/wiki/Cha_gi%C3%A0u,_cha_ngh%C3%A8o",          # Rich Dad Poor Dad
-    "https://vi.wikipedia.org/wiki/Nh%C3%A0_gi%E1%BA%A3_kim_(s%C3%A1ch)",    # The Alchemist
-    "https://en.wikipedia.org/wiki/Deep_Work",  
-    
+    "https://vi.wikipedia.org/wiki/Th%C3%B3i_quen_nguy%C3%AAn_t%E1%BB%AD",
+    "https://vi.wikipedia.org/wiki/T%C6%B0_duy_nhanh_v%C3%A0_ch%E1%BA%ADm",
+    "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%AFc_nh%C3%A2n_t%C3%A2m",
+    "https://vi.wikipedia.org/wiki/Cha_gi%C3%A0u,_cha_ngh%C3%A8o",
+    "https://vi.wikipedia.org/wiki/Nh%C3%A0_gi%E1%BA%A3_kim_(s%C3%A1ch)",
+    "https://en.wikipedia.org/wiki/Deep_Work",
 ]
 
 
 async def crawl_article(url: str) -> dict:
     """
     Crawl một bài viết và trả về dict chứa metadata + content.
-
-    Returns:
-        {
-            "url": str,
-            "title": str,
-            "date_crawled": str (ISO format),
-            "content_markdown": str
-        }
     """
     from crawl4ai import AsyncWebCrawler
 
-    # TODO: Implement crawling logic
-    # async with AsyncWebCrawler() as crawler:
-    #     result = await crawler.arun(url=url)
-    #     return {
-    #         "url": url,
-    #         "title": result.metadata.get("title", "Unknown"),
-    #         "date_crawled": datetime.now().isoformat(),
-    #         "content_markdown": result.markdown,
-    #     }
-    raise NotImplementedError("Implement crawl_article")
+    async with AsyncWebCrawler() as crawler:
+        result = await crawler.arun(url=url)
+
+        # Một số version crawl4ai trả markdown dạng object (result.markdown.raw_markdown)
+        # thay vì string thuần — xử lý cả 2 trường hợp cho an toàn
+        md = result.markdown
+        content = getattr(md, "raw_markdown", md) if md else ""
+
+        title = "Unknown"
+        if result.metadata:
+            title = result.metadata.get("title", "Unknown")
+
+        return {
+            "url": url,
+            "title": title,
+            "date_crawled": datetime.now().isoformat(),
+            "content": content,
+        }
 
 
 async def crawl_all():
@@ -76,18 +57,26 @@ async def crawl_all():
 
     for i, url in enumerate(ARTICLE_URLS, 1):
         print(f"[{i}/{len(ARTICLE_URLS)}] Crawling: {url}")
-        article = await crawl_article(url)
+        try:
+            article = await crawl_article(url)
+        except Exception as e:
+            print(f"  ✗ Lỗi khi crawl {url}: {e}")
+            continue
 
-        # Lưu file JSON
         filename = f"article_{i:02d}.json"
         filepath = DATA_DIR / filename
-        filepath.write_text(json.dumps(article, ensure_ascii=False, indent=2))
+        filepath.write_text(
+            json.dumps(article, ensure_ascii=False, indent=2),
+            encoding="utf-8"
+        )
         print(f"  ✓ Saved: {filepath}")
+
+        # Nghỉ giữa các request để crawl lịch sự (tránh bị chặn)
+        await asyncio.sleep(1)
 
 
 if __name__ == "__main__":
     if not ARTICLE_URLS:
         print("⚠ Hãy điền ARTICLE_URLS trước khi chạy!")
-        print("Gợi ý: tìm trang thông báo/sự kiện trên trang chính thức của trường đại học")
     else:
         asyncio.run(crawl_all())
