@@ -1,17 +1,182 @@
 [
   {
-    "question": "Học phí hàng năm của chương trình Business tại RMIT Vietnam là bao nhiêu?",
-    "expected_answer": "Khoảng 375.840.000 VND mỗi năm (tùy chương trình cụ thể).",
-    "expected_context": "Trang Tuition Fees, mục Undergraduate Programs"
+    "id": "atomic_01",
+    "question": "Bốn quy luật thay đổi hành vi trong Atomic Habits là gì?",
+    "expected_answer": "Bốn quy luật là: làm cho nó hiển nhiên, hấp dẫn, dễ dàng và thỏa mãn.",
+    "expected_context": "Atomic Habits Business Appendix — Four Laws of Behavior Change",
+    "expected_sources": ["atomic-habits-business-appendix.md", "article_01.md"],
+    "category": "fact",
+    "should_answer": true
   },
   {
-    "question": "Học phí được thanh toán theo hình thức nào?",
-    "expected_answer": "Thanh toán theo từng học kỳ, tính theo từng môn học đã đăng ký.",
-    "expected_context": "Trang Tuition Fees, mục Payment Structure"
+    "id": "atomic_02",
+    "question": "Vòng lặp thói quen gồm bốn bước nào?",
+    "expected_answer": "Vòng lặp thói quen gồm tín hiệu, khao khát, phản hồi và phần thưởng.",
+    "expected_context": "How To Start New Habits That Actually Stick — habit loop",
+    "expected_sources": ["article_02.md", "atomic-habits-business-appendix.md"],
+    "category": "fact",
+    "should_answer": true
   },
   {
-    "question": "Trường có cung cấp ký túc xá trong khuôn viên không?",
-    "expected_answer": "Không — trường không cung cấp chỗ ở trong khuôn viên, nhưng có đội ngũ hỗ trợ sinh viên tìm chỗ ở gần trường.",
-    "expected_context": "Trang Accommodation Services"
+    "id": "atomic_03",
+    "question": "Thói quen dựa trên danh tính được Atomic Habits giải thích như thế nào?",
+    "expected_answer": "Thay đổi bền vững bắt đầu bằng việc xây dựng danh tính mong muốn; hành vi là bằng chứng phản ánh kiểu người mà ta tin mình là.",
+    "expected_context": "Atomic Habits Summary — Lesson 3: Build identity-based habits",
+    "expected_sources": ["article_01.md"],
+    "category": "concept",
+    "should_answer": true
+  },
+  {
+    "id": "atomic_04",
+    "question": "Vì sao James Clear khuyên tập trung vào hệ thống thay vì chỉ đặt mục tiêu?",
+    "expected_answer": "Mục tiêu mô tả kết quả mong muốn, còn hệ thống tạo ra tiến trình lặp lại; khi hệ thống sai, thói quen xấu tiếp tục dù ta vẫn muốn thay đổi.",
+    "expected_context": "Atomic Habits Summary — Forget about setting goals, focus on systems",
+    "expected_sources": ["article_01.md"],
+    "category": "explanation",
+    "should_answer": true
+  },
+  {
+    "id": "atomic_05",
+    "question": "Những cải thiện nhỏ mỗi ngày có ý nghĩa gì theo Atomic Habits?",
+    "expected_answer": "Các thay đổi nhỏ tích lũy theo thời gian và có thể tạo ra khác biệt lớn, thay vì phụ thuộc vào một bước đột phá duy nhất.",
+    "expected_context": "Atomic Habits Summary — Lesson 1: Small habits make a big difference",
+    "expected_sources": ["article_01.md"],
+    "category": "summary",
+    "should_answer": true
+  },
+  {
+    "id": "atomic_06",
+    "question": "Quy luật 'Make it easy' được áp dụng vào sản phẩm kinh doanh ra sao?",
+    "expected_answer": "Doanh nghiệp cần lập bản đồ chuỗi hành vi của khách hàng và giảm ma sát ở từng bước để hành vi mua hoặc sử dụng sản phẩm trở nên dễ thực hiện hơn.",
+    "expected_context": "Atomic Habits Business Appendix — The 3rd Law",
+    "expected_sources": ["atomic-habits-business-appendix.md"],
+    "category": "application",
+    "should_answer": true
+  },
+  {
+    "id": "lean_01",
+    "question": "Validated learning trong phương pháp Lean Startup là gì?",
+    "expected_answer": "Validated learning là quá trình dùng thử nghiệm và phản hồi thị trường để kiểm chứng mức độ quan tâm của khách hàng và học xem doanh nghiệp có đang tiến tới mô hình bền vững hay không.",
+    "expected_context": "Lean Startup Method Analysis — validated learning",
+    "expected_sources": ["lean-startup-method-analysis.md", "article_03.md"],
+    "category": "concept",
+    "should_answer": true
+  },
+  {
+    "id": "lean_02",
+    "question": "Minimum Viable Product có vai trò gì trong Lean Startup?",
+    "expected_answer": "MVP là phiên bản nhỏ nhất của sản phẩm đủ để đưa cho khách hàng tiềm năng, thu phản hồi và bắt đầu học nhanh mà chưa phải xây sản phẩm hoàn chỉnh.",
+    "expected_context": "Lean Startup Method Analysis — minimum viable product",
+    "expected_sources": ["lean-startup-method-analysis.md", "article_03.md"],
+    "category": "concept",
+    "should_answer": true
+  },
+  {
+    "id": "lean_03",
+    "question": "Vòng phản hồi Build–Measure–Learn hoạt động như thế nào?",
+    "expected_answer": "Startup biến ý tưởng thành sản phẩm, đo phản ứng và dữ liệu khách hàng, rồi học xem nên điều chỉnh, kiên trì hay thay đổi giả thuyết; vòng lặp cần được thực hiện nhanh.",
+    "expected_context": "The Lean Startup — Build-Measure-Learn feedback loop",
+    "expected_sources": ["lean-startup-method-analysis.md", "article_03.md"],
+    "category": "process",
+    "should_answer": true
+  },
+  {
+    "id": "lean_04",
+    "question": "Khi nào startup nên pivot thay vì persevere?",
+    "expected_answer": "Khi đo lường cho thấy các động lực của mô hình kinh doanh không tiến triển, startup nên thực hiện một điều chỉnh cấu trúc để kiểm tra giả thuyết mới; nếu dữ liệu xác nhận hướng đi thì tiếp tục kiên trì.",
+    "expected_context": "Lean Startup Method Analysis — Learn When It Is Time To Pivot",
+    "expected_sources": ["lean-startup-method-analysis.md", "article_03.md"],
+    "category": "decision",
+    "should_answer": true
+  },
+  {
+    "id": "lean_05",
+    "question": "Lean Startup đánh giá thử nghiệm và kế hoạch dài hạn như thế nào?",
+    "expected_answer": "Phương pháp này coi thử nghiệm có giá trị hơn kế hoạch chi tiết dựa trên nhiều điều chưa biết; các giả thuyết cần được kiểm tra nhanh bằng phản ứng thực tế của khách hàng.",
+    "expected_context": "Lean Startup Method Analysis — experimentation versus detailed planning",
+    "expected_sources": ["lean-startup-method-analysis.md"],
+    "category": "comparison",
+    "should_answer": true
+  },
+  {
+    "id": "thinking_01",
+    "question": "Hệ thống 1 và Hệ thống 2 khác nhau như thế nào?",
+    "expected_answer": "Hệ thống 1 nhanh, tự động, trực giác và giàu cảm xúc; Hệ thống 2 chậm, có chủ ý, logic và tốn nỗ lực.",
+    "expected_context": "Thinking Fast and Slow Innovation Review — System 1 and System 2",
+    "expected_sources": ["thinking-fast-slow-innovation-review.md", "thinking-fast-slow-cia-review.md"],
+    "category": "concept",
+    "should_answer": true
+  },
+  {
+    "id": "thinking_02",
+    "question": "Hệ thống 1 và Hệ thống 2 phối hợp với nhau ra sao khi con người ra quyết định?",
+    "expected_answer": "Hệ thống 1 tự động tạo ấn tượng và cảm xúc, sau đó chúng trở thành đầu vào cho niềm tin và lựa chọn có chủ ý của Hệ thống 2; khi gặp bất ngờ, Hệ thống 1 có thể huy động Hệ thống 2 xử lý.",
+    "expected_context": "Thinking Fast and Slow CIA Review — interactions of System 1 and System 2",
+    "expected_sources": ["thinking-fast-slow-cia-review.md"],
+    "category": "explanation",
+    "should_answer": true
+  },
+  {
+    "id": "thinking_03",
+    "question": "WYSIATI có ý nghĩa gì trong Thinking, Fast and Slow?",
+    "expected_answer": "WYSIATI là 'What You See Is All There Is', mô tả khuynh hướng tạo phán đoán từ thông tin đang có trước mắt mà không chú ý đầy đủ tới thông tin còn thiếu.",
+    "expected_context": "Thinking, Fast and Slow overview — WYSIATI",
+    "expected_sources": ["article_04.md"],
+    "category": "concept",
+    "should_answer": true
+  },
+  {
+    "id": "thinking_04",
+    "question": "Availability bias ảnh hưởng đến đánh giá rủi ro như thế nào?",
+    "expected_answer": "Các hình ảnh hoặc sự kiện sống động, dễ nhớ khiến Hệ thống 1 đánh giá chúng có khả năng xảy ra cao hơn, ngay cả khi thống kê cho thấy chúng hiếm.",
+    "expected_context": "Thinking Fast and Slow CIA Review — availability bias",
+    "expected_sources": ["thinking-fast-slow-cia-review.md"],
+    "category": "bias",
+    "should_answer": true
+  },
+  {
+    "id": "thinking_05",
+    "question": "Loss aversion có thể tác động đến quyết định đầu tư nguồn lực ra sao?",
+    "expected_answer": "Con người cảm nhận mất mát mạnh hơn lợi ích tương đương, nên có thể tiếp tục đầu tư vào một dự án thua lỗ để tránh thừa nhận mất mát hoặc mất uy tín, liên quan tới sunk-cost fallacy.",
+    "expected_context": "Thinking Fast and Slow CIA Review — loss aversion and sunk cost",
+    "expected_sources": ["thinking-fast-slow-cia-review.md", "thinking-fast-slow-innovation-review.md"],
+    "category": "bias",
+    "should_answer": true
+  },
+  {
+    "id": "thinking_06",
+    "question": "Khi nào trực giác chuyên gia có thể đáng tin theo phần review Thinking, Fast and Slow?",
+    "expected_answer": "Trực giác đáng tin hơn khi môi trường có các tín hiệu hợp lệ, lặp lại và người thực hành nhận được phản hồi kịp thời để học các dấu hiệu đó qua kinh nghiệm.",
+    "expected_context": "Thinking Fast and Slow CIA Review — Expert Intuition",
+    "expected_sources": ["thinking-fast-slow-cia-review.md"],
+    "category": "analysis",
+    "should_answer": true
+  },
+  {
+    "id": "innovators_01",
+    "question": "Cuốn The Innovators tập trung trình bày chủ đề gì?",
+    "expected_answer": "Cuốn sách tổng quan lịch sử cách các nhà đổi mới tạo ra những đột phá quan trọng trong công nghệ máy tính và các ứng dụng của nó.",
+    "expected_context": "The Innovators article — overview",
+    "expected_sources": ["article_05.md"],
+    "category": "summary",
+    "should_answer": true
+  },
+  {
+    "id": "out_01",
+    "question": "Deep Work đề xuất bốn quy tắc làm việc sâu nào?",
+    "expected_answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+    "expected_context": "Không có tài liệu Deep Work trong corpus hiện tại",
+    "expected_sources": [],
+    "category": "out_of_domain",
+    "should_answer": false
+  },
+  {
+    "id": "out_02",
+    "question": "Giá Bitcoin hôm nay là bao nhiêu?",
+    "expected_answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+    "expected_context": "Ngoài phạm vi corpus sách",
+    "expected_sources": [],
+    "category": "out_of_domain",
+    "should_answer": false
   }
 ]
