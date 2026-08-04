@@ -1,5 +1,5 @@
 """
-Task 2 — Crawl bài viết/thông báo về dịch vụ đại học.
+Task 2 — Crawl bài viết/thông báo về Sach.
 
 Hướng dẫn:
     1. Crawl tối thiểu 5 bài viết từ trang công khai của một trường đại học.
@@ -33,7 +33,14 @@ def setup_directory():
 ARTICLE_URLS = [
     # Ví dụ (trang công khai RMIT Vietnam):
     # "https://www.rmit.edu.vn/libraryvn/...",
-    # "https://www.rmit.edu.vn/students/...",
+    # "https://www.rmit.edu.vn/students/...",   
+    "https://vi.wikipedia.org/wiki/Th%C3%B3i_quen_nguy%C3%AAn_t%E1%BB%AD", # Atomic Habits
+    "https://vi.wikipedia.org/wiki/T%C6%B0_duy_nhanh_v%C3%A0_ch%E1%BA%ADm", # Thinking, Fast and Slow
+    "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%AFc_nh%C3%A2n_t%C3%A2m",     # How to Win Friends & Influence People
+    "https://vi.wikipedia.org/wiki/Cha_gi%C3%A0u,_cha_ngh%C3%A8o",          # Rich Dad Poor Dad
+    "https://vi.wikipedia.org/wiki/Nh%C3%A0_gi%E1%BA%A3_kim_(s%C3%A1ch)",    # The Alchemist
+    "https://en.wikipedia.org/wiki/Deep_Work",  
+    
 ]
 
 
