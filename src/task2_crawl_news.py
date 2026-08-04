@@ -31,11 +31,15 @@ def setup_directory():
 
 
 ARTICLE_URLS = [
+    # Phát triển bản thân - Atomic Habits (James Clear)
+    "https://jamesclear.com/atomic-habits-summary",
     "https://jamesclear.com/three-steps-habit-change",
-    "https://jamesclear.com/habit-tracker",
-    "https://thedecisionlab.com/reference-guide/philosophy/system-1-and-system-2-thinking",
-    "https://en.wikipedia.org/wiki/Deep_Work",
-    "https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow",
+    # Kinh doanh - The Lean Startup (Eric Ries)
+    "https://theleanstartup.com/book",
+    # Tâm lý học - Thinking, Fast and Slow (Daniel Kahneman)
+    "https://us.macmillan.com/books/9780374533557/thinkingfastandslow/",
+    # Công nghệ - The Innovators (Walter Isaacson)
+    "https://isaacson.tulane.edu/books/innovators/",
 ]
 
 
