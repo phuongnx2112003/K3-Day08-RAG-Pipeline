@@ -1,0 +1,1154 @@
+{
+  "generated_at": "2026-08-04T15:28:19.540252+00:00",
+  "dataset_size": 19,
+  "configs": [
+    "Config A (Hybrid)",
+    "Config B (Dense-only)"
+  ],
+  "rows": [
+    {
+      "config": "Config A (Hybrid)",
+      "id": "atomic_01",
+      "question": "Bốn quy luật thay đổi hành vi trong Atomic Habits là gì?",
+      "should_answer": true,
+      "expected_sources": [
+        "atomic-habits-business-appendix.md",
+        "article_01.md"
+      ],
+      "ground_truth": "Bốn quy luật là: làm cho nó hiển nhiên, hấp dẫn, dễ dàng và thỏa mãn.",
+      "answer": "Bốn quy luật thay đổi hành vi trong Atomic Habits là:\n\n1. Make it obvious (Làm cho nó rõ ràng).\n2. Make it attractive (Làm cho nó hấp dẫn).\n3. Make it easy (Làm cho nó dễ dàng).\n4. Make it satisfying (Làm cho nó thỏa mãn).\n\nQuy luật thứ tư, \"make it satisfying,\" là giai đoạn cuối cùng của vòng lặp thói quen, giúp tăng khả năng hành vi được lặp lại trong tương lai bằng cách tạo ra phần thưởng hoặc cảm giác thỏa mãn khi thực hiện hành vi đó [S1][S4].",
+      "contexts": [
+        "SOURCE: atomic-habits-business-appendix.md\n# Atomic Habits\n\n**Author:** James Clear\n**Category:** personal_development\n**Source:** https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf\n**Type:** public_pdf\n\n---\n\n1\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nHow to Apply These\nIdeas to Business\n\nI\n\nn Atomic Habits, I explain a four-step loop that underlies all of human behavior: cue,\ncraving, response, and reward. When repeated, this neurological feedback loop leads\n\nto the formation of new habits.\nAs a reminder, the Habit Loop can be represented as follows:\n\n\f2\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nFrom these steps, I have developed the Four Laws of Behavior Change:\n1.\n\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3.",
+        "SOURCE: atomic-habits-business-appendix.md\nATOMIC HABITS ENGRAVED PENS\nThese laser engraved pens feature popular quotes\nfrom Atomic Habits. These pens won’t build better\nhabits for you, but they will remind you of the core\nprinciples mentioned in Atomic Habits. Each pen is\nrefillable and designed to last a lifetime. There are\n3 different engraving options: grab your favorite\n(or get the bundle pack with all three).\njamesclear.com/pens\n\nUse the code HABITS20 to get 20% off these items at Baronfig.com",
+        "SOURCE: article_01.md\nThis section of the Atomic Habits summary presents key points from three of the core themes of the book.\n\nLesson 1: Small habits make a big difference\n\nIt is so easy to overestimate the importance of one defining moment and underestimate the value of making small improvements on a daily basis.",
+        "SOURCE: atomic-habits-business-appendix.md\nTHE 4TH LAW\nThe 4th Law of Behavior Change is to make it satisfying. The final stage of the habit\nloop is the reward. If there is a reward associated with a behavior—that is, it feels good\nand has a satisfying ending—then we have a reason to repeat it in the future.\nIn Chapter 15 of Atomic Habits, I say, “The first three laws of behavior change—make\nit obvious, make it attractive, and make it easy—increase the odds that a behavior will be\nperformed this time. The fourth law of behavior change—make it satisfying—increases\nthe odds that a behavior will be repeated next time. It completes the habit loop.”\nIn business, we could say that making your product or service satisfying increases the\nodds that a customer will return next time. It is the fourth stage that closes the loop and",
+        "SOURCE: article_01.md\n# Atomic Habits Summary by James Clear\n\n**Source:** https://jamesclear.com/atomic-habits-summary\n**Crawled:** 2026-08-04T10:53:28.304672\n**Book:** Atomic Habits\n**Author:** James Clear\n**Category:** personal_development\n**Type:** public_book_article\n\n---\n\nby James Clear is a comprehensive, practical guide on how to change your habits and get 1% better every day. Using a framework called the Four Laws of Behavior Change, Atomic Habits teaches readers a simple set of rules for creating good habits and breaking bad ones. Read the full summary to glean 3 key lessons from Atomic Habits, learn how to build a habit in 4 simple steps, and get a handy reference guide for the strategies recommended throughout the book."
+      ],
+      "got_sources": [
+        "atomic-habits-business-appendix.md",
+        "article_01.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "atomic_02",
+      "question": "Vòng lặp thói quen gồm bốn bước nào?",
+      "should_answer": true,
+      "expected_sources": [
+        "article_02.md",
+        "atomic-habits-business-appendix.md"
+      ],
+      "ground_truth": "Vòng lặp thói quen gồm tín hiệu, khao khát, phản hồi và phần thưởng.",
+      "answer": "Vòng lặp thói quen gồm bốn bước là: tín hiệu (cue), khao khát (craving), phản ứng (response), và phần thưởng (reward) [S1][S3].",
+      "contexts": [
+        "SOURCE: article_02.md\n, the things you believe, and the personality that you portray.\n\nBut what if you want to improve? What if you want to form new habits? How would you go about it?\n\nTurns out, there’s a helpful framework that can make it easier to stick to new habits so that you can improve your health, your work, and your life in general.\n\nLet’s talk about that framework now…\n\nThe process of building a habit can be divided into four simple steps: cue, craving, response, and reward.\n\nBreaking it down into these fundamental parts can help us understand what a habit is, how it works, and how to improve it.\n\nThis four-step pattern is the backbone of every habit, and your brain runs through these steps in the same order each time.",
+        "SOURCE: atomic-habits-business-appendix.md\nTHE 4TH LAW\nThe 4th Law of Behavior Change is to make it satisfying. The final stage of the habit\nloop is the reward. If there is a reward associated with a behavior—that is, it feels good\nand has a satisfying ending—then we have a reason to repeat it in the future.\nIn Chapter 15 of Atomic Habits, I say, “The first three laws of behavior change—make\nit obvious, make it attractive, and make it easy—increase the odds that a behavior will be\nperformed this time. The fourth law of behavior change—make it satisfying—increases\nthe odds that a behavior will be repeated next time. It completes the habit loop.”\nIn business, we could say that making your product or service satisfying increases the\nodds that a customer will return next time. It is the fourth stage that closes the loop and",
+        "SOURCE: atomic-habits-business-appendix.md\n# Atomic Habits\n\n**Author:** James Clear\n**Category:** personal_development\n**Source:** https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf\n**Type:** public_pdf\n\n---\n\n1\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nHow to Apply These\nIdeas to Business\n\nI\n\nn Atomic Habits, I explain a four-step loop that underlies all of human behavior: cue,\ncraving, response, and reward. When repeated, this neurological feedback loop leads\n\nto the formation of new habits.\nAs a reminder, the Habit Loop can be represented as follows:\n\n\f2\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nFrom these steps, I have developed the Four Laws of Behavior Change:\n1.\n\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3.",
+        "SOURCE: thinking-fast-slow-cia-review.md\nsubvariety of intuitive prediction, which is\noften indistinguishable from the first, is based\non biased judgments. This type of intuitive prediction, typically forwarded with considerable\nconfidence, very often leads to trouble. The\nexpanded use in intelligence analysis of structured analytic techniques and approaches\nadopted in the wake of the 9/11 attacks and the\nNational Intelligence Estimate on Iraqi weapons of mass destruction represents in part an\neffort to eliminate this latter type of prediction.",
+        "SOURCE: atomic-habits-business-appendix.md\nNote: As we covered in Chapter 10 of Atomic Habits, we find it attractive to imitate the\nhabits of those around us. Social norms are one of the most powerful forces influencing human behavior. The more you can use social proof to show potential customers that “people\nlike you use our product,” the greater likelihood you have in altering someone’s behavior.\nWe can now see, Glotz, that by combining (1) much Pavlovian conditioning, (2) powerful social-proof effects, and (3) wonderful-tasting, energy-giving, stimulating and desirably-cold beverage that causes much operant conditioning, we are going to get sales\nthat speed up for a long time by reason of the huge mixture of factors we have chosen.\nTherefore, we are going to start something like an autocatalytic reaction in chemistry,"
+      ],
+      "got_sources": [
+        "article_02.md",
+        "atomic-habits-business-appendix.md",
+        "thinking-fast-slow-cia-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.6667
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "atomic_03",
+      "question": "Thói quen dựa trên danh tính được Atomic Habits giải thích như thế nào?",
+      "should_answer": true,
+      "expected_sources": [
+        "article_01.md"
+      ],
+      "ground_truth": "Thay đổi bền vững bắt đầu bằng việc xây dựng danh tính mong muốn; hành vi là bằng chứng phản ánh kiểu người mà ta tin mình là.",
+      "answer": "Atomic Habits giải thích thói quen dựa trên danh tính như một trong các bài học quan trọng trong việc xây dựng thói quen. Cụ thể, bài học 3 trong tóm tắt Atomic Habits nhấn mạnh việc xây dựng thói quen dựa trên danh tính (Build identity-based habits) [S3]. Tuy nhiên, trong đoạn trích được cung cấp, không có giải thích chi tiết về cách thức hoạt động hoặc ý nghĩa cụ thể của thói quen dựa trên danh tính. \n\nDo đó, dựa trên thông tin hiện có, thói quen dựa trên danh tính được đề cập như một bài học quan trọng trong cuốn sách, nhưng chi tiết giải thích cụ thể không được cung cấp trong ngữ cảnh này.",
+      "contexts": [
+        "SOURCE: atomic-habits-business-appendix.md\n# Atomic Habits\n\n**Author:** James Clear\n**Category:** personal_development\n**Source:** https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf\n**Type:** public_pdf\n\n---\n\n1\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nHow to Apply These\nIdeas to Business\n\nI\n\nn Atomic Habits, I explain a four-step loop that underlies all of human behavior: cue,\ncraving, response, and reward. When repeated, this neurological feedback loop leads\n\nto the formation of new habits.\nAs a reminder, the Habit Loop can be represented as follows:\n\n\f2\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nFrom these steps, I have developed the Four Laws of Behavior Change:\n1.\n\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3.",
+        "SOURCE: atomic-habits-business-appendix.md\nATOMIC HABITS ENGRAVED PENS\nThese laser engraved pens feature popular quotes\nfrom Atomic Habits. These pens won’t build better\nhabits for you, but they will remind you of the core\nprinciples mentioned in Atomic Habits. Each pen is\nrefillable and designed to last a lifetime. There are\n3 different engraving options: grab your favorite\n(or get the bundle pack with all three).\njamesclear.com/pens\n\nUse the code HABITS20 to get 20% off these items at Baronfig.com",
+        "SOURCE: article_01.md\nLesson 2: Forget about setting goals. Focus on your system instead.\n\nGoals are about the results you want to achieve.\n\nare about the processes that lead to those results.\n\nIf you’re having trouble changing your habits, the problem isn’t you. The problem is your system. Bad habits repeat themselves again and again not because you don’t want to change, but because you have the wrong system for change.\n\nYou do not rise to the level of your goals. You fall to the level of your systems.\n\nAtomic Habits presents a proven system for building good habits and breaking bad ones.\n\nLesson 3: Build identity-based habits",
+        "SOURCE: article_01.md\nThis section of the Atomic Habits summary presents key points from three of the core themes of the book.\n\nLesson 1: Small habits make a big difference\n\nIt is so easy to overestimate the importance of one defining moment and underestimate the value of making small improvements on a daily basis.",
+        "SOURCE: article_01.md\n# Atomic Habits Summary by James Clear\n\n**Source:** https://jamesclear.com/atomic-habits-summary\n**Crawled:** 2026-08-04T10:53:28.304672\n**Book:** Atomic Habits\n**Author:** James Clear\n**Category:** personal_development\n**Type:** public_book_article\n\n---\n\nby James Clear is a comprehensive, practical guide on how to change your habits and get 1% better every day. Using a framework called the Four Laws of Behavior Change, Atomic Habits teaches readers a simple set of rules for creating good habits and breaking bad ones. Read the full summary to glean 3 key lessons from Atomic Habits, learn how to build a habit in 4 simple steps, and get a handy reference guide for the strategies recommended throughout the book."
+      ],
+      "got_sources": [
+        "atomic-habits-business-appendix.md",
+        "article_01.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.5
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "atomic_04",
+      "question": "Vì sao James Clear khuyên tập trung vào hệ thống thay vì chỉ đặt mục tiêu?",
+      "should_answer": true,
+      "expected_sources": [
+        "article_01.md"
+      ],
+      "ground_truth": "Mục tiêu mô tả kết quả mong muốn, còn hệ thống tạo ra tiến trình lặp lại; khi hệ thống sai, thói quen xấu tiếp tục dù ta vẫn muốn thay đổi.",
+      "answer": "James Clear khuyên tập trung vào hệ thống thay vì chỉ đặt mục tiêu vì hệ thống giúp tạo ra các thói quen hiệu quả thông qua việc áp dụng bốn bước của vòng lặp hành vi: tín hiệu (cue), khao khát (craving), phản ứng (response), và phần thưởng (reward). Bằng cách làm cho hành vi trở nên rõ ràng, hấp dẫn, dễ thực hiện và thỏa mãn, hệ thống này giúp hình thành thói quen mới một cách bền vững, thay vì chỉ tập trung vào mục tiêu cuối cùng. Do đó, tập trung vào hệ thống giúp hành vi trở nên dễ dàng hơn và duy trì lâu dài hơn [S1].",
+      "contexts": [
+        "In Atomic Habits, James Clear explains a four-step loop underlying all human behavior: cue, craving, response, and reward. This neurological feedback loop, when repeated, leads to the formation of new habits. From these steps, he developed the Four Laws of Behavior Change: 1. Cue: Make it obvious. 2. Craving: Make it attractive. 3. Response: Make it easy. 4. Reward: Make it satisfying. These laws provide a flexible framework to make behaviors easier and help establish effective habits, which is the system Clear advises focusing on rather than just setting goals."
+      ],
+      "got_sources": [],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 0.0,
+        "context_precision_proxy": 0.0
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "atomic_05",
+      "question": "Những cải thiện nhỏ mỗi ngày có ý nghĩa gì theo Atomic Habits?",
+      "should_answer": true,
+      "expected_sources": [
+        "article_01.md"
+      ],
+      "ground_truth": "Các thay đổi nhỏ tích lũy theo thời gian và có thể tạo ra khác biệt lớn, thay vì phụ thuộc vào một bước đột phá duy nhất.",
+      "answer": "Theo Atomic Habits, những cải thiện nhỏ mỗi ngày có ý nghĩa rất lớn vì chúng giúp tạo ra sự khác biệt lớn theo thời gian. Cuốn sách nhấn mạnh rằng chúng ta thường đánh giá quá cao tầm quan trọng của một khoảnh khắc quyết định duy nhất và đánh giá thấp giá trị của việc cải thiện nhỏ từng ngày. Những thói quen nhỏ tích lũy lại sẽ dẫn đến sự tiến bộ đáng kể [S4].",
+      "contexts": [
+        "SOURCE: article_01.md\n# Atomic Habits Summary by James Clear\n\n**Source:** https://jamesclear.com/atomic-habits-summary\n**Crawled:** 2026-08-04T10:53:28.304672\n**Book:** Atomic Habits\n**Author:** James Clear\n**Category:** personal_development\n**Type:** public_book_article\n\n---\n\nby James Clear is a comprehensive, practical guide on how to change your habits and get 1% better every day. Using a framework called the Four Laws of Behavior Change, Atomic Habits teaches readers a simple set of rules for creating good habits and breaking bad ones. Read the full summary to glean 3 key lessons from Atomic Habits, learn how to build a habit in 4 simple steps, and get a handy reference guide for the strategies recommended throughout the book.",
+        "SOURCE: atomic-habits-business-appendix.md\nATOMIC HABITS ENGRAVED PENS\nThese laser engraved pens feature popular quotes\nfrom Atomic Habits. These pens won’t build better\nhabits for you, but they will remind you of the core\nprinciples mentioned in Atomic Habits. Each pen is\nrefillable and designed to last a lifetime. There are\n3 different engraving options: grab your favorite\n(or get the bundle pack with all three).\njamesclear.com/pens\n\nUse the code HABITS20 to get 20% off these items at Baronfig.com",
+        "SOURCE: atomic-habits-business-appendix.md\nexperience. For example, car manufacturers have begun to add fake engine noise to their\ncars and trucks to create a satisfying growl when the owner punches the accelerator.1 Additional examples are covered in Chapter 15 of Atomic Habits like adding flavor to chewing\ngum or toothpaste.\nOf course, this same principle can be applied to help the employees of any company\nbuild better habits. Behaviors can be reinforced by offering small bits of praise and encouragement throughout the work day.\nOne founder I interviewed spoke of a simple method his company was using to make\nwork more satisfying, “Everyone gets a Post-It Note in the form of a hand,” he said. “It’s\ncalled a ‘five.’ And whenever someone does something above and beyond, it goes on the",
+        "SOURCE: article_01.md\nThis section of the Atomic Habits summary presents key points from three of the core themes of the book.\n\nLesson 1: Small habits make a big difference\n\nIt is so easy to overestimate the importance of one defining moment and underestimate the value of making small improvements on a daily basis.",
+        "SOURCE: atomic-habits-business-appendix.md\n# Atomic Habits\n\n**Author:** James Clear\n**Category:** personal_development\n**Source:** https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf\n**Type:** public_pdf\n\n---\n\n1\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nHow to Apply These\nIdeas to Business\n\nI\n\nn Atomic Habits, I explain a four-step loop that underlies all of human behavior: cue,\ncraving, response, and reward. When repeated, this neurological feedback loop leads\n\nto the formation of new habits.\nAs a reminder, the Habit Loop can be represented as follows:\n\n\f2\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nFrom these steps, I have developed the Four Laws of Behavior Change:\n1.\n\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3."
+      ],
+      "got_sources": [
+        "article_01.md",
+        "atomic-habits-business-appendix.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.5
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "atomic_06",
+      "question": "Quy luật 'Make it easy' được áp dụng vào sản phẩm kinh doanh ra sao?",
+      "should_answer": true,
+      "expected_sources": [
+        "atomic-habits-business-appendix.md"
+      ],
+      "ground_truth": "Doanh nghiệp cần lập bản đồ chuỗi hành vi của khách hàng và giảm ma sát ở từng bước để hành vi mua hoặc sử dụng sản phẩm trở nên dễ thực hiện hơn.",
+      "answer": "Quy luật 'Make it easy' (Làm cho nó dễ dàng) liên quan đến phản ứng, tức là hành vi hoặc thói quen mà bạn thực hiện. Hành vi có khả năng được thực hiện cao hơn khi chúng dễ dàng, tức là có thể hoàn thành một cách dễ dàng [S5].\n\nTrong kinh doanh, cách hiệu quả nhất để áp dụng quy luật này là lập bản đồ chuỗi hành vi mà khách hàng phải thực hiện để mua sản phẩm hoặc sử dụng dịch vụ của bạn, sau đó tìm kiếm mọi điểm có thể giảm ma sát liên quan đến nhiệm vụ đó. Ví dụ, các dịch vụ gọi xe như Uber hoặc Lyft khi mới ra mắt đã có thể lập bản đồ các bước khách hàng cần làm và tối giản chúng để làm cho việc đặt xe trở nên dễ dàng hơn [S5].\n\nNgoài ra, các doanh nghiệp thành công loại bỏ mọi điểm ma sát có thể nghĩ đến để làm cho hành vi mong muốn trở nên dễ dàng nhất có thể. Ví dụ, việc giao hàng miễn phí trong vòng hai ngày giúp khách hàng dễ dàng nhận sản phẩm mà không gặp trở ngại [S4].\n\nTóm lại, quy luật 'Make it easy' được áp dụng bằng cách giảm thiểu các khó khăn, trở ngại trong quá trình khách hàng thực hiện hành vi mong muốn, từ đó làm cho hành vi đó trở nên dễ dàng và thuận tiện hơn [S4][S5].",
+      "contexts": [
+        "SOURCE: atomic-habits-business-appendix.md\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3.\n\nResponse: Make it easy.\n\n4.\n\nReward: Make it satisfying.\n\nThese four laws can be applied to make any behavior easier (and the inversion of each\nlaw can be applied to make any behavior harder). In business, these same principles can\nbe used to create more effective products and to help employees establish more effective\nhabits.\nIn this appendix, I will explore some examples of how each law might be applied in a\nbusiness context. I offer these only as a starting point. The Four Laws of Behavior Change\nare meant to provide a framework that can be flexible and adapt as your needs and tastes\nchange. I think you’ll find that the applications are nearly endless.",
+        "SOURCE: atomic-habits-business-appendix.md\nlikely to find it attractive themselves.\nThere is an important caveat here that deals with framing: If people think the behavior your product requires is rare, you should frame those who have it in a positive light\n(achieving status): “60% of millionaires read one book every day. With our new product,\nyou can too.”\nIf people think the behavior your product requires is common, then frame those who\ndon’t do it in a negative light (deviating from the norm): “75% of people in your neighborhood are paying less than you on their energy bill. Click here and learn how to not\nmiss out on these savings.”\nFinally, you can make any product inherently more attractive by employing the 3rd\nand 4th Laws of Behavior Change. Behaviors that are “cheap”—easy to do, low social",
+        "SOURCE: atomic-habits-business-appendix.md\nare comfortable enough to sit in for hours. Most machines don’t even require you to pull\na lever anymore. Playing another round is as simple as pressing the SPIN button. When\nyou run out of money, casinos make it as easy as possible to get more. Many slot machines allow you to pay directly from your seat. ATMs are always easy to access, and cash\nadvance and debit withdrawal options are available when your account is empty.\nMake It Satisfying: The only unsatisfying part of the experience is losing money, and\nslot machines are designed to hide this as best as possible. They make it difficult to tell\nhow much money you are spending.\nThe traditional slot machine is just a lever and one wheel, but electronic slot machines",
+        "SOURCE: atomic-habits-business-appendix.md\nit to you free in two days.\nGreat businesses remove every point of friction they can think of to make the desired\nbehavior as easy as possible.",
+        "SOURCE: atomic-habits-business-appendix.md\nTHE 3RD LAW\nThe 3rd Law of Behavior Change is to make it easy. This law is associated with the response, which is the actual behavior or habit that you perform. Behaviors are more likely\nto be performed when they are easy—that is, when they can be accomplished with ease.\nFrom a business standpoint, perhaps the most effective way to employ the 3rd Law of\nBehavior Change is to map out the chain of behaviors that a customer must perform to\npurchase your product or use your service, and then search for any possible area where\nyou can reduce the friction associated with the task.\nImagine the first ride-sharing services like Uber or Lyft. When they were launching,\nthey could have mapped out the chain of behaviors a customer had to perform to get"
+      ],
+      "got_sources": [
+        "atomic-habits-business-appendix.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "lean_01",
+      "question": "Validated learning trong phương pháp Lean Startup là gì?",
+      "should_answer": true,
+      "expected_sources": [
+        "lean-startup-method-analysis.md",
+        "article_03.md"
+      ],
+      "ground_truth": "Validated learning là quá trình dùng thử nghiệm và phản hồi thị trường để kiểm chứng mức độ quan tâm của khách hàng và học xem doanh nghiệp có đang tiến tới mô hình bền vững hay không.",
+      "answer": "Validated learning trong phương pháp Lean Startup là một quá trình mà các công ty đánh giá sự quan tâm của người tiêu dùng đối với sản phẩm hoặc dịch vụ. Quá trình này cho phép các nhà phát triển sản phẩm đo lường sự quan tâm của khách hàng và xác định cách thức sản phẩm cần được cải tiến. Mục đích của validated learning là tránh việc sử dụng tài nguyên không cần thiết trong việc tạo ra và phát triển sản phẩm bằng cách dựa trên những mong muốn đã được khách hàng thể hiện rõ ràng. Đây là một phần trung tâm của phương pháp Lean Startup, giúp các công ty rút ngắn chu kỳ phát triển sản phẩm và nhanh chóng phát hiện xem mô hình kinh doanh đề xuất có khả thi hay không thông qua việc thử nghiệm dựa trên giả thuyết kinh doanh, phát hành sản phẩm lặp đi lặp lại và học hỏi có xác nhận từ khách hàng [S1], [S2], [S5].",
+      "contexts": [
+        "SOURCE: lean-startup-method-analysis.md\nLean startup is the process of developing a product or company based on the expressed desires of the market.The lean startup uses validated learning, which is a process by which companies assess consumer interest. Lean startup methods focus heavily on customer-related information such as customer churn rate, lifetime customer value, and\nproduct popularity. In lean startup practices, experimentation is favored more than adherence to a rigid plan. Lean startup standards will involve the release of a small form or early concept products in order to assess the customer reaction to the product. “Startup success can be engineered by following the process, which means it can be learned,",
+        "SOURCE: lean-startup-method-analysis.md\nto shorten product development cycles and rapidly discover if a proposed business model is viable; this is achieved by adopting a combination of business-hypothesis-driven experimentation, iterative product releases, and validated learning. Lean startup emphasizes customer feedback over intuition and flexibility over planning. This methodology\nenables recovery from failures more often than traditional ways of product development.[1] Central to the lean startup methodology is the assumption that when startup companies invest their time into iteratively building products or services to meet the needs of early customers, the company can reduce market risks and sidestep the need for large",
+        "SOURCE: lean-startup-method-analysis.md\nspecifications for what needs to be built. + Learn When It Is Time To Pivot A core component of Lean Startup methodology is the build-measure-learn feedback loop. The first step is figuring out the problem that needs to be solved and then developing a minimum viable product (MVP) to begin the process of learning as quickly as possible. Once the\nMVP is established, a startup can work on tuning the engine. This will involve measurement and learning and must include actionable metrics that can demonstrate cause and effect question. The startup will also utilize an investigative development method called the \"Five Whys\"-asking simple questions to study and solve problems along the way.",
+        "SOURCE: article_03.md\n\"This book will enable him to help many more entrepreneurs answer the tough questions about their business.\"\n\nco-founder of Facebook and Asana\n\nmakes the case for a new discipline of entrepreneurial management. Identify who is an entrepreneur, define a startup, and articulate a new way for startups to gauge if they are making progress, called validated learning. To achieve that learning, we'll see that startups - in a garage or inside an enterprise - can use scientific experimentation to discover how to build a sustainable business.",
+        "SOURCE: lean-startup-method-analysis.md\nLean startup\nA lean startup is a method used to found a new company or introduce a new product on behalf of an existing company. The lean startup method advocates developing products that consumers have already demonstrated they desire so that a market will already exist as soon as the product is launched. As opposed to developing a product and then\nhoping that demand will emerge. By employing lean startup principles, product developers can gauge consumer interest in the product and determine how the product might need to be refined. This process is called validated learning and it can be utilized to avoid the unnecessary use of resources in product creation and development. Through lean"
+      ],
+      "got_sources": [
+        "lean-startup-method-analysis.md",
+        "article_03.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "lean_02",
+      "question": "Mục đích của Minimum Viable Product (MVP) là gì?",
+      "should_answer": true,
+      "expected_sources": [
+        "lean-startup-method-analysis.md",
+        "article_03.md"
+      ],
+      "ground_truth": "MVP là phiên bản sản phẩm tối thiểu để đưa tới khách hàng nhằm thu thập lượng kiến thức đã được xác minh lớn nhất với ít nỗ lực nhất.",
+      "answer": "Mục đích của Minimum Viable Product (MVP) là tạo ra phiên bản nhỏ nhất, chức năng nhất của sản phẩm có thể được cung cấp cho khách hàng để thu thập phản hồi thực tế. Cách tiếp cận này giúp nhanh chóng xác thực xem ý tưởng có giá trị trên thị trường hay không trước khi đầu tư nguồn lực đáng kể. MVP cho phép startup bắt đầu quá trình học hỏi càng nhanh càng tốt thông qua việc đo lường và học hỏi từ phản hồi khách hàng, từ đó điều chỉnh sản phẩm hoặc mô hình kinh doanh phù hợp hơn. Phương pháp này cũng giúp giảm rủi ro và chi phí so với việc phát triển sản phẩm hoàn chỉnh ngay từ đầu [S1][S2][S3][S5].",
+      "contexts": [
+        "SOURCE: lean-startup-method-analysis.md\noppfordrer Lean Startup å utarbeide en forretningsmodell som raskt testes i markedet. Dette gjøres gjennom reell testing og kontinuerlig tilbakemelding fra kunder for så å igjen justere forretningsmodell, ny test osv. Kjerneprinsipper i Lean Startup Bygg-mål-lær syklusen Denne iterative prosessloopen er selve kjernen i Lean Startup. Start med en\nenkel versjon av produktet, ofte kalt Minimum Viable Product (MVP). MVP er den minste funksjonelle versjonen av produktet som kan leveres til kunder for å samle tilbakemeldinger. Denne tilnærmingen sikrer at du raskt kan validere om idéen din har markedsverdi før du investerer betydelige ressurser. Hypotesedrevet eksperimentering I stedet for",
+        "SOURCE: lean-startup-method-analysis.md\nspecifications for what needs to be built. + Learn When It Is Time To Pivot A core component of Lean Startup methodology is the build-measure-learn feedback loop. The first step is figuring out the problem that needs to be solved and then developing a minimum viable product (MVP) to begin the process of learning as quickly as possible. Once the\nMVP is established, a startup can work on tuning the engine. This will involve measurement and learning and must include actionable metrics that can demonstrate cause and effect question. The startup will also utilize an investigative development method called the \"Five Whys\"-asking simple questions to study and solve problems along the way.",
+        "SOURCE: lean-startup-method-analysis.md\ntarget customer or modifying the product to better serve the current target customer. The lean startup method first identifies a problem that needs to be solved. It then develops a minimum viable product or the smallest form of the product that allows entrepreneurs to introduce it to potential customers for feedback. This method is faster and less\nexpensive than developing the final product for testing and reduces the risk that startups face by decreasing their typical high failure rate. Lean startup redefines a startup as an organization that is searching for a scalable business model, not one that has an existing business plan that it is determined to execute. For example, a healthy meal delivery",
+        "SOURCE: lean-startup-method-analysis.md\n\"What is a minimum viable product, and why do companies need them?\". Forbes. Retrieved 16 October 2018. ^ a b Ries, Eric (30 March 2009). \"Continuous deployment in 5 easy steps\". radar.oreilly.com. Retrieved 4 June 2015. ^ Fitz, Timothy (10 February 2009). \"Continuous deployment at IMVU: doing the impossible fifty times a day\".\ntimothyfitz.wordpress.com. Retrieved 4 June 2015. ^ Ries, Eric (19 May 2009). \"Vanity metrics vs. actionable metrics\". fourhourworkweek.com. Retrieved 4 June 2015. ^ Blank, Steven G.; Dorf, Bob (2012). The startup owner's manual: the step-by-step guide for building a great company. Pescadero, CA: K&S Ranch, Inc. ISBN 9780984999309.",
+        "SOURCE: lean-startup-method-analysis.md\ncompany departments and operations. In an article published in the Harvard Business Review in 2013, Steve Blank described how the lean startup methodology also drew inspiration from the work of people like Ian C. MacMillan and Rita Gunther McGrath who developed a technique called discovery-driven planning, which was an attempt to bring an\nentrepreneurial mindset to planning.[15] In his blog and book The Lean Startup, entrepreneur Eric Ries used specific terms to refer to the core lean startup principles, as described below. A minimum viable product (MVP) is the \"version of a new product which allows a team to collect the maximum amount of validated learning about customers with"
+      ],
+      "got_sources": [
+        "lean-startup-method-analysis.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 0.5,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "lean_03",
+      "question": "Vòng phản hồi Build-Measure-Learn trong Lean Startup hoạt động như thế nào?",
+      "should_answer": true,
+      "expected_sources": [
+        "lean-startup-method-analysis.md",
+        "article_03.md"
+      ],
+      "ground_truth": "Vòng phản hồi bắt đầu bằng việc biến ý tưởng thành MVP, đo lường phản ứng của khách hàng, rồi học hỏi để quyết định giữ nguyên hay chuyển hướng.",
+      "answer": "Vòng phản hồi Build-Measure-Learn trong Lean Startup hoạt động theo chu trình sau:\n\n1. **Build (Xây dựng):** Bắt đầu bằng việc xác định vấn đề cần giải quyết và phát triển một sản phẩm khả thi tối thiểu (MVP - Minimum Viable Product) để nhanh chóng bắt đầu quá trình học hỏi. MVP là phiên bản nhỏ hoặc khái niệm ban đầu của sản phẩm nhằm kiểm tra các giả định cơ bản của startup [S1][S4][S5].\n\n2. **Measure (Đo lường):** Sau khi xây dựng MVP, startup sẽ đo lường hiệu quả của sản phẩm trên thị trường bằng các chỉ số có thể hành động được, nhằm chứng minh mối quan hệ nguyên nhân - kết quả. Việc đo lường này bao gồm các thông tin liên quan đến khách hàng như tỷ lệ khách hàng rời bỏ, giá trị trọn đời của khách hàng, và mức độ phổ biến của sản phẩm [S1][S2][S5].\n\n3. **Learn (Học hỏi):** Từ kết quả đo lường, startup sẽ học hỏi để điều chỉnh sản phẩm hoặc chiến lược. Quá trình này có thể dẫn đến quyết định \"pivot\" (thay đổi hướng đi) hoặc \"persevere\" (kiên trì theo hướng hiện tại). Phương pháp \"Five Whys\" cũng được sử dụng để hỏi các câu hỏi đơn giản nhằm nghiên cứu và giải quyết các vấn đề phát sinh [S1][S4].\n\nChu trình này nhấn mạnh tốc độ và sự linh hoạt trong phát triển sản phẩm, giúp startup nhanh chóng biến ý tưởng thành sản phẩm, đo lường phản ứng của khách hàng và học hỏi từ các thí nghiệm đó để tối ưu hóa kết quả [S5].",
+      "contexts": [
+        "SOURCE: lean-startup-method-analysis.md\nspecifications for what needs to be built. + Learn When It Is Time To Pivot A core component of Lean Startup methodology is the build-measure-learn feedback loop. The first step is figuring out the problem that needs to be solved and then developing a minimum viable product (MVP) to begin the process of learning as quickly as possible. Once the\nMVP is established, a startup can work on tuning the engine. This will involve measurement and learning and must include actionable metrics that can demonstrate cause and effect question. The startup will also utilize an investigative development method called the \"Five Whys\"-asking simple questions to study and solve problems along the way.",
+        "SOURCE: lean-startup-method-analysis.md\nLean startup is the process of developing a product or company based on the expressed desires of the market.The lean startup uses validated learning, which is a process by which companies assess consumer interest. Lean startup methods focus heavily on customer-related information such as customer churn rate, lifetime customer value, and\nproduct popularity. In lean startup practices, experimentation is favored more than adherence to a rigid plan. Lean startup standards will involve the release of a small form or early concept products in order to assess the customer reaction to the product. “Startup success can be engineered by following the process, which means it can be learned,",
+        "SOURCE: lean-startup-method-analysis.md\n\"Situating the construct of lean start-up: adjacent conversations and possible future directions\". Industrial and Corporate Change. 28 (3): 551–564. doi:10.1093/icc/dtz013. ISSN 0960-6491. ^ Blank, Steve; Eckhardt, Jonathan T. (2023-04-18). \"The Lean Startup as an Actionable Theory of Entrepreneurship\". Journal of Management: 014920632311680.\ndoi:10.1177/01492063231168095. ISSN 0149-2063. S2CID 258253927. Retrieved from \" startup canvas. Lean startup adalah. Lean startup summary. Lean startup methodology. Lean startup audiobook. Lean startup book. Lean startup business plan. Lean startup examples. Lean startup business plan template. Lean startup que es. Lean startup\nmeaning. Lean startup methodology pdf. Lean startup template. Lean startup cycle. Lean startup eric ries.",
+        "SOURCE: article_03.md\ndives into the Lean Startup method in detail, showing one major turn through the core Build- Measure- Learn feedback loop. Beginning with leap-of-faith assumptions that cry out for vigorous testing, you'll learn how to build a minimum viable product to test those assumptions, a new accounting system for evaluating whether you're making progress, and a method for deciding whether to pivot (changing course with one foot anchored to the ground) or persevere.",
+        "SOURCE: lean-startup-method-analysis.md\naccountability and maximize outcomes by measuring progress, planning milestones, and prioritizing.[24] The topic was later expanded upon to include three levels of innovation accounting related to the types of assumptions being validated.[25] Artefacts and actions in the Build-Measure-Learn loop The Build–Measure–Learn loop emphasizes speed as\na critical ingredient to customer development. A team or company's effectiveness is determined by its ability to ideate, quickly build a minimum viable product of that idea, measure its effectiveness in the market, and learn from that experiment. In other words, it is a learning cycle of turning ideas into products, measuring customers' reactions and"
+      ],
+      "got_sources": [
+        "lean-startup-method-analysis.md",
+        "article_03.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "lean_04",
+      "question": "Khi nào doanh nghiệp Lean Startup nên thực hiện pivot?",
+      "should_answer": true,
+      "expected_sources": [
+        "lean-startup-method-analysis.md"
+      ],
+      "ground_truth": "Doanh nghiệp nên pivot khi kết quả đo lường thử nghiệm cho thấy các giả thuyết nền tảng không đạt kỳ vọng và cần thay đổi chiến lược.",
+      "answer": "Doanh nghiệp Lean Startup nên thực hiện pivot khi quá trình đo lường và học hỏi cho thấy công ty không đang thúc đẩy các yếu tố then chốt của mô hình kinh doanh. Nếu không có sự tiến triển rõ ràng, đó là dấu hiệu cần phải pivot hoặc thực hiện một sự điều chỉnh cấu trúc để thử nghiệm một giả thuyết cơ bản mới về sản phẩm, chiến lược và động cơ tăng trưởng [S2]. Quá trình này dựa trên vòng phản hồi xây dựng - đo lường - học hỏi, trong đó việc học hỏi nhanh chóng từ sản phẩm khả thi tối thiểu (MVP) giúp xác định khi nào cần thay đổi hướng đi [S1][S3][S5].",
+      "contexts": [
+        "SOURCE: lean-startup-method-analysis.md\nspecifications for what needs to be built. + Learn When It Is Time To Pivot A core component of Lean Startup methodology is the build-measure-learn feedback loop. The first step is figuring out the problem that needs to be solved and then developing a minimum viable product (MVP) to begin the process of learning as quickly as possible. Once the\nMVP is established, a startup can work on tuning the engine. This will involve measurement and learning and must include actionable metrics that can demonstrate cause and effect question. The startup will also utilize an investigative development method called the \"Five Whys\"-asking simple questions to study and solve problems along the way.",
+        "SOURCE: lean-startup-method-analysis.md\nWhen this process of measuring and learning is done correctly, it will be clear that a company is either moving the drivers of the business model or not. If not, it is a sign that it is time to pivot or make a structural course correction to test a new fundamental hypothesis about the product, strategy and engine of growth. Principles You don't have to\nwork in a garage to be in a startup. Read More A startup is an institution, not just a product, so it requires management, a new kind of management specifically geared to its context. Read More Startups exist not to make stuff, make money, or serve customers. They exist to learn how to build a sustainable business. This learning can be validated",
+        "SOURCE: article_03.md\ndives into the Lean Startup method in detail, showing one major turn through the core Build- Measure- Learn feedback loop. Beginning with leap-of-faith assumptions that cry out for vigorous testing, you'll learn how to build a minimum viable product to test those assumptions, a new accounting system for evaluating whether you're making progress, and a method for deciding whether to pivot (changing course with one foot anchored to the ground) or persevere.",
+        "SOURCE: lean-startup-method-analysis.md\nLean startup is the process of developing a product or company based on the expressed desires of the market.The lean startup uses validated learning, which is a process by which companies assess consumer interest. Lean startup methods focus heavily on customer-related information such as customer churn rate, lifetime customer value, and\nproduct popularity. In lean startup practices, experimentation is favored more than adherence to a rigid plan. Lean startup standards will involve the release of a small form or early concept products in order to assess the customer reaction to the product. “Startup success can be engineered by following the process, which means it can be learned,",
+        "SOURCE: lean-startup-method-analysis.md\nscientifically, by running experiments that allow us to test each element of our vision. Read More To improve entrepreneurial outcomes, and to hold entrepreneurs accountable, we need to focus on the boring stuff: how to measure progress, how to setup milestones, how to prioritize work. This requires a new kind of accounting, specific to startups.\nRead More The fundamental activity of a startup is to turn ideas into products, measure how customers respond, and then learn whether to pivot or persevere. All successful startup processes should be geared to accelerate that feedback loop. Read More For prosjektledere som ønsker å effektivisere produktutvikling og minimere risiko, kan Lean"
+      ],
+      "got_sources": [
+        "lean-startup-method-analysis.md",
+        "article_03.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.5
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "lean_05",
+      "question": "Phương pháp 5 Whys được sử dụng làm gì trong Lean Startup?",
+      "should_answer": true,
+      "expected_sources": [
+        "lean-startup-method-analysis.md"
+      ],
+      "ground_truth": "5 Whys là phương pháp điều tra nguyên nhân gốc rễ bằng cách liên tục đặt câu hỏi tại sao khi phát sinh sự cố trong quá trình phát triển.",
+      "answer": "Phương pháp \"Five Whys\" trong Lean Startup được sử dụng như một phương pháp phát triển điều tra nhằm đặt ra các câu hỏi đơn giản để nghiên cứu và giải quyết các vấn đề trong quá trình phát triển sản phẩm hoặc dịch vụ. Cụ thể, nó giúp startup tìm hiểu nguyên nhân gốc rễ của các vấn đề thông qua việc hỏi \"Tại sao?\" liên tiếp, từ đó hỗ trợ quá trình học hỏi và điều chỉnh sản phẩm một cách hiệu quả hơn [S1].",
+      "contexts": [
+        "SOURCE: lean-startup-method-analysis.md\nspecifications for what needs to be built. + Learn When It Is Time To Pivot A core component of Lean Startup methodology is the build-measure-learn feedback loop. The first step is figuring out the problem that needs to be solved and then developing a minimum viable product (MVP) to begin the process of learning as quickly as possible. Once the\nMVP is established, a startup can work on tuning the engine. This will involve measurement and learning and must include actionable metrics that can demonstrate cause and effect question. The startup will also utilize an investigative development method called the \"Five Whys\"-asking simple questions to study and solve problems along the way.",
+        "SOURCE: lean-startup-method-analysis.md\namounts of initial project funding and expensive product launches and financial failures.[2][3] While the events leading up to the launch can make or break a new business, it is important to start with the end in mind, which means thinking about the direction in which you want your business to grow and how to put all the right pieces in place to make\nthis possible.[4] Similar to the precepts of lean manufacturing and lean software development, the lean startup methodology seeks to eliminate wasteful practices and increase value-producing practices during the earliest phases of a company so that the company can have a better chance of success without requiring large amounts of outside funding,",
+        "SOURCE: lean-startup-method-analysis.md\nto shorten product development cycles and rapidly discover if a proposed business model is viable; this is achieved by adopting a combination of business-hypothesis-driven experimentation, iterative product releases, and validated learning. Lean startup emphasizes customer feedback over intuition and flexibility over planning. This methodology\nenables recovery from failures more often than traditional ways of product development.[1] Central to the lean startup methodology is the assumption that when startup companies invest their time into iteratively building products or services to meet the needs of early customers, the company can reduce market risks and sidestep the need for large",
+        "SOURCE: lean-startup-method-analysis.md\nRetrieved 4 June 2015. ^ Still, Kaisa (May 2017). \"Accelerating research innovation by adopting the lean startup paradigm\". Technology Innovation Management Review. 7 (5): 32–43. doi:10.22215/timreview/1075. Retrieved 16 October 2018. ^ Schreiber, Danny (5 April 2012). \"U.S. CIO VanRoekel talks startups, savings, new tech in Iowa visit\".\nSilicon Prairie News. Retrieved 4 June 2015. ^ Ries, Eric (30 May 2012). \"Lean government\". startuplessonslearned.com. Retrieved 4 June 2015. ^ McKendrick, Joe (28 October 2011). \"In search of the US government's inner 'startup': federal CIO\". ZDNet. Retrieved 4 June 2015. ^ \"Making a difference: innovation pathway and entrepreneurs in",
+        "SOURCE: lean-startup-method-analysis.md\nelaborate business plans, or a perfect product.[5] Customer feedback during the development of products or services is integral to the lean startup process, and ensures that the company does not invest time designing features or services that consumers do not want.[6] This is done primarily through two processes: using key performance indicators\nand a continuous deployment process.[3][7][8] When a startup company cannot afford to have its entire investment depend upon the success of a single product or service, the lean startup methodology proposes that by releasing a minimum viable product that is not yet finalized, the company can then make use of customer feedback to help further"
+      ],
+      "got_sources": [
+        "lean-startup-method-analysis.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "thinking_01",
+      "question": "Sự khác biệt chính giữa Hệ thống 1 và Hệ thống 2 trong Thinking, Fast and Slow là gì?",
+      "should_answer": true,
+      "expected_sources": [
+        "thinking-fast-slow-cia-review.md",
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "ground_truth": "Hệ thống 1 vận hành tự động, nhanh và ít tốn sức; Hệ thống 2 đòi hỏi sự tập trung, tính toán logic và nỗ lực kiểm soát.",
+      "answer": "Sự khác biệt chính giữa Hệ thống 1 và Hệ thống 2 trong Thinking, Fast and Slow là:\n\n- Hệ thống 1 (System 1) là hệ thống tư duy nhanh, trực giác và cảm xúc, hoạt động tự động và không cần nỗ lực nhận thức. Ví dụ như một kỳ thủ cờ nhanh chóng tìm nước đi mạnh hoặc một cầu thủ bóng bầu dục thay đổi chiến thuật khi nhận ra điểm yếu phòng thủ. Hệ thống này dựa trên kinh nghiệm đã tích lũy để đưa ra các phán đoán phức tạp một cách nhanh chóng [S1][S5].\n\n- Hệ thống 2 (System 2) là hệ thống tư duy chậm, cần sự chú ý và nỗ lực, dành cho các hoạt động tinh thần đòi hỏi sự tính toán phức tạp và lựa chọn có ý thức, có lý trí. Ví dụ như lái xe trên đường lạ trong điều kiện tuyết, tính tích của 17x24, hoặc hiểu một lập luận logic phức tạp. Hệ thống 2 có thể áp dụng các quy tắc và suy nghĩ có chủ đích [S1][S5].\n\nTóm lại, Hệ thống 1 nhanh, trực giác, cảm xúc và tự động, còn Hệ thống 2 chậm, có ý thức, logic và cần nỗ lực [S1][S5].",
+      "contexts": [
+        "SOURCE: thinking-fast-slow-cia-review.md\nretrieve stored experience to make complex\njudgments. A chess master quickly finding\nstrong moves and a quarterback changing a\nplay sent to him from the sideline when he recognizes a defensive weakness are examples of\nacquired System 1 thinking.\nSystem 2, or slow thinking, allocates attention to the mental activities that demand\neffort, such as complex computations and conscious, reasoned choices about what to think\nand what to do. System 2 requires most of us to\n“pay attention” to do things such as drive on an\nunfamiliar road during a snowstorm, calculate\nthe product of 17x24, schedule transportation\nfor a teenage daughter’s activities, or understand a complex logical argument.\nKahneman focuses much of the book on the\ninteractions of System 1 and System 2 and the",
+        "SOURCE: thinking-fast-slow-cia-review.md\nKahneman concedes that intuition has to be\nvalued, but it cannot necessarily be trusted.\nThinking, Fast and Slow provides intelligence officers with an accessible vocabulary to\ndiscuss the processes of human cognition—the\ninteractions between System 1 and System 2\nthinking—which are at the center of their\nwork. It does not, however, provide solutions or\nreliable approaches to bias mitigation. According to Kahneman, the best we can hope to do is\nlearn to recognize situations in which mistakes are likely, and try harder to avoid specific errors when the stakes are high.\nKahneman also spends very little time discussing how biases work in collaborative environments, despite his own very insightful accounts\nof his collaboration with Tversky. We can hope\nhe will explore that in his next work.",
+        "SOURCE: article_04.md\nIn the book's first section, Kahneman describes two different ways the brain forms thoughts:\n\nKahneman describes a number of experiments which purport to examine the differences between these two thought systems and how they arrive at different results even given the same inputs. Terms and concepts include coherence, attention, laziness, association, jumping to conclusions, WYSIATI (What you see is all there is), and how one forms judgments. The System 1 vs. System 2 debate includes the reasoning or lack thereof for human decision making, with big implications for many areas including law and market research.",
+        "SOURCE: thinking-fast-slow-cia-review.md\nAll statements of fact, opinion, or analysis expressed in this article are those of the author. Nothing in this article should be\nconstrued as asserting or implying US government endorsement of its factual statements and interpretations.\n\nStudies in Intelligence Vol. 56, No. 2 (Extracts, June 2012)\n\n1\n\n\fThinking, Fast and Slow",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nBook Review\nDaniel Kahneman\nThinking Fast and Slow\nToronto, Doubleday Canada 2011\nReviewed by Iain Gow\nUniversité de Montréal, Canada\nThis is an important book by the only psychologist ever to win the Nobel Prize for economics.\nIn it Daniel Kahneman, emeritus professor of psychology at Princeton University, summarizes the\nwork that he and the late Amos Tversky did on human cognition and decision-making. It has some\ncautionary implications for students of innovation.\nThe argument is that humans have two systems for problem solving and decision-making.\nSystem 1 (S1) is rapid, intuitive and emotional. This is the system described by Malcolm Gladwell in\nBlink. System 2 (S2) is slow, deliberative and logical. Only S2 can apply rules. S1 is obviously useful,"
+      ],
+      "got_sources": [
+        "thinking-fast-slow-cia-review.md",
+        "article_04.md",
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.6667
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "thinking_02",
+      "question": "Khái niệm WYSIATI được Daniel Kahneman giải thích như thế nào?",
+      "should_answer": true,
+      "expected_sources": [
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "ground_truth": "WYSIATI chỉ xu hướng của não bộ đưa ra kết luận dựa hoàn toàn trên thông tin đang có sẵn mà ít khi xem xét những thông tin chưa thấy.",
+      "answer": "Khái niệm WYSIATI (What You See Is All There Is) được Daniel Kahneman giải thích trong phần đầu của cuốn sách \"Thinking, Fast and Slow\" như một hiện tượng trong cách mà bộ não hình thành suy nghĩ theo hệ thống 1. Theo đó, con người có xu hướng dựa vào những thông tin mà họ nhìn thấy được mà không xem xét đến các thông tin bị thiếu hoặc không có sẵn, dẫn đến việc đưa ra các phán đoán dựa trên dữ liệu hạn chế. WYSIATI là một phần trong các khái niệm như sự liên kết, sự lười biếng, nhảy đến kết luận, và cách hình thành phán đoán của hệ thống 1 trong não bộ, nơi mà những gì ta thấy được là tất cả những gì ta có để đưa ra quyết định [S1].",
+      "contexts": [
+        "SOURCE: article_04.md\nIn the book's first section, Kahneman describes two different ways the brain forms thoughts:\n\nKahneman describes a number of experiments which purport to examine the differences between these two thought systems and how they arrive at different results even given the same inputs. Terms and concepts include coherence, attention, laziness, association, jumping to conclusions, WYSIATI (What you see is all there is), and how one forms judgments. The System 1 vs. System 2 debate includes the reasoning or lack thereof for human decision making, with big implications for many areas including law and market research.",
+        "SOURCE: article_04.md\nThe second section offers explanations for why humans struggle to think statistically. It begins by documenting a variety of situations in which we either arrive at binary decisions or fail to associate precisely reasonable probabilities with outcomes. Kahneman explains this phenomenon using the theory of\n\n. Kahneman and Tversky originally discussed this topic in their 1974 article titled Judgment Under Uncertainty: Heuristics and Biases.",
+        "SOURCE: article_04.md\nKahneman uses heuristics to assert that System 1 thinking involves associating new information with existing patterns, or thoughts, rather than creating new patterns for each new experience. For example, a child who has only seen shapes with straight edges might perceive an octagon when first viewing a circle. As a legal metaphor, a judge limited to heuristic thinking would only be able to think of similar histor",
+        "SOURCE: thinking-fast-slow-cia-review.md\n# Thinking, Fast and Slow\n\n**Author:** Daniel Kahneman\n**Category:** psychology\n**Source:** https://www.cia.gov/resources/csi/static/Thinking-Fast-and-Slow.pdf\n**Type:** public_pdf\n\n---\n\nIntelligence in Public Literature\n\nThinking, Fast and Slow\nDaniel Kahneman, (New York: Farrar, Straus and Giroux, 2011), 418 pp.",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nBook Review\nDaniel Kahneman\nThinking Fast and Slow\nToronto, Doubleday Canada 2011\nReviewed by Iain Gow\nUniversité de Montréal, Canada\nThis is an important book by the only psychologist ever to win the Nobel Prize for economics.\nIn it Daniel Kahneman, emeritus professor of psychology at Princeton University, summarizes the\nwork that he and the late Amos Tversky did on human cognition and decision-making. It has some\ncautionary implications for students of innovation.\nThe argument is that humans have two systems for problem solving and decision-making.\nSystem 1 (S1) is rapid, intuitive and emotional. This is the system described by Malcolm Gladwell in\nBlink. System 2 (S2) is slow, deliberative and logical. Only S2 can apply rules. S1 is obviously useful,"
+      ],
+      "got_sources": [
+        "article_04.md",
+        "thinking-fast-slow-cia-review.md",
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.3333
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "thinking_03",
+      "question": "Vì sao bài đánh giá trên tài liệu CIA coi Thinking, Fast and Slow là cuốn sách đáng đọc cho cán bộ phân tích?",
+      "should_answer": true,
+      "expected_sources": [
+        "thinking-fast-slow-cia-review.md"
+      ],
+      "ground_truth": "Vì cuốn sách hệ thống hóa cơ sở thực nghiệm về các bẫy tư duy và thiên kiến nhận thức mà nhà phân tích thường gặp trong thực tế.",
+      "answer": "Bài đánh giá trên tài liệu CIA coi Thinking, Fast and Slow là cuốn sách đáng đọc cho cán bộ phân tích vì những lý do sau:\n\n- Cuốn sách là một tổng kết tinh tế của cả đời nghiên cứu của Daniel Kahneman và Amos Tversky, những người đã thay đổi cách các nhà tâm lý học suy nghĩ về tư duy. Kahneman cũng là người đoạt giải Nobel Kinh tế năm 2002 cho công trình của ông với Tversky về thuyết triển vọng, và trong sách ông cũng nêu bật các công trình xuất sắc của nhiều nhà nghiên cứu khác [S5].\n\n- Cuốn sách không giới thiệu vật liệu cách mạng mới, nhưng là một kiệt tác vì cách Kahneman kết hợp các nghiên cứu hiện có lại với nhau [S1].\n\n- Các cán bộ tình báo có kinh nghiệm tại CIA, một cơ quan có nhiệm vụ \"tình báo con người\" cốt lõi, đã qua kinh nghiệm và thực hành để hiểu và khai thác các quá trình nhận thức của con người mà Kahneman viết đến. Những cán bộ này sẽ có nhiều khoảnh khắc nhận ra trong khi đọc cuốn sách, vì nó cung cấp một nền tảng thực nghiệm cho nhiều hiểu biết quý giá mà họ đã tích lũy được [S1].\n\n- Cuốn sách cung cấp một khung nhận thức rất hữu ích để các chuyên gia và cán bộ mới, bất kể thuộc cơ quan tình báo nào, có thể dựa vào đó để gắn kết với kinh nghiệm của họ [S1].\n\nTóm lại, cuốn sách được đánh giá là \"must read\" (đáng đọc) cho cán bộ phân tích tình báo vì nó cung cấp một khung nhận thức khoa học và thực nghiệm sâu sắc về quá trình tư duy và nhận thức con người, giúp họ hiểu và áp dụng trong công việc phân tích tình báo [S5][S1].",
+      "contexts": [
+        "SOURCE: thinking-fast-slow-cia-review.md\nThinking, Fast and Slow introduces no revolutionary new material, but it is a masterpiece\nbecause of the way Kahneman weaves existing\nresearch together.\nExpert intelligence officers at CIA, an\nagency with the “human intelligence” mission\nat its core, have come through experience and\npractice to understand and exploit the human\ncognitive processes of which Kahneman writes.\nThese expert officers will have many moments\nof recognition in reading this book, which gives\nan empirical underpinning for much of their\nhard-won wisdom.\nKahneman also may challenge some strongly\nheld beliefs. Thinking, Fast and Slow gives\nexperts and newer officers, regardless of the\nintelligence agency in which they serve, an\nenormously useful cognitive framework upon\nwhich to hang their experiences.",
+        "SOURCE: thinking-fast-slow-cia-review.md\n# Thinking, Fast and Slow\n\n**Author:** Daniel Kahneman\n**Category:** psychology\n**Source:** https://www.cia.gov/resources/csi/static/Thinking-Fast-and-Slow.pdf\n**Type:** public_pdf\n\n---\n\nIntelligence in Public Literature\n\nThinking, Fast and Slow\nDaniel Kahneman, (New York: Farrar, Straus and Giroux, 2011), 418 pp.",
+        "SOURCE: thinking-fast-slow-cia-review.md\nAll statements of fact, opinion, or analysis expressed in this article are those of the author. Nothing in this article should be\nconstrued as asserting or implying US government endorsement of its factual statements and interpretations.\n\nStudies in Intelligence Vol. 56, No. 2 (Extracts, June 2012)\n\n1\n\n\fThinking, Fast and Slow",
+        "SOURCE: article_04.md\n# Thinking, Fast and Slow - Wikipedia\n\n**Source:** https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow\n**Crawled:** 2026-08-04T10:53:34.831042\n**Book:** Thinking, Fast and Slow\n**Author:** Daniel Kahneman\n**Category:** psychology\n**Type:** public_book_article\n\n---\n\nis a 2011 popular science book by the Israeli-American psychologist\n\n. Its main thesis is a differentiation between two modes of\n\nThe book delineates rational and non-rational motivations or triggers associated with each type of thinking process, and how they complement each other, starting with Kahneman's own research on\n\nto people's tendency to replace a difficult question with one that is easy to answer, the book summarizes several decades of research to suggest that people have too much confidence in human judgment.",
+        "SOURCE: thinking-fast-slow-cia-review.md\nReviewed by Frank J. Babetski\nFew books are “must reads” for intelligence\nofficers. Fewer still are “must reads” that mention Intelligence Community functions or the\nCIA only once, and then only in passing. Daniel Kahneman has written one of these rare\nbooks. Thinking, Fast and Slow represents an\nelegant summation of a lifetime of research in\nwhich Kahneman, Princeton University Professor Emeritus of Psychology and Public Affairs,\nand his late collaborator, Amos Tversky,\nchanged the way psychologists think about\nthinking. Kahneman, who won the 2002 Nobel\nPrize in Economics for his work with Tversky\non prospect theory, also highlights the best\nwork of other researchers throughout the book.\nThinking, Fast and Slow introduces no revolutionary new material, but it is a masterpiece"
+      ],
+      "got_sources": [
+        "thinking-fast-slow-cia-review.md",
+        "article_04.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.5
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "thinking_04",
+      "question": "Nghiên cứu của Kahneman và Tversky ảnh hưởng thế nào đến kinh tế học?",
+      "should_answer": true,
+      "expected_sources": [
+        "thinking-fast-slow-cia-review.md"
+      ],
+      "ground_truth": "Công trình của họ về lý thuyết triển vọng đã thách thức giả định con người luôn hành động lý trí và mang lại cho Kahneman giải Nobel Kinh tế 2002.",
+      "answer": "Nghiên cứu của Kahneman và Tversky đã làm thay đổi cách các nhà kinh tế học và nhà tâm lý học suy nghĩ về quá trình ra quyết định và tư duy của con người. Họ đã phát triển lý thuyết về cách con người xử lý thông tin và ra quyết định dưới sự không chắc chắn, đặc biệt là qua công trình về \"prospect theory\" (lý thuyết triển vọng), giúp giải thích các hành vi kinh tế mà lý thuyết kinh tế truyền thống không thể lý giải được. Daniel Kahneman đã nhận giải Nobel Kinh tế năm 2002 cho công trình này, thể hiện tầm ảnh hưởng lớn của nghiên cứu đối với lĩnh vực kinh tế học [S5]. Ngoài ra, trong cuốn sách \"Thinking, Fast and Slow\", Kahneman và Tversky trình bày hai hệ thống tư duy (Hệ thống 1 nhanh, trực giác và Hệ thống 2 chậm, suy luận) giúp hiểu rõ hơn về cách con người ra quyết định trong kinh tế và các lĩnh vực khác [S2, S4].",
+      "contexts": [
+        "SOURCE: article_04.md\nThe second section offers explanations for why humans struggle to think statistically. It begins by documenting a variety of situations in which we either arrive at binary decisions or fail to associate precisely reasonable probabilities with outcomes. Kahneman explains this phenomenon using the theory of\n\n. Kahneman and Tversky originally discussed this topic in their 1974 article titled Judgment Under Uncertainty: Heuristics and Biases.",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nBook Review\nDaniel Kahneman\nThinking Fast and Slow\nToronto, Doubleday Canada 2011\nReviewed by Iain Gow\nUniversité de Montréal, Canada\nThis is an important book by the only psychologist ever to win the Nobel Prize for economics.\nIn it Daniel Kahneman, emeritus professor of psychology at Princeton University, summarizes the\nwork that he and the late Amos Tversky did on human cognition and decision-making. It has some\ncautionary implications for students of innovation.\nThe argument is that humans have two systems for problem solving and decision-making.\nSystem 1 (S1) is rapid, intuitive and emotional. This is the system described by Malcolm Gladwell in\nBlink. System 2 (S2) is slow, deliberative and logical. Only S2 can apply rules. S1 is obviously useful,",
+        "SOURCE: thinking-fast-slow-innovation-review.md\ninsistence on replication and methodological critique. Is Kahneman’s charge more applicable in the\ncase of social sciences? This would seem to be true, when the objective is to predict an outcome. Here,\nKahneman supports the ideas of N. N. Taleb in The Black Swan, concerning our preference for\nnarrative over probabilities. I don’t think we have to throw out our great classics like Weber,\nEisenstadt, Simon, Friedrich, Gabriel Almond, Michel Crozier or Henry Mintzberg. They were\nidentifying the deep tendencies of social systems and not concerned with predictions in specific\n2",
+        "SOURCE: article_04.md\nIn the book's first section, Kahneman describes two different ways the brain forms thoughts:\n\nKahneman describes a number of experiments which purport to examine the differences between these two thought systems and how they arrive at different results even given the same inputs. Terms and concepts include coherence, attention, laziness, association, jumping to conclusions, WYSIATI (What you see is all there is), and how one forms judgments. The System 1 vs. System 2 debate includes the reasoning or lack thereof for human decision making, with big implications for many areas including law and market research.",
+        "SOURCE: thinking-fast-slow-cia-review.md\nReviewed by Frank J. Babetski\nFew books are “must reads” for intelligence\nofficers. Fewer still are “must reads” that mention Intelligence Community functions or the\nCIA only once, and then only in passing. Daniel Kahneman has written one of these rare\nbooks. Thinking, Fast and Slow represents an\nelegant summation of a lifetime of research in\nwhich Kahneman, Princeton University Professor Emeritus of Psychology and Public Affairs,\nand his late collaborator, Amos Tversky,\nchanged the way psychologists think about\nthinking. Kahneman, who won the 2002 Nobel\nPrize in Economics for his work with Tversky\non prospect theory, also highlights the best\nwork of other researchers throughout the book.\nThinking, Fast and Slow introduces no revolutionary new material, but it is a masterpiece"
+      ],
+      "got_sources": [
+        "article_04.md",
+        "thinking-fast-slow-innovation-review.md",
+        "thinking-fast-slow-cia-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.3333
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "thinking_05",
+      "question": "Trực giác của chuyên gia có thể tin cậy trong điều kiện nào theo Kahneman?",
+      "should_answer": true,
+      "expected_sources": [
+        "thinking-fast-slow-cia-review.md"
+      ],
+      "ground_truth": "Trực giác đáng tin hơn khi môi trường có các tín hiệu hợp lệ, lặp lại và người thực hành nhận được phản hồi kịp thời để học các dấu hiệu đó qua kinh nghiệm.",
+      "answer": "Theo Kahneman, trực giác của chuyên gia có thể tin cậy khi môi trường đủ đều đặn để có thể dự đoán được và chuyên gia đã có kinh nghiệm lâu dài trong môi trường đó. Trong trường hợp này, trực giác của chuyên gia thực chất là sự nhận diện dựa trên kinh nghiệm, như ví dụ về người lính cứu hỏa đã kêu gọi đồng đội rời khỏi tòa nhà đang cháy ngay trước khi sàn nhà sập mà không biết rõ lý do tại sao mình cảm nhận được nguy hiểm đó [S5].",
+      "contexts": [
+        "SOURCE: thinking-fast-slow-cia-review.md\nIntelligence analysts should pay particularly close attention to Kahneman’s chapters\non the nested problems of prediction, intuition,\nand expertise. a Forecasting and prediction are\ncore mission elements for analysts. Kahneman\nbreaks them down into two main varieties. The\nfirst, such as those engineers make, rely on\n\nKahneman, despite his stated preference for\nstatistics and algorithms, cannot dismiss out of\nhand the value of intuitive prediction borne of\ntrue expertise. His “Expert Intuition: When\nCan We Trust It?” chapter centers on what he\ncalls his adversarial collaboration with Gary\nKlein, a leading proponent of Naturalistic Deci-",
+        "SOURCE: thinking-fast-slow-cia-review.md\n# Thinking, Fast and Slow\n\n**Author:** Daniel Kahneman\n**Category:** psychology\n**Source:** https://www.cia.gov/resources/csi/static/Thinking-Fast-and-Slow.pdf\n**Type:** public_pdf\n\n---\n\nIntelligence in Public Literature\n\nThinking, Fast and Slow\nDaniel Kahneman, (New York: Farrar, Straus and Giroux, 2011), 418 pp.",
+        "SOURCE: thinking-fast-slow-innovation-review.md\n# Thinking, Fast and Slow\n\n**Author:** Daniel Kahneman\n**Category:** psychology\n**Source:** https://innovation.cc/wp-content/uploads/2012_17_3_10_gow_bk_rev_kahneman.pdf\n**Type:** public_pdf\n\n---\n\nThe Innovation Journal: The Public Sector Innovation Journal, Volume 17(3), 2012, article 10.",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nhas shaped S1 successfully. Yet expertise can also generate intuitions that are false. Kahneman writes\nof “theory-induced blindness”, of the “illusion of control”, and the experts’ “unshakeable faith in\nthemselves”. Undue optimism leads them often to persist with costly results. He considers performance\nbonuses in business and finance to be rewards for luck.\nKahneman finds that protocols or algorithms do consistently better than expert judgment in\nmaking predictions or obtaining desired results. While the mind prefers causal explanations and\nprofiles, statistics and base rates work better. On picking officer candidates for the Israeli military, he\nfound that experts could do quite well if they rated recruits on a half dozen characteristics, whereas a",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nthe names were omitted.\nSo Kahneman is skeptical of experts. They overrate the value of their knowledge and, even\nwhen faced with overwhelming evidence to the contrary, they persist in what they do. Practitioners\nvalue experience over statistics; there is a “deep resistance to demystification of expertise” (288).\nKahneman looks at two cases discussed by Gladwell and concludes that intuition in an expert is\nrecognition (as Herbert Simon said). If an environment is regular enough to be predictable and the\nexpert has had prolonged experience, then, as in the case of the fireman who called his men out of a\nburning building just before the floor collapsed without knowing why he sensed the danger, expertise"
+      ],
+      "got_sources": [
+        "thinking-fast-slow-cia-review.md",
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.5
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "innovators_01",
+      "question": "Cuốn The Innovators tập trung trình bày chủ đề gì?",
+      "should_answer": true,
+      "expected_sources": [
+        "article_05.md"
+      ],
+      "ground_truth": "Cuốn sách tổng quan lịch sử cách các nhà đổi mới tạo ra những đột phá quan trọng trong công nghệ máy tính và các ứng dụng của nó.",
+      "answer": "Cuốn The Innovators tập trung trình bày lịch sử và những đóng góp của một nhóm các hacker, thiên tài và những người đam mê công nghệ đã tạo ra cuộc cách mạng kỹ thuật số. Cuốn sách tóm tắt những đóng góp quan trọng của nhiều nhà sáng tạo trong lĩnh vực công nghệ máy tính và các ứng dụng của nó, từ những bước đột phá đầu tiên trên thế giới [S1].",
+      "contexts": [
+        "SOURCE: article_05.md\n# The Innovators (book) - Wikipedia\n\n**Source:** https://en.wikipedia.org/wiki/The_Innovators_(book)\n**Crawled:** 2026-08-04T10:53:35.509500\n**Book:** The Innovators\n**Author:** Walter Isaacson\n**Category:** technology\n**Type:** public_book_article\n\n---\n\nThe Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution\n\nis an overview of the history of\n\nThe book summarizes the contributions of several innovators who have made pivotal breakthroughs in computer technology and its applications—from the world's first\n\npublished a revised electronic edition of",
+        "SOURCE: article_05.md\nIn the 2019 three-part Netflix docuseries\n\nInside Bill's Brain: Decoding Bill Gates\n\n, this conflict is briefly mentioned by who appears to be Gates's secretary as she goes over the books that Gates was reading at the time of recording.\n\nIsaacson explains in his book that, as he was writing about\n\nand how it worked, he decided that his book should be collectively examined in a Wikipedia manner. Hence he uploaded a draft on\n\n, allowing readers to make dozens of comments to correct and improve the book\n\nInnovators discussed in the book by chapter:",
+        "SOURCE: lean-startup-method-analysis.md\nworking with customers\".[51][52] In May 2012, Ries and The White House announced the Presidential Innovation Fellows program, which brings together top citizen innovators and government officials to work on high-level projects and deliver measurable results in six months.[53] Steve Blank, working with retired United States Army colonel Pete\nNewell and former United States Army Special Forces colonel Joe Felter, adapted lean startup principles for U.S. government innovation under the moniker \"Hacking for Defense\", a program in which university students solve problems that the Department of Defense, the United States Armed Forces, and the United States Intelligence Community",
+        "SOURCE: lean-startup-method-analysis.md\nevery startup is a grand experiment that attempts to answer a question. The question is not \"Can this product be built?\" Instead, the questions are \"Should this product be built?\" and \"Can we build a sustainable business around this set of products and services?\" This experiment is more than just theoretical inquiry; it is a first product. If it is\nsuccessful, it allows a manager to get started with his or her campaign: enlisting early adopters, adding employees to each further experiment or iteration, and eventually starting to build a product. By the time that product is ready to be distributed widely, it will already have established customers. It will have solved real problems and offer detailed",
+        "SOURCE: thinking-fast-slow-innovation-review.md\ncircumstances. Something like Robert Michels’ Iron Law of Oligarchy seems to fit this argument.\nThere may be exceptions but, over time and in a wide variety of contexts, this proposition has been\nvalidated as a general proposition.\nWhat does all this have to do with innovation? First, creative thinking clearly lies in S1, but it\ncan be primed, as both scientists and innovation-seeking organizations like the Bell Laboratories have\nshown. Second, this approach supports the separation of the brainstorming and the analytical stages,\nbringing in S2 after the stage of creative thinking to test feasibility. Third, it is important to listen to the\nstakeholders in order to have a wide variety of points of view. Moreover fourth, Kahneman has lots of"
+      ],
+      "got_sources": [
+        "article_05.md",
+        "lean-startup-method-analysis.md",
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.3333
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "out_01",
+      "question": "Deep Work đề xuất bốn quy tắc làm việc sâu nào?",
+      "should_answer": false,
+      "expected_sources": [],
+      "ground_truth": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "answer": "Thông tin trong ngữ cảnh được cung cấp không đề cập đến bốn quy tắc làm việc sâu (Deep Work). Vì vậy, tôi không thể trả lời câu hỏi này dựa trên các tài liệu đã cho.\n\nXin lỗi vì không thể giúp bạn với câu hỏi này.",
+      "contexts": [
+        "SOURCE: article_02.md\n, the things you believe, and the personality that you portray.\n\nBut what if you want to improve? What if you want to form new habits? How would you go about it?\n\nTurns out, there’s a helpful framework that can make it easier to stick to new habits so that you can improve your health, your work, and your life in general.\n\nLet’s talk about that framework now…\n\nThe process of building a habit can be divided into four simple steps: cue, craving, response, and reward.\n\nBreaking it down into these fundamental parts can help us understand what a habit is, how it works, and how to improve it.\n\nThis four-step pattern is the backbone of every habit, and your brain runs through these steps in the same order each time.",
+        "SOURCE: atomic-habits-business-appendix.md\n# Atomic Habits\n\n**Author:** James Clear\n**Category:** personal_development\n**Source:** https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf\n**Type:** public_pdf\n\n---\n\n1\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nHow to Apply These\nIdeas to Business\n\nI\n\nn Atomic Habits, I explain a four-step loop that underlies all of human behavior: cue,\ncraving, response, and reward. When repeated, this neurological feedback loop leads\n\nto the formation of new habits.\nAs a reminder, the Habit Loop can be represented as follows:\n\n\f2\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nFrom these steps, I have developed the Four Laws of Behavior Change:\n1.\n\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3.",
+        "SOURCE: atomic-habits-business-appendix.md\nTHE 4TH LAW\nThe 4th Law of Behavior Change is to make it satisfying. The final stage of the habit\nloop is the reward. If there is a reward associated with a behavior—that is, it feels good\nand has a satisfying ending—then we have a reason to repeat it in the future.\nIn Chapter 15 of Atomic Habits, I say, “The first three laws of behavior change—make\nit obvious, make it attractive, and make it easy—increase the odds that a behavior will be\nperformed this time. The fourth law of behavior change—make it satisfying—increases\nthe odds that a behavior will be repeated next time. It completes the habit loop.”\nIn business, we could say that making your product or service satisfying increases the\nodds that a customer will return next time. It is the fourth stage that closes the loop and",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nthe names were omitted.\nSo Kahneman is skeptical of experts. They overrate the value of their knowledge and, even\nwhen faced with overwhelming evidence to the contrary, they persist in what they do. Practitioners\nvalue experience over statistics; there is a “deep resistance to demystification of expertise” (288).\nKahneman looks at two cases discussed by Gladwell and concludes that intuition in an expert is\nrecognition (as Herbert Simon said). If an environment is regular enough to be predictable and the\nexpert has had prolonged experience, then, as in the case of the fireman who called his men out of a\nburning building just before the floor collapsed without knowing why he sensed the danger, expertise",
+        "SOURCE: thinking-fast-slow-innovation-review.md\ninsistence on replication and methodological critique. Is Kahneman’s charge more applicable in the\ncase of social sciences? This would seem to be true, when the objective is to predict an outcome. Here,\nKahneman supports the ideas of N. N. Taleb in The Black Swan, concerning our preference for\nnarrative over probabilities. I don’t think we have to throw out our great classics like Weber,\nEisenstadt, Simon, Friedrich, Gabriel Almond, Michel Crozier or Henry Mintzberg. They were\nidentifying the deep tendencies of social systems and not concerned with predictions in specific\n2"
+      ],
+      "got_sources": [
+        "article_02.md",
+        "atomic-habits-business-appendix.md",
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 0.0,
+        "answer_relevancy_proxy": 0.0,
+        "context_recall_proxy": 0.0,
+        "context_precision_proxy": 0.0
+      }
+    },
+    {
+      "config": "Config A (Hybrid)",
+      "id": "out_02",
+      "question": "Giá Bitcoin hôm nay là bao nhiêu?",
+      "should_answer": false,
+      "expected_sources": [],
+      "ground_truth": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "answer": "Xin lỗi, trong phần thông tin được cung cấp không có dữ liệu về giá Bitcoin hôm nay.",
+      "contexts": [
+        "SOURCE: atomic-habits-business-appendix.md\nHow consistent is my solution with the history of the real Coca-Cola company? Well,\nas late as 1896, twelve years after the fictional Glotz was to start vigorously with $2 million, the real Coca-Cola company had a net worth under $150 thousand and earnings of\nabout zero. And thereafter the real Coca-Cola company did lose half its trademark and\ndid grant perpetual bottling franchises at fixed syrup prices. And some of the bottlers\nwere not very effective and couldn’t easily be changed. And the real Coca-Cola company, with this system, did lose much pricing control that would have improved results,\nhad it been retained. Yet, even so, the real Coca-Cola company followed so much of the\nplan given to Glotz that it is now worth about $125 billion and will have to increase its",
+        "SOURCE: atomic-habits-business-appendix.md\ncan then net four cents per serving, we will earn $117 billion. This will be enough, if our\nbusiness is still growing at a good rate, to make it easily worth two trillion dollars.\nA big question, of course, is whether four cents per serving is a reasonable profit\ntarget for 2034. And the answer is yes, if we can create a beverage with strong universal\nappeal. One hundred fifty years is a long time. The dollar, like the roman drachma, will\nalmost surely suffer monetary depreciation. Concurrently, real purchasing power of the\naverage beverage consumer in the world will go way up. His proclivity to inexpensively\nimprove his experience while ingesting water will go up considerably faster. Meanwhile,",
+        "SOURCE: atomic-habits-business-appendix.md\nplan given to Glotz that it is now worth about $125 billion and will have to increase its\nvalue at only 8 percent per year until 2034 to reach a value of $2 trillion. And it can hit\nan annual physical volume target of 2.92 trillion servings if servings grow until 2034 at\nonly 6 percent per year, a result consistent with much past experience and leaving plenty\nof plain-water ingestion for Coca-Cola to replace after 2034. So I would guess that the\nfictional Glotz, starting earlier and stronger and avoiding the worst errors, would have\neasily hit his $2 trillion target. And he would have done it well before 2034.",
+        "SOURCE: thinking-fast-slow-innovation-review.md\ncircumstances. Something like Robert Michels’ Iron Law of Oligarchy seems to fit this argument.\nThere may be exceptions but, over time and in a wide variety of contexts, this proposition has been\nvalidated as a general proposition.\nWhat does all this have to do with innovation? First, creative thinking clearly lies in S1, but it\ncan be primed, as both scientists and innovation-seeking organizations like the Bell Laboratories have\nshown. Second, this approach supports the separation of the brainstorming and the analytical stages,\nbringing in S2 after the stage of creative thinking to test feasibility. Third, it is important to listen to the\nstakeholders in order to have a wide variety of points of view. Moreover fourth, Kahneman has lots of",
+        "SOURCE: atomic-habits-business-appendix.md\nCreating a satisfying experience requires a balance between the 2nd Law (make it attractive) and the 4th Law (make it satisfying) because your level of satisfaction is directly\nlinked to your level of expectation and desire. The danger of making too big a promise\nis that you’ll get people to buy once, but they won’t have a reason to buy again. Think:\nmassive discounts that aren’t followed with great experiences or the sales team making a\npromise that the product team can’t deliver on. Huge expectations might trigger a single\nsale, but you’ll never create a buying habit.\nOne way to employ the 4th Law is to drop in little bits of satisfaction throughout the\nexperience. For example, car manufacturers have begun to add fake engine noise to their"
+      ],
+      "got_sources": [
+        "atomic-habits-business-appendix.md",
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 0.0,
+        "answer_relevancy_proxy": 0.0,
+        "context_recall_proxy": 0.0,
+        "context_precision_proxy": 0.0
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "atomic_01",
+      "question": "Bốn quy luật thay đổi hành vi trong Atomic Habits là gì?",
+      "should_answer": true,
+      "expected_sources": [
+        "atomic-habits-business-appendix.md",
+        "article_01.md"
+      ],
+      "ground_truth": "Bốn quy luật là: làm cho nó hiển nhiên, hấp dẫn, dễ dàng và thỏa mãn.",
+      "answer": "Bốn quy luật thay đổi hành vi trong Atomic Habits là:\n\n1. Make it obvious (Làm cho nó rõ ràng).\n2. Make it attractive (Làm cho nó hấp dẫn).\n3. Make it easy (Làm cho nó dễ dàng).\n4. Make it satisfying (Làm cho nó thỏa mãn).\n\nQuy luật thứ tư là giai đoạn phần thưởng trong vòng lặp thói quen, giúp tăng khả năng hành vi được lặp lại trong tương lai. Bốn quy luật này tạo thành vòng lặp thói quen hoàn chỉnh và được áp dụng trong cả kinh doanh để giữ chân khách hàng [S1][S5].",
+      "contexts": [
+        "SOURCE: atomic-habits-business-appendix.md\n# Atomic Habits\n\n**Author:** James Clear\n**Category:** personal_development\n**Source:** https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf\n**Type:** public_pdf\n\n---\n\n1\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nHow to Apply These\nIdeas to Business\n\nI\n\nn Atomic Habits, I explain a four-step loop that underlies all of human behavior: cue,\ncraving, response, and reward. When repeated, this neurological feedback loop leads\n\nto the formation of new habits.\nAs a reminder, the Habit Loop can be represented as follows:\n\n\f2\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nFrom these steps, I have developed the Four Laws of Behavior Change:\n1.\n\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3.",
+        "SOURCE: article_01.md\nThis section of the Atomic Habits summary presents key points from three of the core themes of the book.\n\nLesson 1: Small habits make a big difference\n\nIt is so easy to overestimate the importance of one defining moment and underestimate the value of making small improvements on a daily basis.",
+        "SOURCE: article_01.md\nLesson 2: Forget about setting goals. Focus on your system instead.\n\nGoals are about the results you want to achieve.\n\nare about the processes that lead to those results.\n\nIf you’re having trouble changing your habits, the problem isn’t you. The problem is your system. Bad habits repeat themselves again and again not because you don’t want to change, but because you have the wrong system for change.\n\nYou do not rise to the level of your goals. You fall to the level of your systems.\n\nAtomic Habits presents a proven system for building good habits and breaking bad ones.\n\nLesson 3: Build identity-based habits",
+        "SOURCE: article_01.md\n# Atomic Habits Summary by James Clear\n\n**Source:** https://jamesclear.com/atomic-habits-summary\n**Crawled:** 2026-08-04T10:53:28.304672\n**Book:** Atomic Habits\n**Author:** James Clear\n**Category:** personal_development\n**Type:** public_book_article\n\n---\n\nby James Clear is a comprehensive, practical guide on how to change your habits and get 1% better every day. Using a framework called the Four Laws of Behavior Change, Atomic Habits teaches readers a simple set of rules for creating good habits and breaking bad ones. Read the full summary to glean 3 key lessons from Atomic Habits, learn how to build a habit in 4 simple steps, and get a handy reference guide for the strategies recommended throughout the book.",
+        "SOURCE: atomic-habits-business-appendix.md\nTHE 4TH LAW\nThe 4th Law of Behavior Change is to make it satisfying. The final stage of the habit\nloop is the reward. If there is a reward associated with a behavior—that is, it feels good\nand has a satisfying ending—then we have a reason to repeat it in the future.\nIn Chapter 15 of Atomic Habits, I say, “The first three laws of behavior change—make\nit obvious, make it attractive, and make it easy—increase the odds that a behavior will be\nperformed this time. The fourth law of behavior change—make it satisfying—increases\nthe odds that a behavior will be repeated next time. It completes the habit loop.”\nIn business, we could say that making your product or service satisfying increases the\nodds that a customer will return next time. It is the fourth stage that closes the loop and"
+      ],
+      "got_sources": [
+        "atomic-habits-business-appendix.md",
+        "article_01.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "atomic_02",
+      "question": "Vòng lặp thói quen gồm bốn bước nào?",
+      "should_answer": true,
+      "expected_sources": [
+        "article_02.md",
+        "atomic-habits-business-appendix.md"
+      ],
+      "ground_truth": "Vòng lặp thói quen gồm tín hiệu, khao khát, phản hồi và phần thưởng.",
+      "answer": "Vòng lặp thói quen gồm bốn bước là: cue (gợi ý), craving (khao khát), response (phản ứng), và reward (phần thưởng) [S1][S2].",
+      "contexts": [
+        "SOURCE: article_02.md\n, the things you believe, and the personality that you portray.\n\nBut what if you want to improve? What if you want to form new habits? How would you go about it?\n\nTurns out, there’s a helpful framework that can make it easier to stick to new habits so that you can improve your health, your work, and your life in general.\n\nLet’s talk about that framework now…\n\nThe process of building a habit can be divided into four simple steps: cue, craving, response, and reward.\n\nBreaking it down into these fundamental parts can help us understand what a habit is, how it works, and how to improve it.\n\nThis four-step pattern is the backbone of every habit, and your brain runs through these steps in the same order each time.",
+        "SOURCE: atomic-habits-business-appendix.md\n# Atomic Habits\n\n**Author:** James Clear\n**Category:** personal_development\n**Source:** https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf\n**Type:** public_pdf\n\n---\n\n1\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nHow to Apply These\nIdeas to Business\n\nI\n\nn Atomic Habits, I explain a four-step loop that underlies all of human behavior: cue,\ncraving, response, and reward. When repeated, this neurological feedback loop leads\n\nto the formation of new habits.\nAs a reminder, the Habit Loop can be represented as follows:\n\n\f2\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nFrom these steps, I have developed the Four Laws of Behavior Change:\n1.\n\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3.",
+        "SOURCE: atomic-habits-business-appendix.md\nodds that a customer will return next time. It is the fourth stage that closes the loop and\nencourages your customers to use your product or service habitually.\nThe speed of the reward is a crucial factor in the 4th Law of Behavior Change. Customers need to feel immediately successful—even if it’s just in some small way—each\ntime they use a product or service. At a minimum, the product should solve the problem\n(i.e. resolve the craving they experienced in Law 2) and, if possible, it should do so with\nsome surprise or delight as well.",
+        "SOURCE: article_01.md\nLesson 3: Build identity-based habits\n\nThe key to building lasting habits is focusing on creating a new identity first. Your current behaviors are simply a reflection of your current identity. What you do now is a mirror image of the type of person you believe that you are (either consciously or subconsciously).\n\nTo change your behavior for good, you need to start believing new things about yourself. You need to build\n\nChanging your beli",
+        "SOURCE: atomic-habits-business-appendix.md\nTHE 4TH LAW\nThe 4th Law of Behavior Change is to make it satisfying. The final stage of the habit\nloop is the reward. If there is a reward associated with a behavior—that is, it feels good\nand has a satisfying ending—then we have a reason to repeat it in the future.\nIn Chapter 15 of Atomic Habits, I say, “The first three laws of behavior change—make\nit obvious, make it attractive, and make it easy—increase the odds that a behavior will be\nperformed this time. The fourth law of behavior change—make it satisfying—increases\nthe odds that a behavior will be repeated next time. It completes the habit loop.”\nIn business, we could say that making your product or service satisfying increases the\nodds that a customer will return next time. It is the fourth stage that closes the loop and"
+      ],
+      "got_sources": [
+        "article_02.md",
+        "atomic-habits-business-appendix.md",
+        "article_01.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.6667
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "atomic_03",
+      "question": "Thói quen dựa trên danh tính được Atomic Habits giải thích như thế nào?",
+      "should_answer": true,
+      "expected_sources": [
+        "article_01.md"
+      ],
+      "ground_truth": "Thay đổi bền vững bắt đầu bằng việc xây dựng danh tính mong muốn; hành vi là bằng chứng phản ánh kiểu người mà ta tin mình là.",
+      "answer": "Thói quen dựa trên danh tính trong Atomic Habits được nhấn mạnh trong bài học 3 của tóm tắt sách, đó là \"Build identity-based habits\" (Xây dựng thói quen dựa trên danh tính) [S2]. Tuy nhiên, trong đoạn trích được cung cấp, chưa có giải thích chi tiết về cách thói quen dựa trên danh tính được định nghĩa hay áp dụng cụ thể như thế nào. \n\nVì vậy, dựa trên thông tin hiện có, tôi không thể cung cấp giải thích chi tiết về thói quen dựa trên danh tính theo Atomic Habits. Nếu bạn cần, tôi có thể giúp tìm thêm thông tin hoặc bạn có thể tham khảo trực tiếp từ nguồn sách hoặc tóm tắt đầy đủ hơn.",
+      "contexts": [
+        "SOURCE: atomic-habits-business-appendix.md\n# Atomic Habits\n\n**Author:** James Clear\n**Category:** personal_development\n**Source:** https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf\n**Type:** public_pdf\n\n---\n\n1\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nHow to Apply These\nIdeas to Business\n\nI\n\nn Atomic Habits, I explain a four-step loop that underlies all of human behavior: cue,\ncraving, response, and reward. When repeated, this neurological feedback loop leads\n\nto the formation of new habits.\nAs a reminder, the Habit Loop can be represented as follows:\n\n\f2\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nFrom these steps, I have developed the Four Laws of Behavior Change:\n1.\n\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3.",
+        "SOURCE: article_01.md\nLesson 2: Forget about setting goals. Focus on your system instead.\n\nGoals are about the results you want to achieve.\n\nare about the processes that lead to those results.\n\nIf you’re having trouble changing your habits, the problem isn’t you. The problem is your system. Bad habits repeat themselves again and again not because you don’t want to change, but because you have the wrong system for change.\n\nYou do not rise to the level of your goals. You fall to the level of your systems.\n\nAtomic Habits presents a proven system for building good habits and breaking bad ones.\n\nLesson 3: Build identity-based habits",
+        "SOURCE: article_01.md\n# Atomic Habits Summary by James Clear\n\n**Source:** https://jamesclear.com/atomic-habits-summary\n**Crawled:** 2026-08-04T10:53:28.304672\n**Book:** Atomic Habits\n**Author:** James Clear\n**Category:** personal_development\n**Type:** public_book_article\n\n---\n\nby James Clear is a comprehensive, practical guide on how to change your habits and get 1% better every day. Using a framework called the Four Laws of Behavior Change, Atomic Habits teaches readers a simple set of rules for creating good habits and breaking bad ones. Read the full summary to glean 3 key lessons from Atomic Habits, learn how to build a habit in 4 simple steps, and get a handy reference guide for the strategies recommended throughout the book.",
+        "SOURCE: atomic-habits-business-appendix.md\nATOMIC HABITS ENGRAVED PENS\nThese laser engraved pens feature popular quotes\nfrom Atomic Habits. These pens won’t build better\nhabits for you, but they will remind you of the core\nprinciples mentioned in Atomic Habits. Each pen is\nrefillable and designed to last a lifetime. There are\n3 different engraving options: grab your favorite\n(or get the bundle pack with all three).\njamesclear.com/pens\n\nUse the code HABITS20 to get 20% off these items at Baronfig.com",
+        "SOURCE: article_01.md\nThis section of the Atomic Habits summary presents key points from three of the core themes of the book.\n\nLesson 1: Small habits make a big difference\n\nIt is so easy to overestimate the importance of one defining moment and underestimate the value of making small improvements on a daily basis."
+      ],
+      "got_sources": [
+        "atomic-habits-business-appendix.md",
+        "article_01.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.5
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "atomic_04",
+      "question": "Vì sao James Clear khuyên tập trung vào hệ thống thay vì chỉ đặt mục tiêu?",
+      "should_answer": true,
+      "expected_sources": [
+        "article_01.md"
+      ],
+      "ground_truth": "Mục tiêu mô tả kết quả mong muốn, còn hệ thống tạo ra tiến trình lặp lại; khi hệ thống sai, thói quen xấu tiếp tục dù ta vẫn muốn thay đổi.",
+      "answer": "James Clear khuyên tập trung vào hệ thống thay vì chỉ đặt mục tiêu vì mục tiêu chỉ liên quan đến kết quả mà bạn muốn đạt được, trong khi hệ thống là các quá trình dẫn đến kết quả đó. Nếu bạn gặp khó khăn trong việc thay đổi thói quen, vấn đề không phải là bạn mà là hệ thống của bạn. Thói quen xấu lặp đi lặp lại không phải vì bạn không muốn thay đổi, mà vì bạn có hệ thống thay đổi sai. Bạn không tiến lên theo mức độ của mục tiêu mà rơi xuống theo mức độ của hệ thống. Do đó, tập trung vào hệ thống sẽ giúp xây dựng thói quen tốt và phá bỏ thói quen xấu hiệu quả hơn [S1].",
+      "contexts": [
+        "SOURCE: article_01.md\nLesson 2: Forget about setting goals. Focus on your system instead.\n\nGoals are about the results you want to achieve.\n\nare about the processes that lead to those results.\n\nIf you’re having trouble changing your habits, the problem isn’t you. The problem is your system. Bad habits repeat themselves again and again not because you don’t want to change, but because you have the wrong system for change.\n\nYou do not rise to the level of your goals. You fall to the level of your systems.\n\nAtomic Habits presents a proven system for building good habits and breaking bad ones.\n\nLesson 3: Build identity-based habits",
+        "SOURCE: thinking-fast-slow-cia-review.md\nwhile at the same time recognizing and mitigating the flaws of their own System 1 and\nSystem 2 interactions. Hostile services and\norganizations try to do the same thing in\nreturn. Operations officers rely on the biases of\nforeign counterintelligence officers, essentially\nadvising assets to avoid exciting any System 2\nthinking in people positioned to do them harm.\nAldrich Ames’s Soviet handlers preferred that\nwe not focus System 2 thought on how he\nbought a Jaguar on a GS-14 paycheck—System 1 found a tale about his wife’s inheritance\ncognitively easy to accept. a",
+        "SOURCE: thinking-fast-slow-cia-review.md\nlearn these regularities through prolonged\npractice. An expert firefighter’s sensing the\nneed to order his men to evacuate a burning\nbuilding just before it collapses or a race\ndriver’s knowing to slow down well before the\nmassive accident comes into view are due to\nhighly valid clues that each expert’s System 1\nhas learned to use, even if System 2 has not\nlearned to name them.\nLearning, in turn, relies on receiving timely\nand unambiguous feedback. Many if not most\nof the issues with which intelligence analysts\nare seized are what Kahneman and Klein\nwould probably call “low-validity” environments, in which the intuitive predictions of\nexperts should not be trusted at face value,",
+        "SOURCE: thinking-fast-slow-cia-review.md\nwell at making accurate models and predictions in familiar environments. System 1 has\ntwo significant weaknesses: it is prone to make\nsystemic errors in specified situations—these\nare “biases”—and it cannot be turned off. System 2 can, with effort, overrule these biases if\nit recognizes them. Unfortunately, System 2 is\ndemonstrably very poor at recognizing one’s\nown biased thinking. Trying to engage System\n2 at all times to prevent System 1 errors is\nimpractical and exhausting.\nIn terms of Kahneman’s construct, a significant part of the missions of intelligence agencies boils down to seizing opportunities\npresented by the flawed interactions of the System 1 and System 2 thinking of foreign actors\nwhile at the same time recognizing and mitigating the flaws of their own System 1 and",
+        "SOURCE: thinking-fast-slow-cia-review.md\nAny intelligence officer making budget decisions should read Kahneman’s thoughts on the\nbiases underlying the sunk-cost fallacy, or the\ndecision to invest additional resources in losing endeavors when better investments are\navailable. People find it difficult to engage System 2 to cut their losses in such situations,\nespecially when System 1 can easily convince\nthem of the loss of prestige that would surely\nfollow. How often does the same officer who\nstarted an expensive major project also decide\nto kill it? You likely did not have to engage System 2 to answer the question."
+      ],
+      "got_sources": [
+        "article_01.md",
+        "thinking-fast-slow-cia-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.5
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "atomic_05",
+      "question": "Những cải thiện nhỏ mỗi ngày có ý nghĩa gì theo Atomic Habits?",
+      "should_answer": true,
+      "expected_sources": [
+        "article_01.md"
+      ],
+      "ground_truth": "Các thay đổi nhỏ tích lũy theo thời gian và có thể tạo ra khác biệt lớn, thay vì phụ thuộc vào một bước đột phá duy nhất.",
+      "answer": "Theo Atomic Habits, những cải thiện nhỏ mỗi ngày có ý nghĩa rất lớn, đặc biệt là về lâu dài. Một cải thiện nhỏ dù không đáng chú ý hoặc không nổi bật, nhưng qua thời gian có thể tạo ra sự khác biệt to lớn. Cụ thể, nếu bạn có thể cải thiện 1% mỗi ngày trong một năm, bạn sẽ trở nên giỏi hơn gấp 37 lần khi kết thúc. Ngược lại, nếu bạn tệ đi 1% mỗi ngày trong một năm, bạn sẽ gần như xuống đến mức không còn gì. Những chiến thắng nhỏ hoặc thất bại nhỏ tích tụ lại thành điều gì đó lớn hơn nhiều. Điều quan trọng không phải là bạn hiện thành công hay thất bại như thế nào, mà là thói quen của bạn có đang đặt bạn trên con đường dẫn đến thành công hay không. Vì vậy, hãy tập trung vào việc cải thiện 1% mỗi ngày [S1][S4].",
+      "contexts": [
+        "SOURCE: article_01.md\nThis section of the Atomic Habits summary presents key points from three of the core themes of the book.\n\nLesson 1: Small habits make a big difference\n\nIt is so easy to overestimate the importance of one defining moment and underestimate the value of making small improvements on a daily basis.",
+        "SOURCE: article_01.md\nLesson 2: Forget about setting goals. Focus on your system instead.\n\nGoals are about the results you want to achieve.\n\nare about the processes that lead to those results.\n\nIf you’re having trouble changing your habits, the problem isn’t you. The problem is your system. Bad habits repeat themselves again and again not because you don’t want to change, but because you have the wrong system for change.\n\nYou do not rise to the level of your goals. You fall to the level of your systems.\n\nAtomic Habits presents a proven system for building good habits and breaking bad ones.\n\nLesson 3: Build identity-based habits",
+        "SOURCE: article_01.md\n# Atomic Habits Summary by James Clear\n\n**Source:** https://jamesclear.com/atomic-habits-summary\n**Crawled:** 2026-08-04T10:53:28.304672\n**Book:** Atomic Habits\n**Author:** James Clear\n**Category:** personal_development\n**Type:** public_book_article\n\n---\n\nby James Clear is a comprehensive, practical guide on how to change your habits and get 1% better every day. Using a framework called the Four Laws of Behavior Change, Atomic Habits teaches readers a simple set of rules for creating good habits and breaking bad ones. Read the full summary to glean 3 key lessons from Atomic Habits, learn how to build a habit in 4 simple steps, and get a handy reference guide for the strategies recommended throughout the book.",
+        "SOURCE: article_01.md\nisn’t particularly notable— sometimes it isn’t even noticeable—but it can be far more meaningful, especially in the long run. The difference a tiny improvement can make over time is astounding. Here’s how the math works out: if you can get 1 percent better each day for one year, you’ll end up thirty-seven times better by the time you’re done. Conversely, if you get 1 percent worse each day for one year, you’ll decline nearly down to zero. What starts as a small win or a minor setback accumulates into something much more.\n\nIt doesn’t matter how successful or unsuccessful you are right now. What matters is whether your habits are putting you on the path toward success.\n\nFocus on getting 1 percent better every day.\n\nLesson 2: Forget about setting goals. Focus on your system instead.",
+        "SOURCE: atomic-habits-business-appendix.md\nexperience. For example, car manufacturers have begun to add fake engine noise to their\ncars and trucks to create a satisfying growl when the owner punches the accelerator.1 Additional examples are covered in Chapter 15 of Atomic Habits like adding flavor to chewing\ngum or toothpaste.\nOf course, this same principle can be applied to help the employees of any company\nbuild better habits. Behaviors can be reinforced by offering small bits of praise and encouragement throughout the work day.\nOne founder I interviewed spoke of a simple method his company was using to make\nwork more satisfying, “Everyone gets a Post-It Note in the form of a hand,” he said. “It’s\ncalled a ‘five.’ And whenever someone does something above and beyond, it goes on the"
+      ],
+      "got_sources": [
+        "article_01.md",
+        "atomic-habits-business-appendix.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.5
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "atomic_06",
+      "question": "Quy luật 'Make it easy' được áp dụng vào sản phẩm kinh doanh ra sao?",
+      "should_answer": true,
+      "expected_sources": [
+        "atomic-habits-business-appendix.md"
+      ],
+      "ground_truth": "Doanh nghiệp cần lập bản đồ chuỗi hành vi của khách hàng và giảm ma sát ở từng bước để hành vi mua hoặc sử dụng sản phẩm trở nên dễ thực hiện hơn.",
+      "answer": "Quy luật 'Make it easy' (Làm cho nó dễ dàng) là quy luật thứ 3 trong Bốn Quy luật Thay đổi Hành vi, liên quan đến phản ứng, tức là hành vi hoặc thói quen mà bạn thực hiện. Hành vi có khả năng được thực hiện cao hơn khi chúng dễ dàng, tức là có thể hoàn thành một cách dễ dàng.\n\nTrong bối cảnh kinh doanh, cách hiệu quả nhất để áp dụng quy luật này là lập bản đồ chuỗi các hành vi mà khách hàng phải thực hiện để mua sản phẩm hoặc sử dụng dịch vụ của bạn, sau đó tìm kiếm bất kỳ điểm nào có thể giảm ma sát liên quan đến nhiệm vụ đó. Ví dụ, các dịch vụ gọi xe như Uber hay Lyft khi mới ra mắt đã có thể lập bản đồ các bước khách hàng cần làm để đặt xe và tìm cách làm cho các bước này trở nên đơn giản và thuận tiện hơn [S5].",
+      "contexts": [
+        "SOURCE: atomic-habits-business-appendix.md\nlikely to find it attractive themselves.\nThere is an important caveat here that deals with framing: If people think the behavior your product requires is rare, you should frame those who have it in a positive light\n(achieving status): “60% of millionaires read one book every day. With our new product,\nyou can too.”\nIf people think the behavior your product requires is common, then frame those who\ndon’t do it in a negative light (deviating from the norm): “75% of people in your neighborhood are paying less than you on their energy bill. Click here and learn how to not\nmiss out on these savings.”\nFinally, you can make any product inherently more attractive by employing the 3rd\nand 4th Laws of Behavior Change. Behaviors that are “cheap”—easy to do, low social",
+        "SOURCE: atomic-habits-business-appendix.md\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3.\n\nResponse: Make it easy.\n\n4.\n\nReward: Make it satisfying.\n\nThese four laws can be applied to make any behavior easier (and the inversion of each\nlaw can be applied to make any behavior harder). In business, these same principles can\nbe used to create more effective products and to help employees establish more effective\nhabits.\nIn this appendix, I will explore some examples of how each law might be applied in a\nbusiness context. I offer these only as a starting point. The Four Laws of Behavior Change\nare meant to provide a framework that can be flexible and adapt as your needs and tastes\nchange. I think you’ll find that the applications are nearly endless.",
+        "SOURCE: atomic-habits-business-appendix.md\na clear and compelling way. This is why you’ll occasionally hear marketers and graphic\ndesigners say things like, “The words are the design” or “Copy is a design issue.” Choosing the correct words makes the message attractive and the product “beautiful” in the\ncustomer’s mind.\nIn many cases, personalizing the message can be an effective way to implement the\n2nd Law of Behavior Change because products are often more attractive when they seem\nrelevant to the customer’s life. If you’re a freelance writer, it is more powerful to read a\nsales page with the title, “Exactly How to Double Your Income as a Freelance Writer”\nthan to read, “How to Double Your Income.” It’s the same pitch, but the first one feels like\nit’s made for you.",
+        "SOURCE: atomic-habits-business-appendix.md\nmaking its flavor better and imitation harder to arrange for competing products. And,\nbecause we are going to attach so many expensive psychological effects to our flavor, that\nflavor should be different from any other standard flavor so that we maximize difficulties\nfor competitors and give no accidental same-flavor benefit to any existing product.\nNote: These are all ways of making a product more satisfying, which increases the odds\nthat someone will purchase again and again (4th Law) and ultimately leads to a greater\ndesire for the product (2nd Law).\nWhat else, from the psychology textbook, can help our new business? Well, there\nis that powerful “monkey-see, monkey-do” aspect of human nature that psychologists",
+        "SOURCE: atomic-habits-business-appendix.md\nTHE 3RD LAW\nThe 3rd Law of Behavior Change is to make it easy. This law is associated with the response, which is the actual behavior or habit that you perform. Behaviors are more likely\nto be performed when they are easy—that is, when they can be accomplished with ease.\nFrom a business standpoint, perhaps the most effective way to employ the 3rd Law of\nBehavior Change is to map out the chain of behaviors that a customer must perform to\npurchase your product or use your service, and then search for any possible area where\nyou can reduce the friction associated with the task.\nImagine the first ride-sharing services like Uber or Lyft. When they were launching,\nthey could have mapped out the chain of behaviors a customer had to perform to get"
+      ],
+      "got_sources": [
+        "atomic-habits-business-appendix.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "lean_01",
+      "question": "Validated learning trong phương pháp Lean Startup là gì?",
+      "should_answer": true,
+      "expected_sources": [
+        "lean-startup-method-analysis.md",
+        "article_03.md"
+      ],
+      "ground_truth": "Validated learning là quá trình dùng thử nghiệm và phản hồi thị trường để kiểm chứng mức độ quan tâm của khách hàng và học xem doanh nghiệp có đang tiến tới mô hình bền vững hay không.",
+      "answer": "Validated learning trong phương pháp Lean Startup là một quá trình mà các công ty đánh giá sự quan tâm của người tiêu dùng đối với sản phẩm hoặc dịch vụ thông qua các thí nghiệm và phản hồi thực tế từ khách hàng. Quá trình này giúp các nhà phát triển sản phẩm đo lường sự quan tâm của người tiêu dùng và xác định cách thức sản phẩm cần được cải tiến. Mục tiêu của validated learning là dựa trên dữ liệu thực tế để học hỏi và điều chỉnh sản phẩm, tránh việc sử dụng tài nguyên không cần thiết trong quá trình tạo và phát triển sản phẩm. Đây là một phần trung tâm của phương pháp Lean Startup, giúp rút ngắn chu kỳ phát triển sản phẩm và nhanh chóng xác định liệu mô hình kinh doanh đề xuất có khả thi hay không thông qua các thí nghiệm dựa trên giả thuyết kinh doanh, phát hành sản phẩm lặp đi lặp lại và học hỏi có xác nhận [S1][S4][S5].",
+      "contexts": [
+        "SOURCE: lean-startup-method-analysis.md\nLean startup is the process of developing a product or company based on the expressed desires of the market.The lean startup uses validated learning, which is a process by which companies assess consumer interest. Lean startup methods focus heavily on customer-related information such as customer churn rate, lifetime customer value, and\nproduct popularity. In lean startup practices, experimentation is favored more than adherence to a rigid plan. Lean startup standards will involve the release of a small form or early concept products in order to assess the customer reaction to the product. “Startup success can be engineered by following the process, which means it can be learned,",
+        "SOURCE: lean-startup-method-analysis.md\nå basere beslutninger på antagelser, oppfordrer Lean Startup til å teste hypoteser gjennom kontinuerlige, småskala eksperimenter. Dette betyr å kjøre eksperimenter som gir konkret innsikt i kundeadferd og preferanser. For eksempel kan du A/B-teste to versjoner av en nettside, produkt eller en markedsføringskampanje for å bestemme hvilken som\npresterer bedre, basert på reell innsikt det vil si faktiske data. Iterativ læring Lean Startup legger vekt på en kontinuerlig læringsprosess hvor resultatene fra hvert eksperiment analyseres og brukes til å forbedre produktet. Dette gjør det mulig å justere strategien eller produktet – basert på data, i stedet for å følge en ferdig kravspesifikasjon.",
+        "SOURCE: article_03.md\n\"This book will enable him to help many more entrepreneurs answer the tough questions about their business.\"\n\nco-founder of Facebook and Asana\n\nmakes the case for a new discipline of entrepreneurial management. Identify who is an entrepreneur, define a startup, and articulate a new way for startups to gauge if they are making progress, called validated learning. To achieve that learning, we'll see that startups - in a garage or inside an enterprise - can use scientific experimentation to discover how to build a sustainable business.",
+        "SOURCE: lean-startup-method-analysis.md\nto shorten product development cycles and rapidly discover if a proposed business model is viable; this is achieved by adopting a combination of business-hypothesis-driven experimentation, iterative product releases, and validated learning. Lean startup emphasizes customer feedback over intuition and flexibility over planning. This methodology\nenables recovery from failures more often than traditional ways of product development.[1] Central to the lean startup methodology is the assumption that when startup companies invest their time into iteratively building products or services to meet the needs of early customers, the company can reduce market risks and sidestep the need for large",
+        "SOURCE: lean-startup-method-analysis.md\nLean startup\nA lean startup is a method used to found a new company or introduce a new product on behalf of an existing company. The lean startup method advocates developing products that consumers have already demonstrated they desire so that a market will already exist as soon as the product is launched. As opposed to developing a product and then\nhoping that demand will emerge. By employing lean startup principles, product developers can gauge consumer interest in the product and determine how the product might need to be refined. This process is called validated learning and it can be utilized to avoid the unnecessary use of resources in product creation and development. Through lean"
+      ],
+      "got_sources": [
+        "lean-startup-method-analysis.md",
+        "article_03.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "lean_02",
+      "question": "Mục đích của Minimum Viable Product (MVP) là gì?",
+      "should_answer": true,
+      "expected_sources": [
+        "lean-startup-method-analysis.md",
+        "article_03.md"
+      ],
+      "ground_truth": "MVP là phiên bản sản phẩm tối thiểu để đưa tới khách hàng nhằm thu thập lượng kiến thức đã được xác minh lớn nhất với ít nỗ lực nhất.",
+      "answer": "Mục đích của Minimum Viable Product (MVP) là để kiểm tra các giả thuyết kinh doanh cơ bản (hoặc các giả định nhảy vọt) và giúp các doanh nhân bắt đầu quá trình học hỏi càng nhanh càng tốt. MVP là phiên bản nhỏ nhất có thể hoạt động của sản phẩm được cung cấp cho khách hàng nhằm thu thập phản hồi để xác minh xem ý tưởng có giá trị trên thị trường hay không trước khi đầu tư nhiều nguồn lực. Ví dụ, người sáng lập Zappos đã dùng MVP để kiểm tra giả thuyết rằng khách hàng sẵn sàng mua giày trực tuyến bằng cách đăng ảnh giày từ các cửa hàng địa phương lên mạng và chỉ mua giày sau khi có đơn đặt hàng thành công. Điều này giúp giảm rủi ro và bắt đầu quá trình học hỏi nhanh chóng [S1][S2][S3][S5].",
+      "contexts": [
+        "SOURCE: lean-startup-method-analysis.md\nthe least effort\" (similar to a pilot experiment).[16][17][18] The goal of an MVP is to test fundamental business hypotheses (or leap-of-faith assumptions) and to help entrepreneurs begin the learning process as quickly as possible.[16] As an example, Ries noted that Zappos founder Nick Swinmurn wanted to test the hypothesis that customers were\nready and willing to buy shoes online.[16]: 57–58 Instead of building a website and a large database of footwear, Swinmurn approached local shoe stores, took pictures of their inventory, posted the pictures online, bought the shoes from the stores at full price after he'd made a sale, and then shipped them directly to customers. Swinmurn deduced",
+        "SOURCE: lean-startup-method-analysis.md\noppfordrer Lean Startup å utarbeide en forretningsmodell som raskt testes i markedet. Dette gjøres gjennom reell testing og kontinuerlig tilbakemelding fra kunder for så å igjen justere forretningsmodell, ny test osv. Kjerneprinsipper i Lean Startup Bygg-mål-lær syklusen Denne iterative prosessloopen er selve kjernen i Lean Startup. Start med en\nenkel versjon av produktet, ofte kalt Minimum Viable Product (MVP). MVP er den minste funksjonelle versjonen av produktet som kan leveres til kunder for å samle tilbakemeldinger. Denne tilnærmingen sikrer at du raskt kan validere om idéen din har markedsverdi før du investerer betydelige ressurser. Hypotesedrevet eksperimentering I stedet for",
+        "SOURCE: lean-startup-method-analysis.md\nFordelene med Lean Startup Ut ifra min erfaring med bruk av Lean Startup i flere utviklingsprosjekter vil jeg trekke frem tre fordeler: 1. Redusert risiko Ved å tidlig teste mulige hypoteser i markedet kan du unngå å kaste bort ressurser på produkter som ikke vil lykkes. Lean Startup-metoden anbefaler å starte med en MVP, som er en testbar versjon\nav produktet. Dette gjør det mulig å måle produktets mottakelse i markedet og lære av tilbakemeldinger. Ved å iterere raskt basert på denne læringen, kan du justere produktet for å møte kundenes behov, uten å kaste bort tid og penger på unyttige funksjoner. 2. Rask respons på endringer Den iterative prosessen i Lean Startup gjør det mulig for",
+        "SOURCE: lean-startup-method-analysis.md\n\"What is a minimum viable product, and why do companies need them?\". Forbes. Retrieved 16 October 2018. ^ a b Ries, Eric (30 March 2009). \"Continuous deployment in 5 easy steps\". radar.oreilly.com. Retrieved 4 June 2015. ^ Fitz, Timothy (10 February 2009). \"Continuous deployment at IMVU: doing the impossible fifty times a day\".\ntimothyfitz.wordpress.com. Retrieved 4 June 2015. ^ Ries, Eric (19 May 2009). \"Vanity metrics vs. actionable metrics\". fourhourworkweek.com. Retrieved 4 June 2015. ^ Blank, Steven G.; Dorf, Bob (2012). The startup owner's manual: the step-by-step guide for building a great company. Pescadero, CA: K&S Ranch, Inc. ISBN 9780984999309.",
+        "SOURCE: lean-startup-method-analysis.md\ncompany departments and operations. In an article published in the Harvard Business Review in 2013, Steve Blank described how the lean startup methodology also drew inspiration from the work of people like Ian C. MacMillan and Rita Gunther McGrath who developed a technique called discovery-driven planning, which was an attempt to bring an\nentrepreneurial mindset to planning.[15] In his blog and book The Lean Startup, entrepreneur Eric Ries used specific terms to refer to the core lean startup principles, as described below. A minimum viable product (MVP) is the \"version of a new product which allows a team to collect the maximum amount of validated learning about customers with"
+      ],
+      "got_sources": [
+        "lean-startup-method-analysis.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 0.5,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "lean_03",
+      "question": "Vòng phản hồi Build-Measure-Learn trong Lean Startup hoạt động như thế nào?",
+      "should_answer": true,
+      "expected_sources": [
+        "lean-startup-method-analysis.md",
+        "article_03.md"
+      ],
+      "ground_truth": "Vòng phản hồi bắt đầu bằng việc biến ý tưởng thành MVP, đo lường phản ứng của khách hàng, rồi học hỏi để quyết định giữ nguyên hay chuyển hướng.",
+      "answer": "Vòng phản hồi Build-Measure-Learn trong Lean Startup hoạt động theo một chu trình học hỏi liên tục, bắt đầu bằng việc xây dựng một sản phẩm khả thi tối thiểu (minimum viable product - MVP) để kiểm tra các giả định then chốt. Sau khi xây dựng MVP, startup sẽ đo lường hiệu quả của sản phẩm trên thị trường bằng các chỉ số có thể hành động, nhằm đánh giá phản ứng của khách hàng. Cuối cùng, từ kết quả đo lường này, startup sẽ học hỏi để quyết định xem có nên tiếp tục theo hướng hiện tại (persevere) hay thay đổi chiến lược (pivot) — tức là thay đổi hướng đi nhưng vẫn giữ một phần nền tảng đã có. Chu trình này giúp startup nhanh chóng phát hiện và điều chỉnh các giả định kinh doanh, giảm thiểu rủi ro thị trường và tăng tốc độ phát triển sản phẩm [S1][S3][S4][S5].",
+      "contexts": [
+        "SOURCE: article_03.md\ndives into the Lean Startup method in detail, showing one major turn through the core Build- Measure- Learn feedback loop. Beginning with leap-of-faith assumptions that cry out for vigorous testing, you'll learn how to build a minimum viable product to test those assumptions, a new accounting system for evaluating whether you're making progress, and a method for deciding whether to pivot (changing course with one foot anchored to the ground) or persevere.",
+        "SOURCE: article_03.md\n, we'll explore techniques that enable Lean Startups to speed through the Build- Measure- Learn feedback loop as quickly as possible, even as they scale. We'll explore lean manufacturing concepts that are applicable to startups, too, such as the power of small batches. We'll also discuss organizational design, how products grow, and how t",
+        "SOURCE: lean-startup-method-analysis.md\nto shorten product development cycles and rapidly discover if a proposed business model is viable; this is achieved by adopting a combination of business-hypothesis-driven experimentation, iterative product releases, and validated learning. Lean startup emphasizes customer feedback over intuition and flexibility over planning. This methodology\nenables recovery from failures more often than traditional ways of product development.[1] Central to the lean startup methodology is the assumption that when startup companies invest their time into iteratively building products or services to meet the needs of early customers, the company can reduce market risks and sidestep the need for large",
+        "SOURCE: lean-startup-method-analysis.md\naccountability and maximize outcomes by measuring progress, planning milestones, and prioritizing.[24] The topic was later expanded upon to include three levels of innovation accounting related to the types of assumptions being validated.[25] Artefacts and actions in the Build-Measure-Learn loop The Build–Measure–Learn loop emphasizes speed as\na critical ingredient to customer development. A team or company's effectiveness is determined by its ability to ideate, quickly build a minimum viable product of that idea, measure its effectiveness in the market, and learn from that experiment. In other words, it is a learning cycle of turning ideas into products, measuring customers' reactions and",
+        "SOURCE: lean-startup-method-analysis.md\nspecifications for what needs to be built. + Learn When It Is Time To Pivot A core component of Lean Startup methodology is the build-measure-learn feedback loop. The first step is figuring out the problem that needs to be solved and then developing a minimum viable product (MVP) to begin the process of learning as quickly as possible. Once the\nMVP is established, a startup can work on tuning the engine. This will involve measurement and learning and must include actionable metrics that can demonstrate cause and effect question. The startup will also utilize an investigative development method called the \"Five Whys\"-asking simple questions to study and solve problems along the way."
+      ],
+      "got_sources": [
+        "article_03.md",
+        "lean-startup-method-analysis.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "lean_04",
+      "question": "Khi nào doanh nghiệp Lean Startup nên thực hiện pivot?",
+      "should_answer": true,
+      "expected_sources": [
+        "lean-startup-method-analysis.md"
+      ],
+      "ground_truth": "Doanh nghiệp nên pivot khi kết quả đo lường thử nghiệm cho thấy các giả thuyết nền tảng không đạt kỳ vọng và cần thay đổi chiến lược.",
+      "answer": "Doanh nghiệp Lean Startup nên thực hiện pivot khi quá trình đo lường và học hỏi cho thấy công ty không đang thúc đẩy các yếu tố then chốt của mô hình kinh doanh. Nếu không có sự tiến triển này, đó là dấu hiệu cần phải pivot hoặc thực hiện một sự điều chỉnh chiến lược cơ bản để thử nghiệm một giả thuyết mới về sản phẩm, chiến lược và động cơ tăng trưởng [S1][S5].",
+      "contexts": [
+        "SOURCE: lean-startup-method-analysis.md\nspecifications for what needs to be built. + Learn When It Is Time To Pivot A core component of Lean Startup methodology is the build-measure-learn feedback loop. The first step is figuring out the problem that needs to be solved and then developing a minimum viable product (MVP) to begin the process of learning as quickly as possible. Once the\nMVP is established, a startup can work on tuning the engine. This will involve measurement and learning and must include actionable metrics that can demonstrate cause and effect question. The startup will also utilize an investigative development method called the \"Five Whys\"-asking simple questions to study and solve problems along the way.",
+        "SOURCE: lean-startup-method-analysis.md\nscientifically, by running experiments that allow us to test each element of our vision. Read More To improve entrepreneurial outcomes, and to hold entrepreneurs accountable, we need to focus on the boring stuff: how to measure progress, how to setup milestones, how to prioritize work. This requires a new kind of accounting, specific to startups.\nRead More The fundamental activity of a startup is to turn ideas into products, measure how customers respond, and then learn whether to pivot or persevere. All successful startup processes should be geared to accelerate that feedback loop. Read More For prosjektledere som ønsker å effektivisere produktutvikling og minimere risiko, kan Lean",
+        "SOURCE: lean-startup-method-analysis.md\noppfordrer Lean Startup å utarbeide en forretningsmodell som raskt testes i markedet. Dette gjøres gjennom reell testing og kontinuerlig tilbakemelding fra kunder for så å igjen justere forretningsmodell, ny test osv. Kjerneprinsipper i Lean Startup Bygg-mål-lær syklusen Denne iterative prosessloopen er selve kjernen i Lean Startup. Start med en\nenkel versjon av produktet, ofte kalt Minimum Viable Product (MVP). MVP er den minste funksjonelle versjonen av produktet som kan leveres til kunder for å samle tilbakemeldinger. Denne tilnærmingen sikrer at du raskt kan validere om idéen din har markedsverdi før du investerer betydelige ressurser. Hypotesedrevet eksperimentering I stedet for",
+        "SOURCE: lean-startup-method-analysis.md\nLean startup\nA lean startup is a method used to found a new company or introduce a new product on behalf of an existing company. The lean startup method advocates developing products that consumers have already demonstrated they desire so that a market will already exist as soon as the product is launched. As opposed to developing a product and then\nhoping that demand will emerge. By employing lean startup principles, product developers can gauge consumer interest in the product and determine how the product might need to be refined. This process is called validated learning and it can be utilized to avoid the unnecessary use of resources in product creation and development. Through lean",
+        "SOURCE: lean-startup-method-analysis.md\nWhen this process of measuring and learning is done correctly, it will be clear that a company is either moving the drivers of the business model or not. If not, it is a sign that it is time to pivot or make a structural course correction to test a new fundamental hypothesis about the product, strategy and engine of growth. Principles You don't have to\nwork in a garage to be in a startup. Read More A startup is an institution, not just a product, so it requires management, a new kind of management specifically geared to its context. Read More Startups exist not to make stuff, make money, or serve customers. They exist to learn how to build a sustainable business. This learning can be validated"
+      ],
+      "got_sources": [
+        "lean-startup-method-analysis.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "lean_05",
+      "question": "Phương pháp 5 Whys được sử dụng làm gì trong Lean Startup?",
+      "should_answer": true,
+      "expected_sources": [
+        "lean-startup-method-analysis.md"
+      ],
+      "ground_truth": "5 Whys là phương pháp điều tra nguyên nhân gốc rễ bằng cách liên tục đặt câu hỏi tại sao khi phát sinh sự cố trong quá trình phát triển.",
+      "answer": "Phương pháp 5 Whys trong Lean Startup được sử dụng như một phương pháp phát triển điều tra nhằm đặt ra các câu hỏi đơn giản để nghiên cứu và giải quyết các vấn đề trong quá trình phát triển sản phẩm. Cụ thể, sau khi xây dựng sản phẩm khả thi tối thiểu (MVP), startup sẽ sử dụng phương pháp này để đo lường, học hỏi và tìm ra nguyên nhân gốc rễ của các vấn đề nhằm điều chỉnh và cải tiến sản phẩm một cách hiệu quả hơn [S4].",
+      "contexts": [
+        "SOURCE: lean-startup-method-analysis.md\namounts of initial project funding and expensive product launches and financial failures.[2][3] While the events leading up to the launch can make or break a new business, it is important to start with the end in mind, which means thinking about the direction in which you want your business to grow and how to put all the right pieces in place to make\nthis possible.[4] Similar to the precepts of lean manufacturing and lean software development, the lean startup methodology seeks to eliminate wasteful practices and increase value-producing practices during the earliest phases of a company so that the company can have a better chance of success without requiring large amounts of outside funding,",
+        "SOURCE: lean-startup-method-analysis.md\ntarget customer or modifying the product to better serve the current target customer. The lean startup method first identifies a problem that needs to be solved. It then develops a minimum viable product or the smallest form of the product that allows entrepreneurs to introduce it to potential customers for feedback. This method is faster and less\nexpensive than developing the final product for testing and reduces the risk that startups face by decreasing their typical high failure rate. Lean startup redefines a startup as an organization that is searching for a scalable business model, not one that has an existing business plan that it is determined to execute. For example, a healthy meal delivery",
+        "SOURCE: lean-startup-method-analysis.md\noppfordrer Lean Startup å utarbeide en forretningsmodell som raskt testes i markedet. Dette gjøres gjennom reell testing og kontinuerlig tilbakemelding fra kunder for så å igjen justere forretningsmodell, ny test osv. Kjerneprinsipper i Lean Startup Bygg-mål-lær syklusen Denne iterative prosessloopen er selve kjernen i Lean Startup. Start med en\nenkel versjon av produktet, ofte kalt Minimum Viable Product (MVP). MVP er den minste funksjonelle versjonen av produktet som kan leveres til kunder for å samle tilbakemeldinger. Denne tilnærmingen sikrer at du raskt kan validere om idéen din har markedsverdi før du investerer betydelige ressurser. Hypotesedrevet eksperimentering I stedet for",
+        "SOURCE: lean-startup-method-analysis.md\nspecifications for what needs to be built. + Learn When It Is Time To Pivot A core component of Lean Startup methodology is the build-measure-learn feedback loop. The first step is figuring out the problem that needs to be solved and then developing a minimum viable product (MVP) to begin the process of learning as quickly as possible. Once the\nMVP is established, a startup can work on tuning the engine. This will involve measurement and learning and must include actionable metrics that can demonstrate cause and effect question. The startup will also utilize an investigative development method called the \"Five Whys\"-asking simple questions to study and solve problems along the way.",
+        "SOURCE: lean-startup-method-analysis.md\nto shorten product development cycles and rapidly discover if a proposed business model is viable; this is achieved by adopting a combination of business-hypothesis-driven experimentation, iterative product releases, and validated learning. Lean startup emphasizes customer feedback over intuition and flexibility over planning. This methodology\nenables recovery from failures more often than traditional ways of product development.[1] Central to the lean startup methodology is the assumption that when startup companies invest their time into iteratively building products or services to meet the needs of early customers, the company can reduce market risks and sidestep the need for large"
+      ],
+      "got_sources": [
+        "lean-startup-method-analysis.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 1.0
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "thinking_01",
+      "question": "Sự khác biệt chính giữa Hệ thống 1 và Hệ thống 2 trong Thinking, Fast and Slow là gì?",
+      "should_answer": true,
+      "expected_sources": [
+        "thinking-fast-slow-cia-review.md",
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "ground_truth": "Hệ thống 1 vận hành tự động, nhanh và ít tốn sức; Hệ thống 2 đòi hỏi sự tập trung, tính toán logic và nỗ lực kiểm soát.",
+      "answer": "Sự khác biệt chính giữa Hệ thống 1 và Hệ thống 2 trong Thinking, Fast and Slow là:\n\n- Hệ thống 1 (System 1) là hệ thống suy nghĩ nhanh, hoạt động tự động và nhanh chóng, ít hoặc không cần nỗ lực và không có cảm giác kiểm soát có ý thức. Nó bao gồm các kỹ năng bẩm sinh như phát hiện khoảng cách tương đối của các vật thể, phản ứng với âm thanh đột ngột, hoặc nhận biết sự thù địch trong giọng nói, cũng như các kỹ năng được học qua luyện tập lâu dài như đọc hiểu và nhận biết các tình huống xã hội. Hệ thống 1 có thể nhanh chóng và dễ dàng truy xuất kinh nghiệm đã lưu trữ để đưa ra các phán đoán phức tạp (S2, S1).\n\n- Hệ thống 2 (System 2) là hệ thống suy nghĩ chậm, phân bổ sự chú ý cho các hoạt động tinh thần đòi hỏi nỗ lực như tính toán phức tạp và lựa chọn có lý trí về việc nên nghĩ gì và làm gì. Hệ thống 2 yêu cầu chúng ta “chú ý” để thực hiện các công việc như lái xe trên đường không quen trong điều kiện thời tiết xấu, tính tích của hai số lớn, lên lịch cho các hoạt động của con cái, hoặc hiểu một lập luận logic phức tạp. Hệ thống 2 thường \"lười biếng\", có giới hạn về sự chú ý và có thể bị mệt mỏi (S1, S4, S3).\n\nTóm lại, Hệ thống 1 là nhanh, tự động, ít nỗ lực và dựa trên trực giác và kinh nghiệm, trong khi Hệ thống 2 là chậm, có ý thức, đòi hỏi nỗ lực và chú ý để xử lý các vấn đề phức tạp và đưa ra các quyết định có lý trí (S1, S2, S4, S3, S5).",
+      "contexts": [
+        "SOURCE: thinking-fast-slow-cia-review.md\nretrieve stored experience to make complex\njudgments. A chess master quickly finding\nstrong moves and a quarterback changing a\nplay sent to him from the sideline when he recognizes a defensive weakness are examples of\nacquired System 1 thinking.\nSystem 2, or slow thinking, allocates attention to the mental activities that demand\neffort, such as complex computations and conscious, reasoned choices about what to think\nand what to do. System 2 requires most of us to\n“pay attention” to do things such as drive on an\nunfamiliar road during a snowstorm, calculate\nthe product of 17x24, schedule transportation\nfor a teenage daughter’s activities, or understand a complex logical argument.\nKahneman focuses much of the book on the\ninteractions of System 1 and System 2 and the",
+        "SOURCE: thinking-fast-slow-cia-review.md\nThe title of the book refers to what Kahneman, adapting a device that other researchers\noriginally proposed, calls the “two systems” of\nthe human mind. System 1, or fast thinking,\noperates automatically and quickly with little\nor no effort and no sense of voluntary control.\nMost System 1 skills—such as detecting the\nrelative distances of objects, orienting to a sudden sound, or detecting hostility in a voice—are\ninnate and are found in other animals. Some\nfast and automatic System 1 skills can be\nacquired through prolonged practice, such as\nreading and understanding nuances of social\nsituations. Experts in a field can even use System 1 to quickly, effortlessly, and accurately\nretrieve stored experience to make complex\njudgments. A chess master quickly finding",
+        "SOURCE: thinking-fast-slow-innovation-review.md\neven necessary, for survival when a rapid decision may mean safety and success and a slow one danger\nor failure. However, the dominance of S1 goes much further in determining our decisions and our\nbehaviour. It demands explanations and “excels at constructing the best possible story that\nincorporates ideas currently activated” (85), but it doesn’t allow for information that we don’t have. It\nis “ a machine for jumping to conclusions”.\nS2 is much more shrewd, but it gets tired easily and is lazy. It has a limited attention span.\nMoreover, Kahneman says when we S2 is “otherwise engaged, we will believe almost anything” (81).\nS2 is capable of correcting errors made hastily by S1, but sustained effort can lead to “the well-known",
+        "SOURCE: thinking-fast-slow-cia-review.md\nSystem 2 idles, because using it requires effort\nand is tiring. System 1 generates impressions\nand feelings, which become the source of System 2’s explicit beliefs and deliberate choices.\nSystem 1, when it encounters something it cannot quickly understand and did not expect (in\nother words, a surprise), enlists System 2 to\nmake sense of the anomaly. The alerted System 2 takes charge, overriding System 1’s automatic reactions. System 2 always has the last\nword when it chooses to assert it.\nThe systems operate to minimize effort and\nmaximize performance and are the result of\nhundreds of thousands of years of human evolution in our environment. They work\nextremely well, usually. System 1 performs\nwell at making accurate models and predictions in familiar environments. System 1 has",
+        "SOURCE: article_04.md\nIn the book's first section, Kahneman describes two different ways the brain forms thoughts:\n\nKahneman describes a number of experiments which purport to examine the differences between these two thought systems and how they arrive at different results even given the same inputs. Terms and concepts include coherence, attention, laziness, association, jumping to conclusions, WYSIATI (What you see is all there is), and how one forms judgments. The System 1 vs. System 2 debate includes the reasoning or lack thereof for human decision making, with big implications for many areas including law and market research."
+      ],
+      "got_sources": [
+        "thinking-fast-slow-cia-review.md",
+        "thinking-fast-slow-innovation-review.md",
+        "article_04.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.6667
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "thinking_02",
+      "question": "Khái niệm WYSIATI được Daniel Kahneman giải thích như thế nào?",
+      "should_answer": true,
+      "expected_sources": [
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "ground_truth": "WYSIATI chỉ xu hướng của não bộ đưa ra kết luận dựa hoàn toàn trên thông tin đang có sẵn mà ít khi xem xét những thông tin chưa thấy.",
+      "answer": "Khái niệm WYSIATI (What you see is all there is) được Daniel Kahneman giải thích trong phần đầu của cuốn sách như một trong các thuật ngữ liên quan đến cách thức bộ não hình thành suy nghĩ trong hệ thống tư duy. WYSIATI đề cập đến hiện tượng khi con người chỉ dựa vào những gì họ nhìn thấy hoặc biết mà không xem xét thêm các thông tin khác, dẫn đến việc đưa ra các phán đoán hoặc quyết định dựa trên thông tin hạn chế đó [S1].",
+      "contexts": [
+        "SOURCE: article_04.md\nIn the book's first section, Kahneman describes two different ways the brain forms thoughts:\n\nKahneman describes a number of experiments which purport to examine the differences between these two thought systems and how they arrive at different results even given the same inputs. Terms and concepts include coherence, attention, laziness, association, jumping to conclusions, WYSIATI (What you see is all there is), and how one forms judgments. The System 1 vs. System 2 debate includes the reasoning or lack thereof for human decision making, with big implications for many areas including law and market research.",
+        "SOURCE: thinking-fast-slow-cia-review.md\nKahneman focuses much of the book on the\ninteractions of System 1 and System 2 and the\nproblems inherent in those interactions. Both\nsystems are “on” when we are awake. System 1\nruns automatically and effortlessly but",
+        "SOURCE: thinking-fast-slow-innovation-review.md\ninsistence on replication and methodological critique. Is Kahneman’s charge more applicable in the\ncase of social sciences? This would seem to be true, when the objective is to predict an outcome. Here,\nKahneman supports the ideas of N. N. Taleb in The Black Swan, concerning our preference for\nnarrative over probabilities. I don’t think we have to throw out our great classics like Weber,\nEisenstadt, Simon, Friedrich, Gabriel Almond, Michel Crozier or Henry Mintzberg. They were\nidentifying the deep tendencies of social systems and not concerned with predictions in specific\n2",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nBook Review\nDaniel Kahneman\nThinking Fast and Slow\nToronto, Doubleday Canada 2011\nReviewed by Iain Gow\nUniversité de Montréal, Canada\nThis is an important book by the only psychologist ever to win the Nobel Prize for economics.\nIn it Daniel Kahneman, emeritus professor of psychology at Princeton University, summarizes the\nwork that he and the late Amos Tversky did on human cognition and decision-making. It has some\ncautionary implications for students of innovation.\nThe argument is that humans have two systems for problem solving and decision-making.\nSystem 1 (S1) is rapid, intuitive and emotional. This is the system described by Malcolm Gladwell in\nBlink. System 2 (S2) is slow, deliberative and logical. Only S2 can apply rules. S1 is obviously useful,",
+        "SOURCE: article_04.md\nKahneman uses heuristics to assert that System 1 thinking involves associating new information with existing patterns, or thoughts, rather than creating new patterns for each new experience. For example, a child who has only seen shapes with straight edges might perceive an octagon when first viewing a circle. As a legal metaphor, a judge limited to heuristic thinking would only be able to think of similar histor"
+      ],
+      "got_sources": [
+        "article_04.md",
+        "thinking-fast-slow-cia-review.md",
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.3333
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "thinking_03",
+      "question": "Vì sao bài đánh giá trên tài liệu CIA coi Thinking, Fast and Slow là cuốn sách đáng đọc cho cán bộ phân tích?",
+      "should_answer": true,
+      "expected_sources": [
+        "thinking-fast-slow-cia-review.md"
+      ],
+      "ground_truth": "Vì cuốn sách hệ thống hóa cơ sở thực nghiệm về các bẫy tư duy và thiên kiến nhận thức mà nhà phân tích thường gặp trong thực tế.",
+      "answer": "Bài đánh giá trên tài liệu CIA coi Thinking, Fast and Slow là cuốn sách đáng đọc cho cán bộ phân tích vì các lý do sau:\n\n- Cuốn sách là một tổng kết tinh tế của cả một đời nghiên cứu của Kahneman và cộng sự Amos Tversky, những người đã thay đổi cách các nhà tâm lý học suy nghĩ về tư duy. Kahneman cũng giới thiệu các công trình nghiên cứu xuất sắc khác trong cuốn sách [S5].\n\n- Cuốn sách cung cấp một khung nhận thức rất hữu ích cho các cán bộ phân tích, giúp họ có thể treo kinh nghiệm của mình lên đó, dù họ là chuyên gia hay mới vào nghề, và bất kể thuộc cơ quan tình báo nào. Nó cũng cung cấp một từ vựng dễ tiếp cận để thảo luận về các quá trình nhận thức của con người, đặc biệt là sự tương tác giữa hai hệ thống tư duy (System 1 và System 2) vốn là trung tâm trong công việc của họ [S1], [S3].\n\n- Các cán bộ tình báo có thể nhận ra nhiều điều trong cuốn sách dựa trên kinh nghiệm thực tế của họ, vì cuốn sách đưa ra nền tảng thực nghiệm cho nhiều kiến thức mà họ đã tích lũy được qua thực tiễn [S1].\n\n- Mặc dù cuốn sách không cung cấp các giải pháp hay phương pháp đáng tin cậy để giảm thiểu thiên kiến, nó giúp nhận diện các tình huống dễ xảy ra sai sót và khuyến khích cố gắng tránh những lỗi cụ thể khi mức độ quan trọng cao [S3].\n\nTóm lại, cuốn sách là một tác phẩm xuất sắc tổng hợp các nghiên cứu về tư duy, cung cấp khung nhận thức và ngôn ngữ để các cán bộ phân tích hiểu và vận dụng trong công việc của mình, từ đó được coi là \"must read\" cho họ [S1], [S3], [S5].",
+      "contexts": [
+        "SOURCE: thinking-fast-slow-cia-review.md\nThinking, Fast and Slow introduces no revolutionary new material, but it is a masterpiece\nbecause of the way Kahneman weaves existing\nresearch together.\nExpert intelligence officers at CIA, an\nagency with the “human intelligence” mission\nat its core, have come through experience and\npractice to understand and exploit the human\ncognitive processes of which Kahneman writes.\nThese expert officers will have many moments\nof recognition in reading this book, which gives\nan empirical underpinning for much of their\nhard-won wisdom.\nKahneman also may challenge some strongly\nheld beliefs. Thinking, Fast and Slow gives\nexperts and newer officers, regardless of the\nintelligence agency in which they serve, an\nenormously useful cognitive framework upon\nwhich to hang their experiences.",
+        "SOURCE: thinking-fast-slow-cia-review.md\nAll statements of fact, opinion, or analysis expressed in this article are those of the author. Nothing in this article should be\nconstrued as asserting or implying US government endorsement of its factual statements and interpretations.\n\nStudies in Intelligence Vol. 56, No. 2 (Extracts, June 2012)\n\n1\n\n\fThinking, Fast and Slow",
+        "SOURCE: thinking-fast-slow-cia-review.md\nKahneman concedes that intuition has to be\nvalued, but it cannot necessarily be trusted.\nThinking, Fast and Slow provides intelligence officers with an accessible vocabulary to\ndiscuss the processes of human cognition—the\ninteractions between System 1 and System 2\nthinking—which are at the center of their\nwork. It does not, however, provide solutions or\nreliable approaches to bias mitigation. According to Kahneman, the best we can hope to do is\nlearn to recognize situations in which mistakes are likely, and try harder to avoid specific errors when the stakes are high.\nKahneman also spends very little time discussing how biases work in collaborative environments, despite his own very insightful accounts\nof his collaboration with Tversky. We can hope\nhe will explore that in his next work.",
+        "SOURCE: article_04.md\n# Thinking, Fast and Slow - Wikipedia\n\n**Source:** https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow\n**Crawled:** 2026-08-04T10:53:34.831042\n**Book:** Thinking, Fast and Slow\n**Author:** Daniel Kahneman\n**Category:** psychology\n**Type:** public_book_article\n\n---\n\nis a 2011 popular science book by the Israeli-American psychologist\n\n. Its main thesis is a differentiation between two modes of\n\nThe book delineates rational and non-rational motivations or triggers associated with each type of thinking process, and how they complement each other, starting with Kahneman's own research on\n\nto people's tendency to replace a difficult question with one that is easy to answer, the book summarizes several decades of research to suggest that people have too much confidence in human judgment.",
+        "SOURCE: thinking-fast-slow-cia-review.md\nReviewed by Frank J. Babetski\nFew books are “must reads” for intelligence\nofficers. Fewer still are “must reads” that mention Intelligence Community functions or the\nCIA only once, and then only in passing. Daniel Kahneman has written one of these rare\nbooks. Thinking, Fast and Slow represents an\nelegant summation of a lifetime of research in\nwhich Kahneman, Princeton University Professor Emeritus of Psychology and Public Affairs,\nand his late collaborator, Amos Tversky,\nchanged the way psychologists think about\nthinking. Kahneman, who won the 2002 Nobel\nPrize in Economics for his work with Tversky\non prospect theory, also highlights the best\nwork of other researchers throughout the book.\nThinking, Fast and Slow introduces no revolutionary new material, but it is a masterpiece"
+      ],
+      "got_sources": [
+        "thinking-fast-slow-cia-review.md",
+        "article_04.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.5
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "thinking_04",
+      "question": "Nghiên cứu của Kahneman và Tversky ảnh hưởng thế nào đến kinh tế học?",
+      "should_answer": true,
+      "expected_sources": [
+        "thinking-fast-slow-cia-review.md"
+      ],
+      "ground_truth": "Công trình của họ về lý thuyết triển vọng đã thách thức giả định con người luôn hành động lý trí và mang lại cho Kahneman giải Nobel Kinh tế 2002.",
+      "answer": "Nghiên cứu của Kahneman và Tversky có ảnh hưởng quan trọng đến kinh tế học, đặc biệt là trong việc hiểu về nhận thức và ra quyết định của con người. Daniel Kahneman, nhà tâm lý học duy nhất từng đoạt giải Nobel kinh tế, đã cùng Amos Tversky tổng hợp công trình nghiên cứu về nhận thức và ra quyết định của con người, qua đó đưa ra mô hình hai hệ thống tư duy: Hệ thống 1 (nhanh, trực giác, cảm xúc) và Hệ thống 2 (chậm, suy nghĩ có chủ đích và logic). Mô hình này giúp giải thích tại sao con người thường không ra quyết định dựa trên lý luận logic mà dựa nhiều vào trực giác và cảm xúc, dẫn đến các sai lệch trong đánh giá xác suất và rủi ro [S2].\n\nNgoài ra, Kahneman và Tversky cũng đã chỉ ra rằng con người thường ưu tiên câu chuyện hơn là xác suất, điều này ảnh hưởng đến cách dự đoán và ra quyết định trong kinh tế học và các lĩnh vực xã hội khác [S1]. Nghiên cứu của họ cũng làm sáng tỏ các sai lầm phổ biến trong dự báo tài chính và chính trị, khi các chuyên gia thường không chính xác hơn những người không chuyên [S3].\n\nTừ đó, Kahneman đề xuất cần có sự khiêm tốn trong các tuyên bố về tính chắc chắn của các giả thuyết và khuyến khích phát triển các thuật toán hoặc giao thức dựa trên bằng chứng rõ ràng thay vì chỉ dựa vào ý kiến chuyên gia [S4]. Điều này có ý nghĩa lớn trong việc cải thiện các quyết định kinh tế và chính sách công.\n\nTóm lại, nghiên cứu của Kahneman và Tversky đã làm thay đổi cách nhìn nhận về hành vi kinh tế, nhấn mạnh vai trò của các yếu tố tâm lý trong ra quyết định kinh tế và thúc đẩy việc áp dụng các phương pháp dựa trên bằng chứng để giảm thiểu sai sót trong dự báo và quản lý rủi ro [S2][S3][S4].",
+      "contexts": [
+        "SOURCE: thinking-fast-slow-innovation-review.md\ninsistence on replication and methodological critique. Is Kahneman’s charge more applicable in the\ncase of social sciences? This would seem to be true, when the objective is to predict an outcome. Here,\nKahneman supports the ideas of N. N. Taleb in The Black Swan, concerning our preference for\nnarrative over probabilities. I don’t think we have to throw out our great classics like Weber,\nEisenstadt, Simon, Friedrich, Gabriel Almond, Michel Crozier or Henry Mintzberg. They were\nidentifying the deep tendencies of social systems and not concerned with predictions in specific\n2",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nBook Review\nDaniel Kahneman\nThinking Fast and Slow\nToronto, Doubleday Canada 2011\nReviewed by Iain Gow\nUniversité de Montréal, Canada\nThis is an important book by the only psychologist ever to win the Nobel Prize for economics.\nIn it Daniel Kahneman, emeritus professor of psychology at Princeton University, summarizes the\nwork that he and the late Amos Tversky did on human cognition and decision-making. It has some\ncautionary implications for students of innovation.\nThe argument is that humans have two systems for problem solving and decision-making.\nSystem 1 (S1) is rapid, intuitive and emotional. This is the system described by Malcolm Gladwell in\nBlink. System 2 (S2) is slow, deliberative and logical. Only S2 can apply rules. S1 is obviously useful,",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nhad dismal results. A bank of 11,600 market forecasts by chief financial officers of a large number of\nprivate corporations collected at Duke University proved to be quite worthless. Financial advisers and\nexperts asked to pick promising stocks did no better than rolling dice. In the realm of political\npredictions, Kahneman found that the most knowledgeable experts were less realistic than reasonably\nwell-informed amateurs. He even turned his eye to his own profession and challenged the idea that\nstudents’ names should appear on their examinations, so that the professor can put their answers into\ncontext. Kaheneman calls this the halo effect and found that results were considerably different when\nthe names were omitted.",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nevidence that loss aversion is greater that desire for gain, so it becomes vital to consult those who stand\nto lose in an innovation (team owners in the National Hockey League might have thought of this).\nFinally, Kahneman’s findings should lead to more modesty in claims for the certainty of our\npropositions. His work supports increased efforts to arrive at algorithms or protocols that should only\nbe deviated from in the case of clear evidence, not merely “expert opinion”.\nIn the public sector, the possibilities of using such an approach will be limited by political and\npublic resistance. If a patient is denied treatment on the basis of an algorithm, there will be many who\nwill reject the latter. Still, Kahneman’s plea for better education in statistical reasoning among the",
+        "SOURCE: article_04.md\nThe second section offers explanations for why humans struggle to think statistically. It begins by documenting a variety of situations in which we either arrive at binary decisions or fail to associate precisely reasonable probabilities with outcomes. Kahneman explains this phenomenon using the theory of\n\n. Kahneman and Tversky originally discussed this topic in their 1974 article titled Judgment Under Uncertainty: Heuristics and Biases."
+      ],
+      "got_sources": [
+        "thinking-fast-slow-innovation-review.md",
+        "article_04.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 0.0,
+        "context_precision_proxy": 0.0
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "thinking_05",
+      "question": "Trực giác của chuyên gia có thể tin cậy trong điều kiện nào theo Kahneman?",
+      "should_answer": true,
+      "expected_sources": [
+        "thinking-fast-slow-cia-review.md"
+      ],
+      "ground_truth": "Trực giác đáng tin hơn khi môi trường có các tín hiệu hợp lệ, lặp lại và người thực hành nhận được phản hồi kịp thời để học các dấu hiệu đó qua kinh nghiệm.",
+      "answer": "Theo Kahneman, trực giác của chuyên gia chỉ phản ánh được chuyên môn thực sự khi có hai điều kiện cơ bản: môi trường phải đủ đều đặn để có thể dự đoán được và chuyên gia phải có cơ hội học hỏi những quy luật đó thông qua thực hành kéo dài. Nếu các điều kiện này được đáp ứng, trực giác của chuyên gia có thể tin cậy hơn, ví dụ như trường hợp người lính cứu hỏa cảm nhận được nguy hiểm trước khi sàn nhà sụp đổ mà không biết tại sao mình lại có cảm giác đó [S1], [S2].",
+      "contexts": [
+        "SOURCE: thinking-fast-slow-innovation-review.md\nthe names were omitted.\nSo Kahneman is skeptical of experts. They overrate the value of their knowledge and, even\nwhen faced with overwhelming evidence to the contrary, they persist in what they do. Practitioners\nvalue experience over statistics; there is a “deep resistance to demystification of expertise” (288).\nKahneman looks at two cases discussed by Gladwell and concludes that intuition in an expert is\nrecognition (as Herbert Simon said). If an environment is regular enough to be predictable and the\nexpert has had prolonged experience, then, as in the case of the fireman who called his men out of a\nburning building just before the floor collapsed without knowing why he sensed the danger, expertise",
+        "SOURCE: thinking-fast-slow-cia-review.md\nsion Making, who rejects Kahneman’s emphasis on biases and focuses instead on the value\nof expert intuition and on how intuitive skills\ndevelop. It is not difficult to imagine that their\ncollaboration was more difficult than Kahneman generously portrays it to have been, which\nmakes the areas on which they were able to\nagree even more noteworthy.\nThey agreed that the confidence that experts\nexpress in their intuitive judgments is not a\nreliable guide to their validity. They further\nagreed that two basic conditions must be present before intuitive judgments reflect true\nexpertise: an environment that is sufficiently\nregular to be predictable and an opportunity to\nlearn these regularities through prolonged\npractice. An expert firefighter’s sensing the",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nsingle intuitive judgement was of no value. Since the experts were very resistant to being obliged\nsimply to apply formulae, he allowed them to make a global assessment once the protocol had been\nfollowed and concluded that intuition adds value, but only after a disciplined collection of objective\ninformation and a disciplined scoring of separate traits.\nIn addition to this preference for protocols and base rates over expert opinion, Kahneman offers\nsome practical advice on avoiding the illusion of understanding. First, we should constantly question\nour own thinking and be aware of our own biases. Second, we should get information from different\nsources. Before discussion at a meeting, for example, he recommends asking each participant to write a",
+        "SOURCE: thinking-fast-slow-cia-review.md\nirrespective of the confidence with which they\nare stated. Moreover, they would probably consider the feedback available to analysts—from\npolicymakers and events—inadequate for efficient learning and expertise development. Kahneman was not referring specifically to\nintelligence analysts when he wrote, “it is\nwrong to blame anyone for failing to forecast\naccurately in an unpredictable world,” but he\nhas given interviews in which he discusses\nintelligence analysts in this context. At the\nsame time, he also wrote, “however, it seems\nfair to blame professionals for believing they\ncan succeed in an impossible task.” In short,\nKahneman concedes that intuition has to be\nvalued, but it cannot necessarily be trusted.",
+        "SOURCE: thinking-fast-slow-innovation-review.md\nhas shaped S1 successfully. Yet expertise can also generate intuitions that are false. Kahneman writes\nof “theory-induced blindness”, of the “illusion of control”, and the experts’ “unshakeable faith in\nthemselves”. Undue optimism leads them often to persist with costly results. He considers performance\nbonuses in business and finance to be rewards for luck.\nKahneman finds that protocols or algorithms do consistently better than expert judgment in\nmaking predictions or obtaining desired results. While the mind prefers causal explanations and\nprofiles, statistics and base rates work better. On picking officer candidates for the Israeli military, he\nfound that experts could do quite well if they rated recruits on a half dozen characteristics, whereas a"
+      ],
+      "got_sources": [
+        "thinking-fast-slow-innovation-review.md",
+        "thinking-fast-slow-cia-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.5
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "innovators_01",
+      "question": "Cuốn The Innovators tập trung trình bày chủ đề gì?",
+      "should_answer": true,
+      "expected_sources": [
+        "article_05.md"
+      ],
+      "ground_truth": "Cuốn sách tổng quan lịch sử cách các nhà đổi mới tạo ra những đột phá quan trọng trong công nghệ máy tính và các ứng dụng của nó.",
+      "answer": "Cuốn The Innovators tập trung trình bày lịch sử và đóng góp của một nhóm các lập trình viên, thiên tài và những người đam mê công nghệ đã tạo ra cuộc cách mạng kỹ thuật số. Cuốn sách tóm tắt những đóng góp quan trọng của nhiều nhà sáng tạo đã có những bước đột phá then chốt trong công nghệ máy tính và các ứng dụng của nó, từ những phát minh đầu tiên trên thế giới [S1].",
+      "contexts": [
+        "SOURCE: article_05.md\n# The Innovators (book) - Wikipedia\n\n**Source:** https://en.wikipedia.org/wiki/The_Innovators_(book)\n**Crawled:** 2026-08-04T10:53:35.509500\n**Book:** The Innovators\n**Author:** Walter Isaacson\n**Category:** technology\n**Type:** public_book_article\n\n---\n\nThe Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution\n\nis an overview of the history of\n\nThe book summarizes the contributions of several innovators who have made pivotal breakthroughs in computer technology and its applications—from the world's first\n\npublished a revised electronic edition of",
+        "SOURCE: lean-startup-method-analysis.md\nevery startup is a grand experiment that attempts to answer a question. The question is not \"Can this product be built?\" Instead, the questions are \"Should this product be built?\" and \"Can we build a sustainable business around this set of products and services?\" This experiment is more than just theoretical inquiry; it is a first product. If it is\nsuccessful, it allows a manager to get started with his or her campaign: enlisting early adopters, adding employees to each further experiment or iteration, and eventually starting to build a product. By the time that product is ready to be distributed widely, it will already have established customers. It will have solved real problems and offer detailed",
+        "SOURCE: lean-startup-method-analysis.md\ncompany departments and operations. In an article published in the Harvard Business Review in 2013, Steve Blank described how the lean startup methodology also drew inspiration from the work of people like Ian C. MacMillan and Rita Gunther McGrath who developed a technique called discovery-driven planning, which was an attempt to bring an\nentrepreneurial mindset to planning.[15] In his blog and book The Lean Startup, entrepreneur Eric Ries used specific terms to refer to the core lean startup principles, as described below. A minimum viable product (MVP) is the \"version of a new product which allows a team to collect the maximum amount of validated learning about customers with",
+        "SOURCE: article_03.md\nCEO Startup America Partnership\n\n\"A must read for every serious entrepreneur-and every manager interested in innovation.\"\n\nco-founder of Andreessen Horowitz, Opsware Inc. and Netscape\n\nis the book whose lessons I want every entrepreneur to absorb and apply.\"\n\nFounder, Lotus Development Corp.\n\n\"Every entrepreneur responsible for innovation within their organization should read this book.\"\n\nprofessor of Electrical Engineering at Stanford University, and co-founder of several startups\n\n\"It's ultimately an answer to the question 'How can we learn more quickly what works, and discard what doesn't?'\"\n\n\"This book should be mandatory reading for entrepreneurs, and the same goes for managers who want better entrepreneurial instincts.\"",
+        "SOURCE: thinking-fast-slow-innovation-review.md\ncircumstances. Something like Robert Michels’ Iron Law of Oligarchy seems to fit this argument.\nThere may be exceptions but, over time and in a wide variety of contexts, this proposition has been\nvalidated as a general proposition.\nWhat does all this have to do with innovation? First, creative thinking clearly lies in S1, but it\ncan be primed, as both scientists and innovation-seeking organizations like the Bell Laboratories have\nshown. Second, this approach supports the separation of the brainstorming and the analytical stages,\nbringing in S2 after the stage of creative thinking to test feasibility. Third, it is important to listen to the\nstakeholders in order to have a wide variety of points of view. Moreover fourth, Kahneman has lots of"
+      ],
+      "got_sources": [
+        "article_05.md",
+        "lean-startup-method-analysis.md",
+        "article_03.md",
+        "thinking-fast-slow-innovation-review.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 1.0,
+        "answer_relevancy_proxy": 1.0,
+        "context_recall_proxy": 1.0,
+        "context_precision_proxy": 0.25
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "out_01",
+      "question": "Deep Work đề xuất bốn quy tắc làm việc sâu nào?",
+      "should_answer": false,
+      "expected_sources": [],
+      "ground_truth": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "answer": "Thông tin trong ngữ cảnh cung cấp không đề cập đến bốn quy tắc làm việc sâu (Deep Work) được đề xuất trong cuốn sách hoặc tài liệu nào. Vì vậy, tôi không thể trả lời câu hỏi này dựa trên dữ liệu hiện có.\n\nBạn vui lòng cung cấp thêm thông tin hoặc tài liệu liên quan để tôi có thể hỗ trợ tốt hơn.",
+      "contexts": [
+        "SOURCE: article_02.md\n, the things you believe, and the personality that you portray.\n\nBut what if you want to improve? What if you want to form new habits? How would you go about it?\n\nTurns out, there’s a helpful framework that can make it easier to stick to new habits so that you can improve your health, your work, and your life in general.\n\nLet’s talk about that framework now…\n\nThe process of building a habit can be divided into four simple steps: cue, craving, response, and reward.\n\nBreaking it down into these fundamental parts can help us understand what a habit is, how it works, and how to improve it.\n\nThis four-step pattern is the backbone of every habit, and your brain runs through these steps in the same order each time.",
+        "SOURCE: atomic-habits-business-appendix.md\nTHE 4TH LAW\nThe 4th Law of Behavior Change is to make it satisfying. The final stage of the habit\nloop is the reward. If there is a reward associated with a behavior—that is, it feels good\nand has a satisfying ending—then we have a reason to repeat it in the future.\nIn Chapter 15 of Atomic Habits, I say, “The first three laws of behavior change—make\nit obvious, make it attractive, and make it easy—increase the odds that a behavior will be\nperformed this time. The fourth law of behavior change—make it satisfying—increases\nthe odds that a behavior will be repeated next time. It completes the habit loop.”\nIn business, we could say that making your product or service satisfying increases the\nodds that a customer will return next time. It is the fourth stage that closes the loop and",
+        "SOURCE: atomic-habits-business-appendix.md\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3.\n\nResponse: Make it easy.\n\n4.\n\nReward: Make it satisfying.\n\nThese four laws can be applied to make any behavior easier (and the inversion of each\nlaw can be applied to make any behavior harder). In business, these same principles can\nbe used to create more effective products and to help employees establish more effective\nhabits.\nIn this appendix, I will explore some examples of how each law might be applied in a\nbusiness context. I offer these only as a starting point. The Four Laws of Behavior Change\nare meant to provide a framework that can be flexible and adapt as your needs and tastes\nchange. I think you’ll find that the applications are nearly endless.",
+        "SOURCE: article_01.md\nThis section of the Atomic Habits summary presents key points from three of the core themes of the book.\n\nLesson 1: Small habits make a big difference\n\nIt is so easy to overestimate the importance of one defining moment and underestimate the value of making small improvements on a daily basis.",
+        "SOURCE: atomic-habits-business-appendix.md\n# Atomic Habits\n\n**Author:** James Clear\n**Category:** personal_development\n**Source:** https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf\n**Type:** public_pdf\n\n---\n\n1\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nHow to Apply These\nIdeas to Business\n\nI\n\nn Atomic Habits, I explain a four-step loop that underlies all of human behavior: cue,\ncraving, response, and reward. When repeated, this neurological feedback loop leads\n\nto the formation of new habits.\nAs a reminder, the Habit Loop can be represented as follows:\n\n\f2\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS\n\nFrom these steps, I have developed the Four Laws of Behavior Change:\n1.\n\nCue: Make it obvious.\n\n2.\n\nCraving: Make it attractive.\n\n3."
+      ],
+      "got_sources": [
+        "article_02.md",
+        "atomic-habits-business-appendix.md",
+        "article_01.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 0.0,
+        "answer_relevancy_proxy": 0.0,
+        "context_recall_proxy": 0.0,
+        "context_precision_proxy": 0.0
+      }
+    },
+    {
+      "config": "Config B (Dense-only)",
+      "id": "out_02",
+      "question": "Giá Bitcoin hôm nay là bao nhiêu?",
+      "should_answer": false,
+      "expected_sources": [],
+      "ground_truth": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "answer": "Xin lỗi, tôi không tìm thấy thông tin về giá Bitcoin hôm nay trong tài liệu đã cung cấp.",
+      "contexts": [
+        "SOURCE: atomic-habits-business-appendix.md\nHow consistent is my solution with the history of the real Coca-Cola company? Well,\nas late as 1896, twelve years after the fictional Glotz was to start vigorously with $2 million, the real Coca-Cola company had a net worth under $150 thousand and earnings of\nabout zero. And thereafter the real Coca-Cola company did lose half its trademark and\ndid grant perpetual bottling franchises at fixed syrup prices. And some of the bottlers\nwere not very effective and couldn’t easily be changed. And the real Coca-Cola company, with this system, did lose much pricing control that would have improved results,\nhad it been retained. Yet, even so, the real Coca-Cola company followed so much of the\nplan given to Glotz that it is now worth about $125 billion and will have to increase its",
+        "SOURCE: atomic-habits-business-appendix.md\nplan given to Glotz that it is now worth about $125 billion and will have to increase its\nvalue at only 8 percent per year until 2034 to reach a value of $2 trillion. And it can hit\nan annual physical volume target of 2.92 trillion servings if servings grow until 2034 at\nonly 6 percent per year, a result consistent with much past experience and leaving plenty\nof plain-water ingestion for Coca-Cola to replace after 2034. So I would guess that the\nfictional Glotz, starting earlier and stronger and avoiding the worst errors, would have\neasily hit his $2 trillion target. And he would have done it well before 2034.",
+        "SOURCE: atomic-habits-business-appendix.md\n10\n\nBONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS\n\nATOMIC HABITS BONUS",
+        "SOURCE: atomic-habits-business-appendix.md\nreasonably that by 2034 there will be about eight billion beverage consumers around the\nworld. On average, each of these consumers will be much more prosperous in real terms\nthan the average consumer of 1884. Each consumer is composed mostly of water and\nmust ingest about 64 ounces of water per day. This is eight eight-ounce servings. Thus, if\nour new beverage, and other imitative beverages in our new market, can flavor and otherwise improve only 25 percent of ingested water worldwide, and we can occupy half of\nthe new world market, we can sell 2.92 trillion eight-ounce servings in 2034. And if we",
+        "SOURCE: atomic-habits-business-appendix.md\ncan then net four cents per serving, we will earn $117 billion. This will be enough, if our\nbusiness is still growing at a good rate, to make it easily worth two trillion dollars.\nA big question, of course, is whether four cents per serving is a reasonable profit\ntarget for 2034. And the answer is yes, if we can create a beverage with strong universal\nappeal. One hundred fifty years is a long time. The dollar, like the roman drachma, will\nalmost surely suffer monetary depreciation. Concurrently, real purchasing power of the\naverage beverage consumer in the world will go way up. His proclivity to inexpensively\nimprove his experience while ingesting water will go up considerably faster. Meanwhile,"
+      ],
+      "got_sources": [
+        "atomic-habits-business-appendix.md"
+      ],
+      "citations_valid": true,
+      "error": null,
+      "metrics": {
+        "faithfulness_proxy": 0.0,
+        "answer_relevancy_proxy": 0.0,
+        "context_recall_proxy": 0.0,
+        "context_precision_proxy": 0.0
+      }
+    }
+  ],
+  "mode": "ragas",
+  "judge_model": "gpt-4.1-mini",
+  "embedding_model": "text-embedding-3-small"
+}

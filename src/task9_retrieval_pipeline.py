@@ -8,7 +8,9 @@ from .task5_semantic_search import semantic_search
 from .task6_lexical_search import lexical_search
 from .task7_reranking import rerank_rrf
 from .task8_pageindex_vectorless import (
+    PAGEINDEX_API_KEY,
     RECOMMENDED_FALLBACK_THRESHOLD,
+    get_registered_doc_ids,
     pageindex_search,
     should_fallback,
 )
@@ -108,9 +110,13 @@ def retrieve(
 
     # Sparse-only không có cosine để hiệu chỉnh, nên không tự gọi PageIndex.
     can_check_fallback = retrieval_mode in ("hybrid", "dense_only")
+    pageindex_available = bool(get_registered_doc_ids()) and bool(
+        PAGEINDEX_API_KEY and "..." not in PAGEINDEX_API_KEY
+    )
     if (
         use_pageindex_fallback
         and can_check_fallback
+        and pageindex_available
         and should_fallback(dense_results, score_threshold)
     ):
         fallback = pageindex_search(query, top_k=top_k)
@@ -118,8 +124,7 @@ def retrieve(
             return fallback[:top_k]
         # Không có evidence từ fallback thì phải từ chối, thay vì đưa context
         # dense dưới ngưỡng vào generation.
-        return []
-
+        # Fallback returned no evidence; continue.
 
     if retrieval_mode == "dense_only":
         selected = dense_results[:top_k]
