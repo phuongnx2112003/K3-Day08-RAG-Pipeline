@@ -1,5 +1,5 @@
 """
-Task 1 — Thu thập văn bản chính sách/quy định dịch vụ đại học.
+Task 1 — Thu thập source brief cho Book Insights RAG.
 
 Hướng dẫn:
     1. Tìm tối thiểu 3 văn bản chính sách (PDF/DOCX) từ trang công khai của một trường đại học.
@@ -27,28 +27,29 @@ from pathlib import Path
 DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "legal"
 
 
+REQUIRED_FILES = [
+    "atomic-habits-source-brief.pdf",
+    "deep-work-source-brief.pdf",
+    "thinking-fast-slow-source-brief.pdf",
+]
+
+
 def setup_directory():
     """Tạo thư mục data/landing/legal/ nếu chưa có."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     print(f"✓ Thư mục đã sẵn sàng: {DATA_DIR}")
 
 
-# TODO: Tải file PDF/DOCX về DATA_DIR
-# Có thể tải thủ công hoặc viết script download nếu có direct link.
-#
-# Ví dụ nếu có direct link:
-#
-# import requests
-#
-# def download_file(url: str, filename: str):
-#     response = requests.get(url)
-#     filepath = DATA_DIR / filename
-#     filepath.write_bytes(response.content)
-#     print(f"✓ Đã tải: {filepath}")
-#
-# Nếu trang là HTML thuần (không phải PDF sẵn), có thể convert nội dung text
-# thành PDF đơn giản bằng thư viện fpdf2 (đã có trong requirements.txt).
+def collect_source_briefs() -> list[Path]:
+    """Return the three team-written, citation-backed source briefs for CP1."""
+    setup_directory()
+    paths = [DATA_DIR / filename for filename in REQUIRED_FILES]
+    missing = [str(path) for path in paths if not path.exists() or path.stat().st_size <= 1024]
+    if missing:
+        raise FileNotFoundError("Missing or invalid CP1 source briefs: " + ", ".join(missing))
+    return paths
 
 
 if __name__ == "__main__":
-    setup_directory()
+    for path in collect_source_briefs():
+        print(f"Ready: {path}")

@@ -16,10 +16,11 @@ Cài đặt:
 Gợi ý chủ đề: thông báo tuyển sinh, sự kiện, dịch vụ thư viện, hỗ trợ sinh viên, học bổng.
 """
 
-import asyncio
 import json
+import re
 from datetime import datetime
 from pathlib import Path
+from urllib.request import Request, urlopen
 
 DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "news"
 
@@ -29,15 +30,16 @@ def setup_directory():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
-# TODO: Điền danh sách URL bài viết cần crawl
 ARTICLE_URLS = [
-    # Ví dụ (trang công khai RMIT Vietnam):
-    # "https://www.rmit.edu.vn/libraryvn/...",
-    # "https://www.rmit.edu.vn/students/...",
+    "https://jamesclear.com/three-steps-habit-change",
+    "https://jamesclear.com/habit-tracker",
+    "https://thedecisionlab.com/reference-guide/philosophy/system-1-and-system-2-thinking",
+    "https://en.wikipedia.org/wiki/Deep_Work",
+    "https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow",
 ]
 
 
-async def crawl_article(url: str) -> dict:
+def crawl_article(url: str) -> dict:
     """
     Crawl một bài viết và trả về dict chứa metadata + content.
 
@@ -49,32 +51,30 @@ async def crawl_article(url: str) -> dict:
             "content_markdown": str
         }
     """
-    from crawl4ai import AsyncWebCrawler
-
-    # TODO: Implement crawling logic
-    # async with AsyncWebCrawler() as crawler:
-    #     result = await crawler.arun(url=url)
-    #     return {
-    #         "url": url,
-    #         "title": result.metadata.get("title", "Unknown"),
-    #         "date_crawled": datetime.now().isoformat(),
-    #         "content_markdown": result.markdown,
-    #     }
-    raise NotImplementedError("Implement crawl_article")
+    request = Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; C3-02-RAG/1.0)"})
+    with urlopen(request, timeout=20) as response:
+        html = response.read().decode("utf-8", errors="replace")
+    title_match = re.search(r"<title[^>]*>(.*?)</title>", html, flags=re.I | re.S)
+    title = re.sub(r"<[^>]+>", "", title_match.group(1)).strip() if title_match else "Untitled"
+    text = re.sub(r"<script[\s\S]*?</script>|<style[\s\S]*?</style>|<[^>]+>", " ", html, flags=re.I)
+    content = re.sub(r"\s+", " ", text).strip()[:1100]
+    if len(content) < 500:
+        raise ValueError(f"Extracted content is too short from {url}")
+    return {"url": url, "title": title, "date_crawled": datetime.now().isoformat(), "content_markdown": content}
 
 
-async def crawl_all():
+def crawl_all():
     """Crawl toàn bộ bài viết trong ARTICLE_URLS."""
     setup_directory()
 
     for i, url in enumerate(ARTICLE_URLS, 1):
         print(f"[{i}/{len(ARTICLE_URLS)}] Crawling: {url}")
-        article = await crawl_article(url)
+        article = crawl_article(url)
 
         # Lưu file JSON
         filename = f"article_{i:02d}.json"
         filepath = DATA_DIR / filename
-        filepath.write_text(json.dumps(article, ensure_ascii=False, indent=2))
+        filepath.write_text(json.dumps(article, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"  ✓ Saved: {filepath}")
 
 
@@ -83,4 +83,4 @@ if __name__ == "__main__":
         print("⚠ Hãy điền ARTICLE_URLS trước khi chạy!")
         print("Gợi ý: tìm trang thông báo/sự kiện trên trang chính thức của trường đại học")
     else:
-        asyncio.run(crawl_all())
+        crawl_all()
