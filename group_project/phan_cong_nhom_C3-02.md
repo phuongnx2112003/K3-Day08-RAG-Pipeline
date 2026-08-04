@@ -51,7 +51,7 @@ Task 1, Task 2
 
 ## 3. Phân Công Theo Checkpoint
 
-> Quy ước của nhóm: **Task 9** được giao cho Phượng (Role 1) vì đây là bước hợp nhất kiến trúc giữa dense retrieval của Role 3 và sparse/fallback của Role 4. Việc này không thay đổi 6 role đã chốt.
+> Quy ước áp dụng: nhóm ưu tiên **Phương án C - nhóm 6 người** trong `LAB_GUIDE.md` để xác định quyền sở hữu Task 1-10. Một số dòng role ở phần checkpoint của lab là mô tả tổng quát cho nhóm quy mô khác, nên chỉ dùng làm checklist tiến độ. **Task 9** được giao cho Phượng (Role 1) vì đây là bước hợp nhất kiến trúc giữa dense retrieval của Role 3 và sparse/fallback của Role 4; **Task 10** vẫn thuộc Dũng (Role 5). Việc này không thay đổi 6 role đã chốt.
 
 ### CP0 - Setup Môi Trường (0:00 - 0:10)
 
@@ -83,14 +83,14 @@ Task 1, Task 2
 
 | Thành viên | Nhiệm vụ | Phụ thuộc / Bàn giao |
 |---|---|---|
-| Phượng - Role 1 | Duyệt contract chunk chung: `content`, `score`, `metadata`; chốt chunk size, overlap và model embedding với Hải. | Phụ thuộc Markdown của CP1. |
+| Phượng - Role 1 | Duyệt contract chunk chung: `content`, `score`, `metadata`; chốt `CHUNK_SIZE=800`, `CHUNK_OVERLAP=100` và model embedding với Hải. | Phụ thuộc Markdown của CP1. |
 | Phước - Role 2 | Sửa hoặc bổ sung data nếu phát hiện file rỗng, lỗi encode hay metadata thiếu. | Hỗ trợ Hải/Mạnh theo phản hồi. |
 | Hải - Role 3 | Làm Task 4 và 5: chunking, ChromaDB indexing, `semantic_search()` và HyDE nếu triển khai. | Nhận Markdown từ Role 2; bàn giao dense results cho Mạnh/Phượng. |
 | Mạnh - Role 4 | Làm Task 6: xây BM25/TF-IDF từ cùng corpus và trả format chunk thống nhất. | Nhận Markdown từ Role 2; đối chiếu format với Hải. |
 | Dũng - Role 5 | Chuẩn bị UI nhận `answer`, `sources`; chưa nối pipeline khi Task 10 chưa xong. | Nhận contract output từ Phượng. |
 | Minh Đức - Role 6 | Chọn 5 câu sanity-check để đo dense và BM25 có lấy đúng context hay không. | Nhận kết quả từ Hải và Mạnh. |
 
-**Điều kiện qua CP2:** tạo được ChromaDB, `semantic_search()` và `lexical_search()` trả danh sách chunks đúng contract.
+**Điều kiện qua CP2:** tạo được ChromaDB với `CHUNK_SIZE=800`, `CHUNK_OVERLAP=100`; `semantic_search()` và `lexical_search()` trả danh sách chunks đúng contract.
 
 ### CP3 - Reranking Và Vectorless Fallback (1:00 - 1:20)
 
@@ -109,14 +109,14 @@ Task 1, Task 2
 
 | Thành viên | Nhiệm vụ | Phụ thuộc / Bàn giao |
 |---|---|---|
-| Phượng - Role 1 | Làm Task 9, ghép Semantic + BM25 + RRF + PageIndex vào `retrieve()`; kiểm tra `PipelineSupervisor` và toàn bộ test. | Phụ thuộc Task 5-8; bàn giao retrieval contract cho Dũng/Minh Đức. |
+| Phượng - Role 1 | Làm Task 9, ghép Semantic + BM25 + RRF + PageIndex vào `retrieve()`; kiểm tra `PipelineSupervisor`, chạy `pytest tests/test_individual.py -v` và xử lý lỗi tích hợp. | Phụ thuộc Task 5-8; bàn giao retrieval contract cho Dũng/Minh Đức. |
 | Phước - Role 2 | Hỗ trợ đối chiếu kết quả retrieval với tài liệu gốc khi có lỗi. | Nhận query lỗi từ Phượng. |
 | Hải - Role 3 | Hỗ trợ chỉnh semantic score/HyDE nếu fallback kích hoạt sai. | Theo log tích hợp Task 9. |
 | Mạnh - Role 4 | Hỗ trợ sửa RRF, BM25 hoặc PageIndex nếu Task 9 không ghép được. | Theo log tích hợp Task 9. |
 | Dũng - Role 5 | Làm Task 10: reorder chunks, format context, gọi LLM và trả citation cùng sources. | Phụ thuộc `retrieve()` của Role 1. |
 | Minh Đức - Role 6 | Rà citation: mỗi claim phải bám context; ghi các case trả lời không đủ evidence. | Phụ thuộc Task 10. |
 
-**Điều kiện qua CP4:** `retrieve()` và `generate_with_citation()` chạy theo contract; câu trả lời có citation hoặc từ chối khi evidence thiếu.
+**Điều kiện qua CP4:** `retrieve()` và `generate_with_citation()` chạy theo contract; câu trả lời có citation hoặc từ chối khi evidence thiếu; `pytest tests/test_individual.py -v` đạt toàn bộ test khả dụng.
 
 ### CP5 - Chatbot Và Đánh Giá RAGAS (1:45 - 2:15)
 
