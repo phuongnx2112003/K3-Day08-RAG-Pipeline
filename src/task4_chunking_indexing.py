@@ -9,11 +9,18 @@ Hướng dẫn:
 """
 
 import os
+import re
 from pathlib import Path
 import requests
-import chromadb
+try:  # Keep the data-preparation functions usable before optional deps are installed.
+    import chromadb
+except ImportError:  # pragma: no cover - exercised in minimal environments
+    chromadb = None
 from dotenv import load_dotenv
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+try:
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+except ImportError:  # pragma: no cover - simple compatible fallback below
+    RecursiveCharacterTextSplitter = None
 
 load_dotenv()
 
@@ -29,9 +36,9 @@ CHUNK_OVERLAP = 100
 CHUNKING_METHOD = "recursive"
 
 # Sử dụng Jina Embeddings API v3 cho kết quả rất chính xác và không tốn bộ nhớ local
-EMBEDDING_MODEL = "jina-embeddings-v3"
-EMBEDDING_DIM = 1024
-JINA_EMBEDDING_URL = "https://api.jina.ai/v1/embeddings"
+EMBEDDING_MODEL = os.getenv("JINA_EMBEDDING_MODEL", "jina-embeddings-v3")
+EMBEDDING_DIM = int(os.getenv("JINA_EMBEDDING_DIM", "1024"))
+JINA_EMBEDDING_URL = os.getenv("JINA_EMBEDDING_BASE_URL", "https://api.jina.ai/v1/embeddings")
 
 VECTOR_STORE = "chromadb"
 COLLECTION_NAME = "university_services_docs"
@@ -79,6 +86,8 @@ def get_jina_embeddings(texts: list[str], is_query: bool = False) -> list[list[f
 
 def get_collection():
     global _collection
+    if chromadb is None:
+        raise RuntimeError("ChromaDB is not installed. Run: pip install -r requirements.txt")
     if _collection is None:
         CHROMA_DIR.mkdir(parents=True, exist_ok=True)
         client = chromadb.PersistentClient(path=str(CHROMA_DIR))
@@ -102,11 +111,20 @@ def load_documents() -> list[dict]:
             continue
         content = md_file.read_text(encoding="utf-8")
         doc_type = "legal" if "legal" in str(md_file.parent) else "news"
+        def field(name: str) -> str:
+            match = re.search(rf"^\*\*{name}:\*\*\s*(.+)$", content, re.MULTILINE)
+            return match.group(1).strip() if match else ""
+        title = next((line[2:].strip() for line in content.splitlines() if line.startswith("# ")), md_file.stem)
         documents.append({
             "content": content,
             "metadata": {
                 "source": md_file.name,
-                "type": doc_type
+                "type": field("Type") or doc_type,
+                "book_title": field("Book") or title,
+                "author": field("Author"),
+                "category": field("Category"),
+                "source_url": field("Source"),
+                "rights_note": "public-source-or-team-summary",
             }
         })
     return documents
@@ -116,15 +134,19 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
     """
     Chunk documents theo RecursiveCharacterTextSplitter.
     """
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=CHUNK_SIZE,
-        chunk_overlap=CHUNK_OVERLAP,
-        separators=["\n\n", "\n", ". ", " ", ""]
-    )
-
     chunks = []
     for doc in documents:
-        splits = splitter.split_text(doc["content"])
+        if RecursiveCharacterTextSplitter is None:
+            # Dependency-free fallback preserving the same size/overlap contract.
+            text = doc["content"]
+            step = CHUNK_SIZE - CHUNK_OVERLAP
+            splits = [text[i:i + CHUNK_SIZE] for i in range(0, len(text), step)]
+        else:
+            splitter = RecursiveCharacterTextSplitter(
+                chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP,
+                separators=["\n\n", "\n", ". ", " ", ""],
+            )
+            splits = splitter.split_text(doc["content"])
         for i, chunk_text in enumerate(splits):
             chunk_metadata = {**doc["metadata"], "chunk_index": i}
             chunks.append({

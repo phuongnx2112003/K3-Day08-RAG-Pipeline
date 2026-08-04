@@ -41,12 +41,21 @@ def semantic_search(query: str, top_k: int = 10) -> list[dict]:
     if not query.strip():
         return []
 
-    collection = get_collection()
+    try:
+        collection = get_collection()
+    except RuntimeError:
+        # A fresh checkout may not have ChromaDB/the persisted index yet.
+        return []
 
     if collection.count() == 0:
         return []
 
-    query_vector = get_jina_embeddings([query], is_query=True)[0]
+    try:
+        query_vector = get_jina_embeddings([query], is_query=True)[0]
+    except (ValueError, OSError, KeyError):
+        # Index/query credentials are configured separately; retrieval pipeline
+        # can still use BM25 and its vectorless fallback while Jina is unavailable.
+        return []
 
     results = collection.query(
         query_embeddings=[query_vector],

@@ -1,17 +1,22 @@
 [
-  {
-    "question": "Học phí hàng năm của chương trình Business tại RMIT Vietnam là bao nhiêu?",
-    "expected_answer": "Khoảng 375.840.000 VND mỗi năm (tùy chương trình cụ thể).",
-    "expected_context": "Trang Tuition Fees, mục Undergraduate Programs"
-  },
-  {
-    "question": "Học phí được thanh toán theo hình thức nào?",
-    "expected_answer": "Thanh toán theo từng học kỳ, tính theo từng môn học đã đăng ký.",
-    "expected_context": "Trang Tuition Fees, mục Payment Structure"
-  },
-  {
-    "question": "Trường có cung cấp ký túc xá trong khuôn viên không?",
-    "expected_answer": "Không — trường không cung cấp chỗ ở trong khuôn viên, nhưng có đội ngũ hỗ trợ sinh viên tìm chỗ ở gần trường.",
-    "expected_context": "Trang Accommodation Services"
-  }
+  {"question":"Bốn bước hình thành thói quen là gì?","expected_answer":"Cue, craving, response và reward.","expected_context":"article_02.md — four simple steps"},
+  {"question":"Bốn quy luật thay đổi hành vi của Atomic Habits là gì?","expected_answer":"Make it obvious, make it attractive, make it easy và make it satisfying.","expected_context":"atomic-habits-business-appendix.md — Four Laws of Behavior Change"},
+  {"question":"Atomic Habits khuyên cải thiện bao nhiêu phần trăm mỗi ngày?","expected_answer":"Tập trung vào việc tốt hơn 1 phần trăm mỗi ngày.","expected_context":"article_01.md — Lesson 1"},
+  {"question":"Atomic Habits ưu tiên mục tiêu hay hệ thống?","expected_answer":"Nguồn nêu nên tập trung vào hệ thống, tức các quy trình tạo ra kết quả, thay vì chỉ đặt mục tiêu.","expected_context":"article_01.md — Lesson 2"},
+  {"question":"Identity-based habits nghĩa là gì?","expected_answer":"Xây thói quen bền vững bằng cách trước hết hình thành niềm tin về bản sắc mới của bản thân.","expected_context":"article_01.md — Lesson 3"},
+  {"question":"Trong vòng lặp thói quen, cue có vai trò gì?","expected_answer":"Cue khởi phát hành vi và dự báo phần thưởng.","expected_context":"article_02.md — cue"},
+  {"question":"Craving trong vòng lặp thói quen là gì?","expected_answer":"Craving là động lực hoặc mong muốn thay đổi trạng thái, tạo lý do để hành động.","expected_context":"article_02.md — cravings"},
+  {"question":"Lean Startup định nghĩa validated learning như thế nào?","expected_answer":"Đó là quá trình đánh giá sự quan tâm của khách hàng để xác định sản phẩm cần được tinh chỉnh ra sao.","expected_context":"lean-startup-method-analysis.md — validated learning"},
+  {"question":"MVP trong Lean Startup dùng để làm gì?","expected_answer":"MVP là dạng nhỏ nhất của sản phẩm để đưa đến khách hàng và thu thập phản hồi nhanh.","expected_context":"lean-startup-method-analysis.md — minimum viable product"},
+  {"question":"Build-Measure-Learn loop gồm những ý nào?","expected_answer":"Biến ý tưởng thành sản phẩm, đo phản hồi khách hàng, rồi học để quyết định pivot hay persevere.","expected_context":"lean-startup-method-analysis.md — Build-Measure-Learn"},
+  {"question":"Pivot có nghĩa gì trong Lean Startup?","expected_answer":"Đó là điều chỉnh cấu trúc hoặc đổi hướng để kiểm thử một giả thuyết mới về sản phẩm, chiến lược hay động cơ tăng trưởng.","expected_context":"lean-startup-method-analysis.md — pivot"},
+  {"question":"Lean Startup coi trọng thử nghiệm hay kế hoạch chi tiết?","expected_answer":"Nguồn ưu tiên thử nghiệm hơn kế hoạch chi tiết khi còn nhiều điều chưa biết.","expected_context":"lean-startup-method-analysis.md — experimentation"},
+  {"question":"System 1 khác System 2 thế nào?","expected_answer":"System 1 nhanh, trực giác và cảm xúc; System 2 chậm, cân nhắc và logic.","expected_context":"thinking-fast-slow-innovation-review.md — two systems"},
+  {"question":"Vì sao System 1 có thể dẫn đến sai lầm?","expected_answer":"Nguồn mô tả System 1 dễ nhảy đến kết luận và xây câu chuyện từ thông tin đang có mà bỏ qua thông tin thiếu.","expected_context":"thinking-fast-slow-innovation-review.md — jumping to conclusions"},
+  {"question":"Điểm yếu của System 2 là gì?","expected_answer":"System 2 dễ mệt, lười và có phạm vi chú ý hạn chế.","expected_context":"thinking-fast-slow-innovation-review.md — lazy controller"},
+  {"question":"Kahneman đánh giá chuyên gia và dự báo như thế nào?","expected_answer":"Nguồn nêu chuyên gia có thể đánh giá quá cao kiến thức; thống kê và base rate thường tốt hơn phán đoán nhân quả trực giác.","expected_context":"thinking-fast-slow-innovation-review.md — expertise and statistics"},
+  {"question":"Thinking, Fast and Slow xuất bản năm nào?","expected_answer":"Nguồn Wikipedia mô tả đây là sách khoa học phổ thông xuất bản năm 2011.","expected_context":"article_04.md — opening"},
+  {"question":"The Innovators nói về chủ đề gì?","expected_answer":"Sách khái quát lịch sử đóng góp của nhiều nhà đổi mới cho các đột phá trong công nghệ máy tính và ứng dụng của chúng.","expected_context":"article_05.md — opening"},
+  {"question":"Walter Isaacson đã sửa gì trong ấn bản điện tử The Innovators?","expected_answer":"Nguồn nêu ấn bản sửa sai sót về việc gán quá nhiều công lao cho Bill Gates và bổ sung tư liệu ghi nhận vai trò của Paul Allen.","expected_context":"article_05.md — revised electronic edition"},
+  {"question":"Học phí chương trình Business tại RMIT Vietnam là bao nhiêu?","expected_answer":"Tôi không thể xác minh thông tin này từ nguồn hiện có vì corpus không chứa chính sách học phí RMIT.","expected_context":"Out-of-scope test — expect refusal/fallback"}
 ]

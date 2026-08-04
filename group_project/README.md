@@ -91,12 +91,12 @@ Phạm vi đề tài, chuẩn nguồn dữ liệu và metadata nằm trong
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| Nguyễn Xuân Phượng | 2A202601874 | Role 1: Supervisor, kiến trúc và điều phối demo | Đang triển khai |
-| Phùng Hồng Phước | 2A202601215 | Role 2: Task 1-3, data engineering | Chờ bàn giao |
-| Nguyễn Đào Nam Hải | 2A202601037 | Role 3: Task 4-5, vector database và dense search | Chờ bàn giao |
-| Trần Đức Mạnh | 2A202601567 | Role 4: Task 6-8, sparse retrieval và fallback | Chờ bàn giao |
-| Lê Công Dũng | 2A202601649 | Role 5: Streamlit UI và Task 10 | Chờ bàn giao |
-| Lê Nguyễn Minh Đức | 2A202601013 | Role 6: Golden dataset, RAGAS và báo cáo | Chờ bàn giao |
+| Nguyễn Xuân Phượng | 2A202601874 | Role 1: Supervisor, kiến trúc và điều phối demo | Hoàn thành |
+| Phùng Hồng Phước | 2A202601215 | Role 2: Task 1-3, data engineering | Hoàn thành |
+| Nguyễn Đào Nam Hải | 2A202601037 | Role 3: Task 4-5, vector database và dense search | Hoàn thành |
+| Trần Đức Mạnh | 2A202601567 | Role 4: Task 6-8, sparse retrieval và fallback | Hoàn thành |
+| Lê Công Dũng | 2A202601649 | Role 5: Streamlit UI và Task 10 | Hoàn thành |
+| Lê Nguyễn Minh Đức | 2A202601013 | Role 6: Golden dataset, RAGAS và báo cáo | Hoàn thành |
 
 ---
 
