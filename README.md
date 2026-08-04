@@ -1,5 +1,5 @@
 ---
-title: University Services RAG Chatbot
+title: BookMind AI — RAG Book Assistant
 emoji: 🎓
 colorFrom: blue
 colorTo: indigo
@@ -13,21 +13,73 @@ pinned: false
 
 **Chương 2 | Ngày 8 trong 15**
 
-> Dùng chung chủ đề "University Services" với biến thể K3 của Ngày 7 (`K3_VARIANT.md`), để pipeline Ngày 7 → Ngày 8 nhất quán.
+> Bài cá nhân vẫn theo format Day 8 (Task 1–10). Riêng **bài nhóm** của team triển khai theo chủ đề:
+> **Trợ lý tóm tắt & phân tích sách chuyên sâu (BookMind AI)**.
 
 ---
 
 ## Mục Tiêu
 
-Xây dựng một RAG pipeline thực tế, end-to-end, từ thu thập dữ liệu chính sách và thông tin dịch vụ đại học → xử lý → indexing → retrieval (hybrid + vectorless fallback) → generation có citation.
+Xây dựng một RAG pipeline thực tế, end-to-end, từ thu thập dữ liệu sách/bài review → xử lý → indexing → retrieval (hybrid + vectorless fallback) → generation có citation.
+
+## Demo nhanh (những gì team đã làm)
+
+### 1) Cài đặt
+
+```bash
+pip install -r requirements.txt
+cp .env.example .env
+```
+
+Điền API keys trong `.env` (tuỳ chọn theo phần bạn muốn chạy):
+- `OPENAI_API_KEY` (Task 10 + RAGAS evaluation)
+- `JINA_API_KEY` (Task 4/5 dense search dùng Jina Embeddings API)
+- `PAGEINDEX_API_KEY` (Task 8 fallback)
+
+### 2) Chạy UI
+
+**A. Streamlit (bài nhóm):**
+```bash
+streamlit run app.py
+```
+
+**B. React A/B Benchmark UI (Vite) + FastAPI backend:**
+
+- Terminal 1 (API, port 8000):
+```bash
+python src/server.py
+# hoặc
+python -m uvicorn src.server:app --reload --port 8000
+```
+
+- Terminal 2 (UI, port 3000):
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+> `frontend/vite.config.js` đã cấu hình proxy `/api` → `http://localhost:8000`.
+
+### 3) Chạy evaluation (RAGAS)
+
+Chạy full evaluation A/B theo golden dataset:
+```bash
+python group_project/evaluation/eval_pipeline.py --mode ragas --save-json --output group_project/evaluation/results.md
+```
+
+Lưu raw output để audit:
+- `group_project/evaluation/eval_outputs.json`
+
+> Lưu ý: UI A/B (endpoint `/api/compare`) hiện hiển thị metrics tính nhanh theo logic server để demo realtime; số liệu “RAGAS Metrics” chính thức nằm trong `group_project/evaluation/results.md`.
 
 ---
 
 ## Chủ Đề Dữ Liệu
 
-**Chính sách/quy định dịch vụ đại học** (học phí, học bổng, ký túc xá, đăng ký học phần) + **Thông tin/thông báo đại học** (sự kiện, dịch vụ thư viện, hỗ trợ sinh viên)
+**Sách / bài review / bài phân tích** (ví dụ: *Atomic Habits*, *The Lean Startup*, *Thinking, Fast and Slow*…) phục vụ chatbot tóm tắt tri thức, trích dẫn bài học và phân tích góc nhìn.
 
-Dữ liệu mẫu trong repo được crawl thật từ trang công khai của **RMIT Vietnam** (rmit.edu.vn) — xem chi tiết URL nguồn trong `src/task1_collect_legal_docs.py` và `src/task2_crawl_news.py`.
+Dữ liệu mẫu trong repo có thể gồm file PDF và bài viết crawl công khai; xem chi tiết URL nguồn trong `src/task1_collect_legal_docs.py` và `src/task2_crawl_news.py` (tuỳ biến theo nhóm).
 
 ---
 
@@ -39,11 +91,14 @@ K3-Day08-RAG-Pipeline-Starter/
 ├── LAB_GUIDE.md           ← Hướng dẫn chi tiết & Codelab
 ├── checkpoint_timer.html  ← Dashboard đếm ngược Checkpoint & Phân vai
 ├── app.py                 ← Streamlit chatbot (bài nhóm)
+├── frontend/              ← React (Vite) A/B Benchmark UI
+├── static/                ← Static assets cho FastAPI server
 ├── data/
 │   ├── landing/           ← Task 1 & 2: raw files (PDF, JSON)
 │   └── standardized/      ← Task 3: converted markdown files
 ├── src/
 │   ├── __init__.py
+│   ├── server.py          ← FastAPI backend (A/B + API)
 │   ├── task1_collect_legal_docs.py
 │   ├── task2_crawl_news.py
 │   ├── task3_convert_markdown.py
@@ -387,7 +442,7 @@ def generate_with_citation(query: str, context_chunks: list[dict]) -> str:
 
 ### Yêu cầu 1: Sản phẩm nhóm RAG Chatbot
 
-Xây dựng chatbot trả lời câu hỏi về chính sách và dịch vụ đại học liên quan.
+Xây dựng chatbot tóm tắt và phân tích sách (có citation).
 
 **Yêu cầu:**
 - Giao diện chat (Streamlit / Gradio / Chainlit)
@@ -399,6 +454,12 @@ Xây dựng chatbot trả lời câu hỏi về chính sách và dịch vụ đ�
 ```
 Chainlit/Streamlit → Retrieval (Task 9) → Generation (Task 10) → Display
 ```
+
+#### Triển khai trong repo (team)
+
+- Backend FastAPI: `src/server.py` (các endpoint: `GET /api/health`, `GET /api/benchmark`, `POST /api/chat`, `POST /api/compare`, `GET /api/books`)
+- React UI (Vite): `frontend/` (proxy `/api` sang `http://localhost:8000`)
+- Streamlit chatbot: `app.py`
 
 ---
 
@@ -424,6 +485,18 @@ Sử dụng **1 trong 3 framework** sau để evaluate pipeline RAG của nhóm:
    - **Context Precision** — trong context lấy về, bao nhiêu % thực sự hữu ích?
 3. **So sánh A/B** — chạy eval trên ít nhất 2 config khác nhau (ví dụ: có reranking vs không reranking, hoặc hybrid vs dense-only)
 4. **Báo cáo** — bảng điểm + phân tích worst performers + đề xuất cải tiến
+
+#### Triển khai trong repo (team)
+
+Repo đã có sẵn script chạy evaluation A/B:
+
+```bash
+python group_project/evaluation/eval_pipeline.py --mode ragas --save-json --output group_project/evaluation/results.md
+```
+
+- Golden dataset: `group_project/evaluation/golden_dataset.json`
+- Report: `group_project/evaluation/results.md`
+- Raw outputs (audit): `group_project/evaluation/eval_outputs.json`
 
 #### Code mẫu — DeepEval
 
@@ -549,9 +622,30 @@ run_dashboard()
 
 ### Kiến Trúc Hệ Thống
 
+```text
+Data (Role 2)
+  ├─ Task 1-2: landing (PDF/JSON/HTML)
+  └─ Task 3: standardized Markdown
+        │
+        ├─ Task 4-5 (Role 3): ChromaDB + Dense Search (Jina Embeddings API)
+        ├─ Task 6-8 (Role 4): BM25 + RRF + PageIndex fallback
+        └─ Task 9 (Role 1): Hybrid Retrieval Pipeline
+                │
+                └─ Task 10 (Role 5): Generation + Citation validation
+                        │
+                        ├─ Streamlit UI: `app.py`
+                        ├─ FastAPI backend: `src/server.py` (A/B compare + chat + benchmark)
+                        └─ React UI (Vite): `frontend/` (proxy `/api` → `http://localhost:8000`)
+
+Evaluation (Role 6)
+  └─ Golden dataset + RAGAS A/B: `group_project/evaluation/*`
+
+Role 1: điều phối contract, tích hợp pipeline, kịch bản demo.
 ```
-[Vẽ diagram kiến trúc ở đây]
-```
+
+Chi tiết kiến trúc, điều kiện bàn giao và kịch bản demo:
+- `group_project/demo_runbook.md`
+- `group_project/topic_scope.md`
 
 ---
 
@@ -559,12 +653,14 @@ run_dashboard()
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Nguyễn Xuân Phượng | 2A202601874 | Role 1: Supervisor, kiến trúc & tích hợp pipeline (Task 9), điều phối demo | Hoàn thành |
+| Phùng Hồng Phước | 2A202601215 | Role 2: Data engineering (Task 1–3) | Hoàn thành |
+| Nguyễn Đào Nam Hải | 2A202601037 | Role 3: Chunking/Indexing + Dense search (Task 4–5) | Hoàn thành |
+| Trần Đức Mạnh | 2A202601567 | Role 4: Sparse retrieval + Rerank/Fallback (Task 6–8) | Hoàn thành |
+| Lê Công Dũng | 2A202601649 | Role 5: UI integration + Generation (Task 10, app.py) | Hoàn thành |
+| Lê Nguyễn Minh Đức | 2A202601013 | Role 6: Golden dataset + RAGAS evaluation + báo cáo | Hoàn thành |
 
----
+---  
 
 ### Hướng Dẫn Chạy
 
@@ -572,10 +668,18 @@ run_dashboard()
 # Cài đặt dependencies
 pip install -r requirements.txt
 
-# Chạy app
+# Chạy Streamlit UI
 streamlit run app.py
+
+# Chạy FastAPI API (phục vụ React UI)
+python src/server.py
 # hoặc
-chainlit run app.py
+python -m uvicorn src.server:app --reload --port 8000
+
+# Chạy React UI (Vite)
+cd frontend
+npm install
+npm run dev
 ```
 
 ---
