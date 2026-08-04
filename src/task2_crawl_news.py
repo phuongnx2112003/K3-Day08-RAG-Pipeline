@@ -37,9 +37,9 @@ ARTICLE_URLS = [
     # Kinh doanh - The Lean Startup (Eric Ries)
     "https://theleanstartup.com/book",
     # Tâm lý học - Thinking, Fast and Slow (Daniel Kahneman)
-    "https://us.macmillan.com/books/9780374533557/thinkingfastandslow/",
+    "https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow",
     # Công nghệ - The Innovators (Walter Isaacson)
-    "https://isaacson.tulane.edu/books/innovators/",
+    "https://en.wikipedia.org/wiki/The_Innovators_(book)",
 ]
 
 
