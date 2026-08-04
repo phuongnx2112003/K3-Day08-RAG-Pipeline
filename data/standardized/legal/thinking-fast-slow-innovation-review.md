@@ -1,3 +1,12 @@
+# Thinking, Fast and Slow
+
+**Author:** Daniel Kahneman
+**Category:** psychology
+**Source:** https://innovation.cc/wp-content/uploads/2012_17_3_10_gow_bk_rev_kahneman.pdf
+**Type:** public_pdf
+
+---
+
 The Innovation Journal: The Public Sector Innovation Journal, Volume 17(3), 2012, article 10.
 
 Book Review

@@ -1,3 +1,12 @@
+# Thinking, Fast and Slow
+
+**Author:** Daniel Kahneman
+**Category:** psychology
+**Source:** https://www.cia.gov/resources/csi/static/Thinking-Fast-and-Slow.pdf
+**Type:** public_pdf
+
+---
+
 Intelligence in Public Literature
 
 Thinking, Fast and Slow

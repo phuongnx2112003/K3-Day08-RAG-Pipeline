@@ -1,3 +1,12 @@
+# The Lean Startup
+
+**Author:** Eric Ries
+**Category:** business
+**Source:** https://assets.website-files.com/6754fde9083ed68513741b0b/681768721e7e0d62338789a2_51868898252.pdf
+**Type:** public_pdf
+
+---
+
 Lean startup
 A lean startup is a method used to found a new company or introduce a new product on behalf of an existing company. The lean startup method advocates developing products that consumers have already demonstrated they desire so that a market will already exist as soon as the product is launched. As opposed to developing a product and then
 hoping that demand will emerge. By employing lean startup principles, product developers can gauge consumer interest in the product and determine how the product might need to be refined. This process is called validated learning and it can be utilized to avoid the unnecessary use of resources in product creation and development. Through lean

@@ -18,6 +18,8 @@ Hướng dẫn:
 
 import json
 import subprocess
+import zipfile
+from xml.etree import ElementTree
 from pathlib import Path
 
 try:
@@ -27,6 +29,19 @@ except ImportError:
 
 LANDING_DIR = Path(__file__).parent.parent / "data" / "landing"
 OUTPUT_DIR = Path(__file__).parent.parent / "data" / "standardized"
+
+PDF_METADATA = {
+    "atomic-habits-business-appendix.pdf": ("Atomic Habits", "James Clear", "personal_development", "https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf"),
+    "thinking-fast-slow-cia-review.pdf": ("Thinking, Fast and Slow", "Daniel Kahneman", "psychology", "https://www.cia.gov/resources/csi/static/Thinking-Fast-and-Slow.pdf"),
+    "thinking-fast-slow-innovation-review.pdf": ("Thinking, Fast and Slow", "Daniel Kahneman", "psychology", "https://innovation.cc/wp-content/uploads/2012_17_3_10_gow_bk_rev_kahneman.pdf"),
+    "lean-startup-method-analysis.pdf": ("The Lean Startup", "Eric Ries", "business", "https://assets.website-files.com/6754fde9083ed68513741b0b/681768721e7e0d62338789a2_51868898252.pdf"),
+}
+
+
+def _extract_docx_text(filepath: Path) -> str:
+    with zipfile.ZipFile(filepath) as archive:
+        root = ElementTree.fromstring(archive.read("word/document.xml"))
+    return "\n".join(node.text or "" for node in root.iter("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}t"))
 
 
 def convert_legal_docs():
@@ -42,10 +57,16 @@ def convert_legal_docs():
             print(f"Converting: {filepath.name}")
             if md:
                 text = md.convert(str(filepath)).text_content
-            else:
+            elif filepath.suffix.lower() == ".pdf":
                 text = subprocess.run(["pdftotext", str(filepath), "-"], check=True, capture_output=True, text=True).stdout
+            elif filepath.suffix.lower() == ".docx":
+                text = _extract_docx_text(filepath)
+            else:
+                raise ValueError(".doc requires MarkItDown; convert it to .docx or install MarkItDown.")
             output_path = output_dir / f"{filepath.stem}.md"
-            output_path.write_text(text, encoding="utf-8")
+            title, author, category, source_url = PDF_METADATA.get(filepath.name, (filepath.stem, "Unknown", "unknown", "N/A"))
+            header = f"# {title}\n\n**Author:** {author}\n**Category:** {category}\n**Source:** {source_url}\n**Type:** public_pdf\n\n---\n\n"
+            output_path.write_text(header + text, encoding="utf-8")
             print(f"  ✓ Saved: {output_path}")
 
 
@@ -62,7 +83,11 @@ def convert_news_articles():
             output_path = output_dir / f"{filepath.stem}.md"
             header = f"# {data.get('title', 'Unknown')}\n\n"
             header += f"**Source:** {data.get('url', 'N/A')}\n"
-            header += f"**Crawled:** {data.get('date_crawled', 'N/A')}\n\n---\n\n"
+            header += f"**Crawled:** {data.get('date_crawled', 'N/A')}\n"
+            header += f"**Book:** {data.get('book_title', 'Unknown')}\n"
+            header += f"**Author:** {data.get('author', 'Unknown')}\n"
+            header += f"**Category:** {data.get('category', 'unknown')}\n"
+            header += f"**Type:** {data.get('type', 'public_book_article')}\n\n---\n\n"
             output_path.write_text(header + data.get("content_markdown", ""), encoding="utf-8")
             print(f"  ✓ Saved: {output_path}")
 

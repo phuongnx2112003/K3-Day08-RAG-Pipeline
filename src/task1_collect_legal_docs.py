@@ -1,25 +1,9 @@
 """
-Task 1 — Thu thập source brief cho Book Insights RAG.
+Task 1 — Tải PDF công khai phục vụ Book Insights RAG.
 
-Hướng dẫn:
-    1. Tìm tối thiểu 3 văn bản chính sách (PDF/DOCX) từ trang công khai của một trường đại học.
-    2. Tải về và lưu vào data/landing/legal/
-    3. Đặt tên file rõ ràng, không dấu, mô tả đúng nội dung.
-
-Gợi ý nguồn (ví dụ trang công khai RMIT Vietnam — rmit.edu.vn):
-    - https://www.rmit.edu.vn/study-at-rmit/tuition-fees
-    - https://www.rmit.edu.vn/study-at-rmit/scholarships/...
-    - https://www.rmit.edu.vn/students/my-studies/fees-and-payments
-
-Gợi ý văn bản (chủ đề dịch vụ đại học):
-    - Học phí & phương thức thanh toán (Tuition Fees)
-    - Chính sách học bổng (Scholarship eligibility)
-    - Quy định ký túc xá / hỗ trợ chỗ ở (Accommodation Services)
-    - Hướng dẫn đăng ký học phần qua cổng thông tin sinh viên (Course Registration)
-
-Lưu ý: một số trang trường (vd VinUni, Fulbright) chặn bot crawler mặc định (HTTP 403) —
-không phải lỗi của bạn, đó là cấu hình WAF/Cloudflare phía server. Đổi sang trang khác
-thay vì cố vượt qua, và chỉ dùng nguồn công khai/được phép chia sẻ.
+Chỉ dùng phụ lục, excerpt, book review hoặc tài liệu phân tích được công bố công
+khai. Không tải ebook toàn văn có bản quyền. File được lưu tại
+data/landing/legal/ để tương thích cấu trúc starter project.
 """
 
 from pathlib import Path
@@ -45,17 +29,25 @@ def setup_directory():
 def collect_source_briefs() -> list[Path]:
     """Download three publicly shared book-related PDFs with provenance."""
     setup_directory()
-    paths = []
+    downloads: list[tuple[Path, bytes]] = []
+    failures: list[str] = []
     for filename, url in SOURCE_DOCUMENTS:
         path = DATA_DIR / filename
-        request = Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; C3-02-RAG/1.0)"})
-        with urlopen(request, timeout=30) as response:
-            content = response.read()
-        if not content.startswith(b"%PDF") or len(content) <= 1024:
-            raise ValueError(f"Invalid PDF response from {url}")
+        try:
+            request = Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; C3-02-RAG/1.0)"})
+            with urlopen(request, timeout=30) as response:
+                content = response.read()
+            if not content.startswith(b"%PDF") or len(content) <= 1024:
+                raise ValueError("response is not a valid PDF")
+        except Exception as exc:
+            failures.append(f"{url}: {exc}")
+            continue
+        downloads.append((path, content))
+    if failures:
+        raise RuntimeError("Task 1 aborted; no files were updated:\n" + "\n".join(failures))
+    for path, content in downloads:
         path.write_bytes(content)
-        paths.append(path)
-    return paths
+    return [path for path, _ in downloads]
 
 
 if __name__ == "__main__":

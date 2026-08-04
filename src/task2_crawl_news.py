@@ -1,24 +1,13 @@
 """
-Task 2 — Crawl bài viết/thông báo về dịch vụ đại học.
+Task 2 — Crawl bài review/phân tích công khai về sách.
 
-Hướng dẫn:
-    1. Crawl tối thiểu 5 bài viết từ trang công khai của một trường đại học.
-    2. Sử dụng Crawl4AI hoặc thư viện crawling tương tự.
-    3. Lưu output vào data/landing/news/
-    4. Mỗi bài lưu 1 file JSON với metadata (url, title, date_crawled, content).
-
-Cài đặt:
-    pip install crawl4ai
-    playwright install chromium   # bắt buộc — pip install crawl4ai KHÔNG tự tải browser binary,
-                                   # thiếu bước này sẽ báo lỗi
-                                   # "BrowserType.launch: Executable doesn't exist"
-
-Gợi ý chủ đề: thông báo tuyển sinh, sự kiện, dịch vụ thư viện, hỗ trợ sinh viên, học bổng.
+Mỗi file JSON giữ URL, thời điểm crawl, metadata sách và phần nội dung bài viết.
+Crawler chỉ lấy paragraph của bài để loại menu, footer và điều hướng trang.
 """
 
 import json
-import re
 from datetime import datetime
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -42,6 +31,44 @@ ARTICLE_URLS = [
     "https://en.wikipedia.org/wiki/The_Innovators_(book)",
 ]
 
+BOOK_METADATA = {
+    ARTICLE_URLS[0]: {"book_title": "Atomic Habits", "author": "James Clear", "category": "personal_development"},
+    ARTICLE_URLS[1]: {"book_title": "Atomic Habits", "author": "James Clear", "category": "personal_development"},
+    ARTICLE_URLS[2]: {"book_title": "The Lean Startup", "author": "Eric Ries", "category": "business"},
+    ARTICLE_URLS[3]: {"book_title": "Thinking, Fast and Slow", "author": "Daniel Kahneman", "category": "psychology"},
+    ARTICLE_URLS[4]: {"book_title": "The Innovators", "author": "Walter Isaacson", "category": "technology"},
+}
+
+
+class ArticleParser(HTMLParser):
+    """Extract visible article paragraphs without navigation labels."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.title = ""
+        self._tag: str | None = None
+        self._parts: list[str] = []
+
+    def handle_starttag(self, tag, attrs):  # type: ignore[no-untyped-def]
+        if tag in {"title", "p"}:
+            self._tag = tag
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == self._tag:
+            self._tag = None
+
+    def handle_data(self, data: str) -> None:
+        cleaned = " ".join(data.split())
+        if not cleaned:
+            return
+        if self._tag == "title" and not self.title:
+            self.title = cleaned
+        elif self._tag == "p" and len(cleaned) > 30:
+            self._parts.append(cleaned)
+
+    def content(self) -> str:
+        return "\n\n".join(self._parts)[:2500]
+
 
 def crawl_article(url: str) -> dict:
     """
@@ -58,13 +85,20 @@ def crawl_article(url: str) -> dict:
     request = Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; C3-02-RAG/1.0)"})
     with urlopen(request, timeout=20) as response:
         html = response.read().decode("utf-8", errors="replace")
-    title_match = re.search(r"<title[^>]*>(.*?)</title>", html, flags=re.I | re.S)
-    title = re.sub(r"<[^>]+>", "", title_match.group(1)).strip() if title_match else "Untitled"
-    text = re.sub(r"<script[\s\S]*?</script>|<style[\s\S]*?</style>|<[^>]+>", " ", html, flags=re.I)
-    content = re.sub(r"\s+", " ", text).strip()[:1100]
+    parser = ArticleParser()
+    parser.feed(html)
+    content = parser.content()
     if len(content) < 500:
         raise ValueError(f"Extracted content is too short from {url}")
-    return {"url": url, "title": title, "date_crawled": datetime.now().isoformat(), "content_markdown": content}
+    return {
+        "url": url,
+        "title": parser.title or "Untitled",
+        "date_crawled": datetime.now().isoformat(),
+        "content_markdown": content,
+        "type": "public_book_article",
+        "rights_note": "Short extract from a public webpage; retain source URL.",
+        **BOOK_METADATA[url],
+    }
 
 
 def crawl_all():

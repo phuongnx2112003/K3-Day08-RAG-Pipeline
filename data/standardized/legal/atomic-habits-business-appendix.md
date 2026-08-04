@@ -1,3 +1,12 @@
+# Atomic Habits
+
+**Author:** James Clear
+**Category:** personal_development
+**Source:** https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf
+**Type:** public_pdf
+
+---
+
 1
 
 BONUS CHAPTER: HOW TO APPLY THESE IDEAS TO BUSINESS
