@@ -23,14 +23,16 @@ thay vì cố vượt qua, và chỉ dùng nguồn công khai/được phép chi
 """
 
 from pathlib import Path
+from urllib.request import Request, urlopen
 
 DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "legal"
 
 
-REQUIRED_FILES = [
-    "atomic-habits-source-brief.pdf",
-    "deep-work-source-brief.pdf",
-    "thinking-fast-slow-source-brief.pdf",
+SOURCE_DOCUMENTS = [
+    ("atomic-habits-business-appendix.pdf", "https://s3.amazonaws.com/jamesclear/Atomic%20Habits/Business%20Appendix.pdf"),
+    ("thinking-fast-slow-cia-review.pdf", "https://www.cia.gov/resources/csi/static/Thinking-Fast-and-Slow.pdf"),
+    ("thinking-fast-slow-innovation-review.pdf", "https://innovation.cc/wp-content/uploads/2012_17_3_10_gow_bk_rev_kahneman.pdf"),
+    ("lean-startup-method-analysis.pdf", "https://assets.website-files.com/6754fde9083ed68513741b0b/681768721e7e0d62338789a2_51868898252.pdf"),
 ]
 
 
@@ -41,12 +43,18 @@ def setup_directory():
 
 
 def collect_source_briefs() -> list[Path]:
-    """Return the three team-written, citation-backed source briefs for CP1."""
+    """Download three publicly shared book-related PDFs with provenance."""
     setup_directory()
-    paths = [DATA_DIR / filename for filename in REQUIRED_FILES]
-    missing = [str(path) for path in paths if not path.exists() or path.stat().st_size <= 1024]
-    if missing:
-        raise FileNotFoundError("Missing or invalid CP1 source briefs: " + ", ".join(missing))
+    paths = []
+    for filename, url in SOURCE_DOCUMENTS:
+        path = DATA_DIR / filename
+        request = Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; C3-02-RAG/1.0)"})
+        with urlopen(request, timeout=30) as response:
+            content = response.read()
+        if not content.startswith(b"%PDF") or len(content) <= 1024:
+            raise ValueError(f"Invalid PDF response from {url}")
+        path.write_bytes(content)
+        paths.append(path)
     return paths
 
 

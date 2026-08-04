@@ -1,0 +1,8 @@
+# The Lean Startup | The Movement That Is Transforming How New Products Are Built And Launched
+
+**Source:** https://theleanstartup.com/book
+**Crawled:** 2026-08-04T10:40:57.381949
+
+---
+
+The Lean Startup | The Movement That Is Transforming How New Products Are Built And Launched Every so often a business book comes along that changes how we think about innovation and entrepreneurship... The Lean Startup has the chops to join this exalted company. Financial Times &nbsp; &nbsp; The Lean Startup How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses Available Everywhere (Click a retailer below) &nbsp; eBooks International Retailers RandomHouse.ca Chapters.Indigo.ca Amazon.ca Amazon.co.uk &nbsp; Kindle Nook iBookstore &nbsp; What People are Saying "Whether you are a startup or corporate entrepreneur there are important lessons here for you on your quest toward the new and unknown." Tim Brown CEO of IDEO "Every founding team should stop for 48 hours and read Lean Startup. Seriously stop and read this book now." Scott Case CEO Startup America Partnership "A must read for every serious entrepreneur-and every manager interested in innovation." Marc Andreessen co-founder of Andreessen Horowitz, Opsware Inc. and Netscape " The Lean Startu

@@ -17,9 +17,13 @@ Hướng dẫn:
 """
 
 import json
+import subprocess
 from pathlib import Path
 
-from markitdown import MarkItDown
+try:
+    from markitdown import MarkItDown
+except ImportError:
+    MarkItDown = None
 
 LANDING_DIR = Path(__file__).parent.parent / "data" / "landing"
 OUTPUT_DIR = Path(__file__).parent.parent / "data" / "standardized"
@@ -31,14 +35,17 @@ def convert_legal_docs():
     output_dir = OUTPUT_DIR / "legal"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    md = MarkItDown()
+    md = MarkItDown() if MarkItDown else None
 
     for filepath in legal_dir.iterdir():
         if filepath.suffix.lower() in (".pdf", ".docx", ".doc"):
             print(f"Converting: {filepath.name}")
-            result = md.convert(str(filepath))
+            if md:
+                text = md.convert(str(filepath)).text_content
+            else:
+                text = subprocess.run(["pdftotext", str(filepath), "-"], check=True, capture_output=True, text=True).stdout
             output_path = output_dir / f"{filepath.stem}.md"
-            output_path.write_text(result.text_content, encoding="utf-8")
+            output_path.write_text(text, encoding="utf-8")
             print(f"  ✓ Saved: {output_path}")
 
 
