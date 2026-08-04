@@ -14,7 +14,9 @@ bất kể nội dung đó có thật sự liên quan đến câu hỏi hay khô
 quyết định fallback ở Task 9 — xem ghi chú ở đó.
 """
 
-from typing import Optional
+from __future__ import annotations
+
+from typing import Any
 
 
 def rerank_cross_encoder(
@@ -126,28 +128,87 @@ def rerank_rrf(
     Returns:
         List of top_k candidates sorted by RRF score descending.
     """
-    # TODO: Implement RRF
-    #
-    # rrf_scores = {}  # content -> score
-    # content_map = {}  # content -> full dict
-    #
-    # for ranked_list in ranked_lists:
-    #     for rank, item in enumerate(ranked_list, 1):
-    #         key = item["content"]
-    #         rrf_scores[key] = rrf_scores.get(key, 0) + 1 / (k + rank)
-    #         content_map[key] = item
-    #
-    # # Sort by RRF score
-    # sorted_items = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-    #
-    # results = []
-    # for content, score in sorted_items[:top_k]:
-    #     item = content_map[content].copy()
-    #     item["score"] = score
-    #     results.append(item)
-    #
-    # return results
-    raise NotImplementedError("Implement rerank_rrf")
+    if not isinstance(ranked_lists, list):
+        raise TypeError("ranked_lists must be a list of ranked result lists")
+    if not isinstance(top_k, int) or not isinstance(k, int):
+        raise TypeError("top_k and k must be integers")
+    if top_k <= 0 or not ranked_lists:
+        return []
+    if k < 0:
+        raise ValueError("k must be non-negative")
+
+    def identity(item: dict[str, Any]) -> tuple[Any, ...]:
+        """Ưu tiên ID chunk chung; fallback về content để merge dense/sparse."""
+
+        metadata = item.get("metadata") or {}
+        source = metadata.get("source")
+        chunk_index = metadata.get("chunk_index")
+        if source is not None and chunk_index is not None:
+            return ("chunk", str(source), str(chunk_index))
+        return ("content", str(item.get("content", "")))
+
+    scores: dict[tuple[Any, ...], float] = {}
+    representatives: dict[tuple[Any, ...], dict] = {}
+    evidence: dict[tuple[Any, ...], list[dict[str, float | int]]] = {}
+    first_seen: dict[tuple[Any, ...], int] = {}
+    sequence = 0
+
+    for list_index, ranked_list in enumerate(ranked_lists):
+        if not isinstance(ranked_list, list):
+            raise TypeError(f"ranked_lists[{list_index}] must be a list")
+
+        seen_in_ranker: set[tuple[Any, ...]] = set()
+        for rank, item in enumerate(ranked_list, start=1):
+            if not isinstance(item, dict):
+                raise TypeError(f"ranked_lists[{list_index}][{rank - 1}] must be a dict")
+            if not isinstance(item.get("content"), str) or not item["content"].strip():
+                raise ValueError("Every RRF candidate must have non-empty 'content'")
+            if not isinstance(item.get("metadata", {}), dict):
+                raise TypeError("Candidate 'metadata' must be a dict")
+
+            key = identity(item)
+            # Một ranker không được cộng điểm nhiều lần cho cùng chunk.
+            if key in seen_in_ranker:
+                continue
+            seen_in_ranker.add(key)
+
+            if key not in first_seen:
+                first_seen[key] = sequence
+                sequence += 1
+                representatives[key] = {
+                    **item,
+                    "metadata": dict(item.get("metadata") or {}),
+                }
+            else:
+                # Giữ metadata giàu nhất giữa dense và sparse.
+                representatives[key]["metadata"] = {
+                    **representatives[key].get("metadata", {}),
+                    **item.get("metadata", {}),
+                }
+
+            contribution = 1.0 / (k + rank)
+            scores[key] = scores.get(key, 0.0) + contribution
+            evidence.setdefault(key, []).append(
+                {
+                    "list_index": list_index,
+                    "rank": rank,
+                    "original_score": float(item.get("score", 0.0)),
+                }
+            )
+
+    ordered_keys = sorted(
+        scores,
+        key=lambda key: (-scores[key], first_seen[key]),
+    )
+    output: list[dict] = []
+    for key in ordered_keys[:top_k]:
+        item = representatives[key].copy()
+        metadata = dict(item.get("metadata") or {})
+        metadata["rrf_evidence"] = evidence[key]
+        item["metadata"] = metadata
+        item["score"] = round(scores[key], 8)
+        output.append(item)
+    return output
 
 
 # =============================================================================
@@ -178,19 +239,21 @@ def rerank(
         # Cần query_embedding - embed query trước
         raise NotImplementedError("Call rerank_mmr with query_embedding")
     elif method == "rrf":
-        # RRF cần nhiều ranked lists - gọi riêng
-        raise NotImplementedError("Call rerank_rrf with ranked_lists")
+        # Với một list, RRF giữ nguyên thứ hạng nhưng chuẩn hóa score theo rank.
+        return rerank_rrf([candidates], top_k=top_k)
     else:
         raise ValueError(f"Unknown rerank method: {method}")
 
 
 if __name__ == "__main__":
-    # Test with dummy data
-    dummy_candidates = [
-        {"content": "Tuition fee payment schedule", "score": 0.8, "metadata": {}},
-        {"content": "Scholarship eligibility requirements", "score": 0.6, "metadata": {}},
-        {"content": "Library study room booking guide", "score": 0.5, "metadata": {}},
+    dense = [
+        {"content": "Atomic Habits: four laws", "score": 0.8, "metadata": {"source": "atomic.md", "chunk_index": 1}},
+        {"content": "Deep Work", "score": 0.6, "metadata": {"source": "deep.md", "chunk_index": 0}},
     ]
-    results = rerank("tuition fee payment", dummy_candidates, top_k=2)
+    sparse = [
+        {"content": "Atomic Habits: four laws", "score": 12.0, "metadata": {"source": "atomic.md", "chunk_index": 1}},
+        {"content": "Thinking Fast and Slow", "score": 8.0, "metadata": {"source": "thinking.md", "chunk_index": 2}},
+    ]
+    results = rerank_rrf([dense, sparse], top_k=3)
     for r in results:
         print(f"[{r['score']:.3f}] {r['content']}")
